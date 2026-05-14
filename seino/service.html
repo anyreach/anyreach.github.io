@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>求人一覧 | セイノースタッフサービス</title>
+  <meta name="description" content="セイノー人材紹介の現在の求人一覧です。正社員求人を職種・勤務地・年収から検索できます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .job-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: all var(--transition);
+    }
+
+    .job-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-accent);
+    }
+
+    .job-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .job-company {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--color-light);
+      color: var(--color-primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge--salary {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .badge--location {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .job-desc {
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .job-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-gray-light);
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+    }
+
+    .search-form {
+      background: var(--color-light);
+      padding: 2rem;
+      border-radius: var(--radius);
+      margin-bottom: 3rem;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 0.75rem;
+      border: 1px solid var(--color-gray-light);
+      border-radius: var(--radius);
+      font-family: var(--font-base);
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+
+    .search-btn {
+      align-self: flex-end;
+      padding: 0.75rem 2rem;
+    }
+
+    .job-list {
+      margin-bottom: 3rem;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body class="page-body">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__main">セイノー人材紹介</span>
+        <span class="site-logo__sub">正社員求人サイト</span>
+      </a>
+      <nav class="site-nav">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">トップ</a></li>
+          <li><a href="service.html" class="site-nav__link">求職者の方へ</a></li>
+          <li><a href="employers.html" class="site-nav__link">採用担当者様へ</a></li>
+          <li><a href="voices.html" class="site-nav__link">支援実績</a></li>
+          <li><a href="flow.html" class="site-nav__link">ご利用の流れ</a></li>
+          <li><a href="about.html" class="site-nav__link">会社案内</a></li>
+          <li><a href="contact.html" class="site-nav__link site-nav__link--cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__list">
+        <li><a href="index.html" class="mobile-nav__link">トップ</a></li>
+        <li><a href="service.html" class="mobile-nav__link">求職者の方へ</a></li>
+        <li><a href="employers.html" class="mobile-nav__link">採用担当者様へ</a></li>
+        <li><a href="voices.html" class="mobile-nav__link">支援実績</a></li>
+        <li><a href="flow.html" class="mobile-nav__link">ご利用の流れ</a></li>
+        <li><a href="about.html" class="mobile-nav__link">会社案内</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="hero" style="padding: 60px 0;">
+      <div class="container">
+        <h1 class="hero__title" style="margin-bottom: 0;">求職者の方へ</h1>
+      </div>
+    </section>
+
+    <!-- ===== SEARCH & JOBS ===== -->
+    <section class="section">
+      <div class="container">
+
+        <!-- 検索フォーム -->
+        <div class="search-form">
+          <h2 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1.5rem;">求人を検索</h2>
+          <div class="search-grid">
+            <div class="form-group">
+              <label for="keyword">職種キーワード</label>
+              <input type="text" id="keyword" placeholder="例：営業、エンジニア">
+            </div>
+            <div class="form-group">
+              <label for="location">勤務地</label>
+              <select id="location">
+                <option value="">全国</option>
+                <option value="tokyo">東京</option>
+                <option value="osaka">大阪</option>
+                <option value="gifu">岐阜</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="salary">年収</label>
+              <select id="salary">
+                <option value="">指定なし</option>
+                <option value="300-400">300万〜400万</option>
+                <option value="400-500">400万〜500万</option>
+                <option value="500+">500万以上</option>
+              </select>
+            </div>
+            <button class="btn btn--primary search-btn" onclick="alert('検索機能は実装時にATS（Thor）と連携します')">検索</button>
+          </div>
+        </div>
+
+        <!-- 求人一覧 -->
+        <div class="job-list">
+
+          <div class="job-card">
+            <div class="job-header">
+              <div class="job-title">営業職（法人営業）</div>
+              <div class="job-company">大手製造業 A社</div>
+            </div>
+            <div class="job-meta">
+              <span class="badge badge--salary">年収 400万〜500万</span>
+              <span class="badge badge--location">東京都渋谷区</span>
+              <span class="badge">正社員</span>
+            </div>
+            <div class="job-desc">
+              自動車関連製品の営業。既存顧客管理から新規営業まで幅広く経験できます。営業経験3年以上の方を募集中。年1回の賞与あり、福利厚生充実。
+            </div>
+            <div class="job-footer">
+              <span class="job-date">掲載日：2026年3月15日</span>
+              <a href="contact.html" class="btn btn--primary">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <div class="job-header">
+              <div class="job-title">システムエンジニア（Java/Spring Boot）</div>
+              <div class="job-company">IT企業 B社</div>
+            </div>
+            <div class="job-meta">
+              <span class="badge badge--salary">年収 500万〜650万</span>
+              <span class="badge badge--location">東京都千代田区</span>
+              <span class="badge">正社員</span>
+            </div>
+            <div class="job-desc">
+              エンタープライズシステム開発。既存チームへの配置になります。Java/Spring Bootでの開発経験3年以上、テスト設計経験必須。リモートワーク可能。
+            </div>
+            <div class="job-footer">
+              <span class="job-date">掲載日：2026年3月18日</span>
+              <a href="contact.html" class="btn btn--primary">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <div class="job-header">
+              <div class="job-title">経理・財務スタッフ</div>
+              <div class="job-company">流通業 C社</div>
+            </div>
+            <div class="job-meta">
+              <span class="badge badge--salary">年収 350万〜450万</span>
+              <span class="badge badge--location">大阪府大阪市</span>
+              <span class="badge">正社員</span>
+            </div>
+            <div class="job-desc">
+              売上計上、経費精算、決算支援など月次・年次決算業務全般。経理経験3年以上必須。会計ソフト（弥生など）の使用経験があると尚可。
+            </div>
+            <div class="job-footer">
+              <span class="job-date">掲載日：2026年3月20日</span>
+              <a href="contact.html" class="btn btn--primary">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <div class="job-header">
+              <div class="job-title">営業事務</div>
+              <div class="job-company">食品流通 D社</div>
+            </div>
+            <div class="job-meta">
+              <span class="badge badge--salary">年収 300万〜380万</span>
+              <span class="badge badge--location">岐阜県大垣市</span>
+              <span class="badge">正社員</span>
+            </div>
+            <div class="job-desc">
+              営業サポート業務。受注管理、納品書作成、顧客対応など。事務経験2年以上。Excel・Word基本操作必須。同じ岐阜県内での採用になります。
+            </div>
+            <div class="job-footer">
+              <span class="job-date">掲載日：2026年3月21日</span>
+              <a href="contact.html" class="btn btn--primary">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <div class="job-header">
+              <div class="job-title">Webデザイナー</div>
+              <div class="job-company">デジタル企業 E社</div>
+            </div>
+            <div class="job-meta">
+              <span class="badge badge--salary">年収 380万〜480万</span>
+              <span class="badge badge--location">東京都渋谷区</span>
+              <span class="badge">正社員</span>
+            </div>
+            <div class="job-desc">
+              Webサイト・ランディングページのUI/UXデザイン。Figma、Adobe XDでの実務経験3年以上必須。レスポンシブデザイン経験があると尚可。
+            </div>
+            <div class="job-footer">
+              <span class="job-date">掲載日：2026年3月22日</span>
+              <a href="contact.html" class="btn btn--primary">詳細を見る</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>求職者の方へ</h4>
+          <ul>
+            <li><a href="service.html">求人を探す</a></li>
+            <li><a href="flow.html">ご利用の流れ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>採用担当者様へ</h4>
+          <ul>
+            <li><a href="employers.html">採用支援サービス</a></li>
+            <li><a href="about.html">会社案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank">個人情報保護方針</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li>電話: 0584-81-8848</li>
+            <li>受付: 平日 9:00-17:30</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社セイノースタッフサービス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        hamburger.setAttribute('aria-expanded', hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      });
+    }
+  </script>
+</body>
+</html>

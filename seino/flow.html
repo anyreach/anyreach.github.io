@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>ご利用の流れ | セイノースタッフサービス</title>
+  <meta name="description" content="セイノー人材紹介のご利用フロー。登録から内定まで、5ステップで簡単にご利用いただけます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .flow-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .flow-steps {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--color-primary), #2d5a8f);
+      color: var(--color-white);
+      font-size: 2.5rem;
+      font-weight: 700;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .step-content p {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .step-points {
+      background: var(--color-light);
+      padding: 1rem;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .step-points ul {
+      list-style: none;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .step-points li {
+      padding: 0.4rem 0;
+    }
+
+    .step-points li::before {
+      content: "✓ ";
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--color-accent);
+      margin: 1rem 0;
+    }
+
+    .timeline {
+      background: var(--color-light);
+      padding: 2rem;
+      border-radius: var(--radius);
+      margin-top: 3rem;
+    }
+
+    .timeline h3 {
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 0.3rem;
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-content h4 {
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-content p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-section {
+      background: var(--color-light);
+      padding: 3rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-section h3 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .flow-step {
+        grid-template-columns: 1fr;
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8rem;
+      }
+
+      .cta-section {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="page-body">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__main">セイノー人材紹介</span>
+        <span class="site-logo__sub">正社員求人サイト</span>
+      </a>
+      <nav class="site-nav">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">トップ</a></li>
+          <li><a href="service.html" class="site-nav__link">求職者の方へ</a></li>
+          <li><a href="employers.html" class="site-nav__link">採用担当者様へ</a></li>
+          <li><a href="voices.html" class="site-nav__link">支援実績</a></li>
+          <li><a href="flow.html" class="site-nav__link">ご利用の流れ</a></li>
+          <li><a href="about.html" class="site-nav__link">会社案内</a></li>
+          <li><a href="contact.html" class="site-nav__link site-nav__link--cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__list">
+        <li><a href="index.html" class="mobile-nav__link">トップ</a></li>
+        <li><a href="service.html" class="mobile-nav__link">求職者の方へ</a></li>
+        <li><a href="employers.html" class="mobile-nav__link">採用担当者様へ</a></li>
+        <li><a href="voices.html" class="mobile-nav__link">支援実績</a></li>
+        <li><a href="flow.html" class="mobile-nav__link">ご利用の流れ</a></li>
+        <li><a href="about.html" class="mobile-nav__link">会社案内</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="hero" style="padding: 60px 0;">
+      <div class="container">
+        <h1 class="hero__title" style="margin-bottom: 0;">ご利用の流れ</h1>
+      </div>
+    </section>
+
+    <!-- ===== FLOW ===== -->
+    <section class="section">
+      <div class="container flow-container">
+
+        <h2 class="section-title" style="margin-bottom: 2rem;">5ステップで内定まで</h2>
+
+        <div class="flow-steps">
+
+          <!-- Step 1 -->
+          <div class="flow-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>登録・ヒアリング</h3>
+              <p>
+                まずはお気軽にご登録ください。専任のキャリアコンサルタントがあなたのキャリア目標や希望条件をヒアリングします。
+              </p>
+              <div class="step-points">
+                <ul>
+                  <li>完全無料で利用できます</li>
+                  <li>5分程度で登録完了</li>
+                  <li>個人情報は厳重に管理します</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <!-- Step 2 -->
+          <div class="flow-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>求人提案</h3>
+              <p>
+                あなたの希望条件や適性に合った求人を厳選してご提案します。未公開求人もご紹介できます。
+              </p>
+              <div class="step-points">
+                <ul>
+                  <li>複数の求人をご提案</li>
+                  <li>企業の詳細情報をご説明</li>
+                  <li>わからないことはいつでも相談可能</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <!-- Step 3 -->
+          <div class="flow-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>応募・面接対策</h3>
+              <p>
+                応募の手続きはすべてお任せください。面接対策や履歴書添削も無料でサポートします。
+              </p>
+              <div class="step-points">
+                <ul>
+                  <li>面接日程の調整も代行</li>
+                  <li>模擬面接で対策をサポート</li>
+                  <li>企業情報の詳細をご説明</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <!-- Step 4 -->
+          <div class="flow-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>面接・選考</h3>
+              <p>
+                企業との面接を進めます。ご質問や不安なことがあれば、いつでもコンサルタントにご相談ください。
+              </p>
+              <div class="step-points">
+                <ul>
+                  <li>面接後のフィードバック</li>
+                  <li>企業側の評価も共有</li>
+                  <li>必要に応じて追加対策をサポート</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <!-- Step 5 -->
+          <div class="flow-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>内定・入社</h3>
+              <p>
+                内定おめでとうございます！給与や勤務条件の交渉も代行します。スムーズな入社をサポートします。
+              </p>
+              <div class="step-points">
+                <ul>
+                  <li>条件交渉を代行</li>
+                  <li>入社日の調整</li>
+                  <li>入社後のサポートも継続</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+          <h3>一般的なご利用期間</h3>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>登録～求人提案</h4>
+              <p>1-2営業日。お急ぎの場合はご相談ください。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>応募～最終面接</h4>
+              <p>平均2-4週間。企業によってスケジュールは異なります。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>内定～入社</h4>
+              <p>2週間～1ヶ月。現職との引き継ぎ等を考慮して調整します。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+          <h3>今すぐ登録して、あなたに合った求人を見つけましょう</h3>
+          <p>完全無料で利用でき、登録後すぐにサポートが始まります。</p>
+          <a href="contact.html" class="btn btn--primary">無料で登録する</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>求職者の方へ</h4>
+          <ul>
+            <li><a href="service.html">求人を探す</a></li>
+            <li><a href="flow.html">ご利用の流れ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>採用担当者様へ</h4>
+          <ul>
+            <li><a href="employers.html">採用支援サービス</a></li>
+            <li><a href="about.html">会社案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank">個人情報保護方針</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li>電話: 0584-81-8848</li>
+            <li>受付: 平日 9:00-17:30</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社セイノースタッフサービス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        hamburger.setAttribute('aria-expanded', hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      });
+    }
+  </script>
+</body>
+</html>

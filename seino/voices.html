@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>支援実績・お客様の声 | セイノースタッフサービス</title>
+  <meta name="description" content="セイノー人材紹介の支援実績とお客様の声。転職満足度96%、平均内定獲得期間45日など、多くの転職成功者をサポートしています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-badge {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--color-accent);
+    }
+
+    .stat-badge__number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-badge__label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-badge__sub {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      border: 1px solid var(--color-gray-light);
+    }
+
+    .testimonial-card__quote {
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--color-accent);
+      opacity: 0.2;
+      position: absolute;
+      top: 1rem;
+      left: 1.25rem;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-card__body {
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      padding-top: 1.5rem;
+      font-size: 0.97rem;
+    }
+
+    .testimonial-card__footer {
+      border-top: 1px solid var(--color-gray-light);
+      padding-top: 1rem;
+    }
+
+    .testimonial-card__name {
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-card__role {
+      font-size: 0.85rem;
+      color: var(--color-accent);
+    }
+
+    .cta-voices {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-voices h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--color-white);
+    }
+
+    .cta-voices p {
+      margin-bottom: 2rem;
+      opacity: 0.85;
+      font-size: 1rem;
+    }
+
+    .cta-voices .btn--primary {
+      background: var(--color-accent);
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .stat-badge__number {
+        font-size: 2.25rem;
+      }
+
+      .cta-voices h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body class="page-body">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__main">セイノー人材紹介</span>
+        <span class="site-logo__sub">正社員求人サイト</span>
+      </a>
+      <nav class="site-nav">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">トップ</a></li>
+          <li><a href="service.html" class="site-nav__link">求職者の方へ</a></li>
+          <li><a href="employers.html" class="site-nav__link">採用担当者様へ</a></li>
+          <li><a href="voices.html" class="site-nav__link">支援実績</a></li>
+          <li><a href="flow.html" class="site-nav__link">ご利用の流れ</a></li>
+          <li><a href="about.html" class="site-nav__link">会社案内</a></li>
+          <li><a href="contact.html" class="site-nav__link site-nav__link--cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__list">
+        <li><a href="index.html" class="mobile-nav__link">トップ</a></li>
+        <li><a href="service.html" class="mobile-nav__link">求職者の方へ</a></li>
+        <li><a href="employers.html" class="mobile-nav__link">採用担当者様へ</a></li>
+        <li><a href="voices.html" class="mobile-nav__link">支援実績</a></li>
+        <li><a href="flow.html" class="mobile-nav__link">ご利用の流れ</a></li>
+        <li><a href="about.html" class="mobile-nav__link">会社案内</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="hero" style="padding: 60px 0;">
+      <div class="container">
+        <h1 class="hero__title" style="margin-bottom: 0.5rem;">支援実績・お客様の声</h1>
+        <p class="hero__desc" style="margin-top: 1rem;">多くの方の転職を成功に導いてきた実績と、ご利用いただいた方々のリアルな声をご紹介します。</p>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="section section--gray">
+      <div class="container">
+        <h2 class="section-title fade-in">数値で見る支援実績</h2>
+        <p class="section-subtitle fade-in">Our Track Record</p>
+
+        <div class="stats-grid">
+
+          <div class="stat-badge fade-in">
+            <div class="stat-badge__number">96%</div>
+            <div class="stat-badge__label">転職支援満足度</div>
+            <div class="stat-badge__sub">ご利用者アンケートより</div>
+          </div>
+
+          <div class="stat-badge fade-in">
+            <div class="stat-badge__number">45日</div>
+            <div class="stat-badge__label">平均内定獲得期間</div>
+            <div class="stat-badge__sub">登録から内定までの平均日数</div>
+          </div>
+
+          <div class="stat-badge fade-in">
+            <div class="stat-badge__number">250<span style="font-size: 1.5rem;">社以上</span></div>
+            <div class="stat-badge__label">取引企業数</div>
+            <div class="stat-badge__sub">幅広い業種・規模の企業と連携</div>
+          </div>
+
+          <div class="stat-badge fade-in">
+            <div class="stat-badge__number">73%</div>
+            <div class="stat-badge__label">年収アップ実現率</div>
+            <div class="stat-badge__sub">転職後に年収が上がった方の割合</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">転職成功者の声</h2>
+        <p class="section-subtitle fade-in">Customer Voices</p>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-card__quote">"</div>
+            <p class="testimonial-card__body">
+              担当者が親身になって話を聞いてくれました。希望条件を細かく整理してもらい、想像以上に条件の良い職場が見つかりました。
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__name">田中 恵さん（32歳）</div>
+              <div class="testimonial-card__role">事務職 → 営業事務（正社員）</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-card__quote">"</div>
+            <p class="testimonial-card__body">
+              初めての転職で不安でしたが、面接対策を丁寧にサポートしてもらえました。入社後も定期的に連絡いただき安心できました。
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__name">山本 健二さん（28歳）</div>
+              <div class="testimonial-card__role">アルバイト → 製造業（正社員）</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-card__quote">"</div>
+            <p class="testimonial-card__body">
+              30代での転職は難しいと思っていましたが、自分の経験を活かせる求人を複数提案してもらえました。年収も以前より上がりとても満足しています。
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__name">鈴木 美咲さん（35歳）</div>
+              <div class="testimonial-card__role">派遣社員 → 総務（正社員）</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-voices">
+      <div class="container">
+        <h2>あなたもキャリアアップを実現しませんか</h2>
+        <p>無料相談はいつでも受け付けています。まずはお気軽にご相談ください。</p>
+        <a href="contact.html" class="btn btn--primary">無料相談する</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>求職者の方へ</h4>
+          <ul>
+            <li><a href="service.html">求人を探す</a></li>
+            <li><a href="flow.html">ご利用の流れ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>採用担当者様へ</h4>
+          <ul>
+            <li><a href="employers.html">採用支援サービス</a></li>
+            <li><a href="about.html">会社案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank">個人情報保護方針</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li>電話: 0584-81-8848</li>
+            <li>受付: 平日 9:00-17:30</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社セイノースタッフサービス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        hamburger.setAttribute('aria-expanded', hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      });
+    }
+  </script>
+</body>
+</html>

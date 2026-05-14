@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>セイノースタッフサービス 求人ポータルサイト新規制作 キックオフ 2026-05-14</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1a3558;
+  --teal: #0097b2;
+  --teal-light: #e0f5f9;
+  --teal-mid: #b2e4ef;
+  --green: #16a34a;
+  --green-light: #dcfce7;
+  --orange: #ea580c;
+  --orange-light: #fff0e6;
+  --red: #dc2626;
+  --red-light: #fee2e2;
+  --yellow: #ca8a04;
+  --yellow-light: #fef9c3;
+  --slate: #334155;
+  --slate-light: #64748b;
+  --border: #e2e8f0;
+  --bg: #f8fafc;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: var(--slate);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+.slide {
+  background: var(--white);
+  width: 960px;
+  min-height: 540px;
+  margin: 24pt auto;
+  box-shadow: 0 2px 16px rgba(0,0,0,.10);
+  border-radius: 6px;
+  overflow: visible;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-num {
+  position: absolute;
+  bottom: 8pt;
+  right: 12pt;
+  font-size: 8pt;
+  color: #333;
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: none;
+}
+.slide-head {
+  background: linear-gradient(135deg, var(--navy) 0%, #2a5298 100%);
+  color: white;
+  padding: 14pt 24pt;
+  display: flex;
+  align-items: center;
+  gap: 12pt;
+}
+.slide-num {
+  font-size: 9pt;
+  font-weight: 700;
+  background: rgba(255,255,255,.18);
+  border-radius: 4px;
+  padding: 2pt 7pt;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.slide-title {
+  font-size: 15pt;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.slide-body {
+  padding: 20pt 28pt 20pt;
+  flex: 1;
+}
+
+/* Cover */
+.cover-slide .slide-head {
+  background: linear-gradient(160deg, var(--navy) 0%, #1a5276 100%);
+  padding: 24pt 28pt 20pt;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4pt;
+}
+.cover-logo-text {
+  font-size: 10pt;
+  font-weight: 700;
+  background: rgba(255,255,255,.15);
+  padding: 3pt 10pt;
+  border-radius: 20px;
+  margin-bottom: 8pt;
+}
+.cover-company {
+  font-size: 22pt;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+.cover-project { font-size: 13pt; opacity: .85; margin-top: 2pt; }
+.cover-kick {
+  font-size: 11pt;
+  background: var(--teal);
+  padding: 4pt 12pt;
+  border-radius: 4px;
+  margin-top: 10pt;
+  font-weight: 700;
+  display: inline-block;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12pt;
+  margin-top: 4pt;
+}
+.cover-meta-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10pt 14pt;
+}
+.cover-meta-box .label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 4pt;
+}
+.cover-meta-box .val { font-size: 10pt; color: var(--slate); }
+
+/* Agenda */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10pt;
+  margin-top: 8pt;
+}
+.agenda-card {
+  background: var(--teal-light);
+  border-radius: 8px;
+  padding: 12pt 10pt;
+  text-align: center;
+  border-top: 3px solid var(--teal);
+}
+.agenda-card .num {
+  font-size: 20pt;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 4pt;
+}
+.agenda-card .part {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4pt;
+}
+.agenda-card .desc { font-size: 8.5pt; color: var(--slate-light); line-height: 1.4; }
+
+.goal-box {
+  background: linear-gradient(135deg, var(--navy), #2a5298);
+  color: white;
+  border-radius: 8px;
+  padding: 12pt 16pt;
+  margin-top: 14pt;
+  font-size: 10.5pt;
+}
+.goal-box strong { color: #7dd3fc; }
+
+/* Section label */
+.section-label {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--teal);
+  border-bottom: 2px solid var(--teal-mid);
+  padding-bottom: 4pt;
+  margin-bottom: 12pt;
+}
+
+/* Cards */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; }
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12pt; }
+
+.card {
+  border-radius: 8px;
+  padding: 12pt 14pt;
+  border: 1px solid var(--border);
+}
+.card.red   { background: var(--red-light);   border-color: #fca5a5; }
+.card.green { background: var(--green-light);  border-color: #86efac; }
+.card.navy  { background: var(--navy); color: white; }
+.card.teal  { background: var(--teal-light);   border-color: var(--teal-mid); }
+.card.orange{ background: var(--orange-light); border-color: #fdba74; }
+
+.card-title { font-size: 10.5pt; font-weight: 700; margin-bottom: 5pt; }
+.card.red    .card-title { color: var(--red); }
+.card.green  .card-title { color: var(--green); }
+.card.navy   .card-title { color: #7dd3fc; }
+.card.teal   .card-title { color: var(--navy); }
+.card.orange .card-title { color: var(--orange); }
+.card ul { font-size: 9.5pt; padding-left: 14pt; }
+.card ul li { margin-bottom: 3pt; }
+.card p { font-size: 9.5pt; }
+.card.navy p, .card.navy ul { color: rgba(255,255,255,.9); }
+
+/* Team */
+.team-section { margin-bottom: 14pt; }
+.team-section-label {
+  font-size: 9pt;
+  font-weight: 700;
+  color: white;
+  background: var(--navy);
+  display: inline-block;
+  padding: 2pt 10pt;
+  border-radius: 4px;
+  margin-bottom: 8pt;
+}
+.team-section-label.partner { background: var(--teal); }
+.team-cards { display: flex; gap: 10pt; }
+.team-card {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 10pt 12pt;
+  background: var(--bg);
+}
+.team-card .name { font-size: 10.5pt; font-weight: 700; color: var(--navy); margin-bottom: 3pt; }
+.team-card .role { font-size: 9pt; color: var(--teal); font-weight: 600; margin-bottom: 4pt; }
+.team-card .note { font-size: 8.5pt; color: var(--slate-light); line-height: 1.4; }
+.comm-bar {
+  background: var(--teal-light);
+  border: 1px solid var(--teal-mid);
+  border-radius: 6px;
+  padding: 8pt 14pt;
+  font-size: 9.5pt;
+  margin-top: 10pt;
+}
+
+/* Compare table */
+.compare-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-top: 8pt; }
+.compare-table th { padding: 8pt 12pt; text-align: center; font-weight: 700; font-size: 10pt; }
+.compare-table th:first-child { background: var(--bg); color: var(--slate-light); text-align: left; width: 20%; }
+.compare-table th.existing { background: #e2e8f0; color: var(--slate); }
+.compare-table th.new { background: var(--navy); color: white; }
+.compare-table td { padding: 7pt 12pt; border-top: 1px solid var(--border); vertical-align: middle; }
+.compare-table td:first-child { font-weight: 600; color: var(--slate-light); font-size: 9pt; background: var(--bg); }
+.compare-table td:nth-child(2) { color: var(--slate-light); text-align: center; }
+.compare-table td:nth-child(3) { color: var(--navy); font-weight: 600; text-align: center; }
+.tag-new {
+  display: inline-block;
+  font-size: 8pt;
+  background: var(--teal);
+  color: white;
+  padding: 1pt 6pt;
+  border-radius: 3px;
+  font-weight: 700;
+  margin-left: 4pt;
+  vertical-align: middle;
+}
+.important-note {
+  background: var(--orange-light);
+  border-left: 4px solid var(--orange);
+  padding: 8pt 12pt;
+  font-size: 9.5pt;
+  border-radius: 0 6px 6px 0;
+  margin-top: 12pt;
+}
+.important-note strong { color: var(--orange); }
+
+/* Tech stack */
+.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; margin-top: 8pt; }
+.tech-card { border-radius: 8px; border: 1px solid var(--border); padding: 10pt 12pt; background: var(--white); }
+.tech-card .layer { font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--slate-light); margin-bottom: 4pt; }
+.tech-card .tech-name { font-size: 12pt; font-weight: 800; color: var(--navy); margin-bottom: 4pt; }
+.tech-card .reason { font-size: 8.5pt; color: var(--slate-light); line-height: 1.4; }
+.host-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; margin-top: 10pt; }
+.host-option { border-radius: 8px; padding: 10pt 12pt; border: 2px solid var(--border); }
+.host-option.recommended { border-color: var(--teal); background: var(--teal-light); }
+.host-option .plan-title { font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 5pt; }
+.host-option.recommended .plan-title::after {
+  content: " 推奨";
+  font-size: 7.5pt;
+  background: var(--teal);
+  color: white;
+  padding: 1pt 6pt;
+  border-radius: 3px;
+  margin-left: 4pt;
+}
+.host-option ul { font-size: 8.5pt; padding-left: 14pt; color: var(--slate); }
+.host-option ul li { margin-bottom: 3pt; }
+
+/* Toroo flow */
+.flow-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 12pt 0;
+  justify-content: center;
+}
+.flow-box {
+  background: var(--navy);
+  color: white;
+  border-radius: 8px;
+  padding: 10pt 14pt;
+  text-align: center;
+  min-width: 120pt;
+}
+.flow-box .fb-label { font-size: 8pt; opacity: .7; margin-bottom: 2pt; }
+.flow-box .fb-main { font-size: 10.5pt; font-weight: 700; }
+.flow-box.teal-box { background: var(--teal); }
+.flow-box.light-box { background: var(--teal-light); color: var(--navy); border: 2px solid var(--teal-mid); }
+.flow-box.green-box { background: var(--green); }
+.flow-arrow { font-size: 16pt; color: var(--slate-light); padding: 0 6pt; flex-shrink: 0; }
+.toroo-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; margin-top: 12pt; }
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8pt;
+  padding: 8pt 10pt;
+  background: var(--bg);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.feature-item .fi-text { font-size: 9.5pt; }
+.feature-item .fi-text strong { display: block; color: var(--navy); margin-bottom: 2pt; }
+
+/* Schedule */
+.timeline { position: relative; margin: 12pt 0; }
+.timeline-phase { display: flex; align-items: stretch; margin-bottom: 8pt; }
+.phase-label {
+  width: 120pt;
+  flex-shrink: 0;
+  padding: 8pt 10pt;
+  border-radius: 6px 0 0 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.phase-label .ph-num { font-size: 7.5pt; opacity: .75; margin-bottom: 1pt; }
+.phase-label .ph-name { font-size: 9.5pt; }
+.phase-bar {
+  flex: 1;
+  padding: 8pt 10pt;
+  border-radius: 0 6px 6px 0;
+  font-size: 8.5pt;
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+}
+.phase-bar .pb-period { font-weight: 700; font-size: 9pt; white-space: nowrap; flex-shrink: 0; }
+.phase-bar .pb-owner { font-size: 8pt; opacity: .8; }
+.phase-0 { background: #e2e8f0; color: var(--slate); }
+.phase-1 { background: #dbeafe; color: #1e40af; }
+.phase-2 { background: var(--teal-light); color: #0f5f72; }
+.phase-3 { background: #ede9fe; color: #5b21b6; }
+.phase-4 { background: var(--orange-light); color: var(--orange); }
+.phase-5 { background: var(--green-light); color: var(--green); }
+.schedule-note {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 8pt 12pt;
+  font-size: 9pt;
+  border-radius: 0 6px 6px 0;
+  margin-top: 10pt;
+}
+
+/* Task list */
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10pt;
+  padding: 10pt 12pt;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-bottom: 6pt;
+  background: var(--white);
+}
+.task-num {
+  font-size: 9pt;
+  font-weight: 800;
+  color: white;
+  background: var(--navy);
+  border-radius: 50%;
+  width: 20pt;
+  height: 20pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1pt;
+}
+.task-body { flex: 1; }
+.task-body .t-name { font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 2pt; }
+.task-body .t-detail { font-size: 8.5pt; color: var(--slate-light); }
+.task-deadline { font-size: 8.5pt; font-weight: 700; white-space: nowrap; color: var(--teal); flex-shrink: 0; margin-top: 2pt; }
+.task-deadline.urgent { color: var(--red); }
+
+/* Confirm table */
+.confirm-table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 8pt; }
+.confirm-table th { background: var(--navy); color: white; padding: 6pt 10pt; text-align: left; font-size: 9.5pt; }
+.confirm-table td { padding: 6pt 10pt; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.confirm-table tr:nth-child(even) td { background: var(--bg); }
+.confirm-table td:first-child { width: 28pt; text-align: center; font-weight: 800; color: var(--slate-light); font-size: 8.5pt; }
+.confirm-table td:last-child { width: 150pt; }
+.answer-box {
+  display: inline-block;
+  border: 1.5px solid var(--teal-mid);
+  border-radius: 4px;
+  padding: 1pt 8pt;
+  font-size: 8.5pt;
+  color: var(--slate-light);
+  min-width: 100pt;
+  background: white;
+  cursor: text;
+  outline: none;
+}
+.answer-box:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 2px rgba(0,151,178,0.2);
+  color: #1e293b;
+}
+
+/* Scope */
+.scope-list { list-style: none; margin: 8pt 0; }
+.scope-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8pt;
+  padding: 6pt 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 10pt;
+}
+.scope-list li:last-child { border-bottom: none; }
+.scope-list .check { color: var(--green); font-size: 12pt; flex-shrink: 0; margin-top: 1pt; font-weight: 700; }
+.cost-box {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10pt 14pt;
+  gap: 12pt;
+  margin-top: 12pt;
+}
+.cost-box .cost-label { font-size: 9pt; color: #555; font-weight: 600; }
+.cost-box .cost-val { font-size: 9pt; font-weight: 700; color: var(--navy); }
+.cost-box .cost-note { font-size: 8.5pt; color: var(--slate-light); margin-top: 2pt; }
+.deliverables { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 14pt; }
+.deliv-item {
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7pt 10pt;
+  font-size: 9.5pt;
+}
+
+/* Additional request flow */
+.req-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 14pt 0;
+}
+.req-step {
+  background: var(--teal-light);
+  border: 2px solid var(--teal-mid);
+  border-radius: 8px;
+  padding: 10pt 12pt;
+  text-align: center;
+  min-width: 100pt;
+}
+.req-step .rs-num { font-size: 8pt; font-weight: 700; color: var(--teal); margin-bottom: 3pt; }
+.req-step .rs-label { font-size: 10pt; font-weight: 700; color: var(--navy); }
+.req-step .rs-owner { font-size: 8pt; color: var(--slate-light); margin-top: 2pt; }
+.req-arrow { font-size: 16pt; color: var(--teal); padding: 0 6pt; flex-shrink: 0; }
+.req-note {
+  background: var(--teal-light);
+  border: 1px solid var(--teal-mid);
+  border-radius: 6px;
+  padding: 10pt 14pt;
+  font-size: 9.5pt;
+  margin-top: 10pt;
+}
+
+/* SEO */
+.seo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; margin-top: 10pt; }
+.seo-card { border-radius: 8px; padding: 12pt 14pt; border: 1px solid var(--border); }
+.seo-card.p0 { background: var(--green-light); border-color: #86efac; }
+.seo-card.p1 { background: var(--teal-light);  border-color: var(--teal-mid); }
+.seo-card.p2 { background: var(--yellow-light); border-color: #fde68a; }
+.priority-badge {
+  font-size: 9pt;
+  font-weight: 800;
+  padding: 2pt 8pt;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 6pt;
+}
+.p0 .priority-badge { background: var(--green); color: white; }
+.p1 .priority-badge { background: var(--teal);  color: white; }
+.p2 .priority-badge { background: var(--yellow); color: white; }
+.seo-card .seo-title { font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 5pt; }
+.seo-card ul { font-size: 8.5pt; padding-left: 14pt; }
+.seo-card ul li { margin-bottom: 3pt; }
+.seo-table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 10pt; }
+.seo-table th { background: var(--navy); color: white; padding: 6pt 10pt; text-align: left; }
+.seo-table td { padding: 6pt 10pt; border-bottom: 1px solid var(--border); }
+.seo-table tr:nth-child(even) td { background: var(--bg); }
+
+/* Action table */
+.action-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-top: 8pt; }
+.action-table th { background: var(--navy); color: white; padding: 7pt 10pt; text-align: left; font-size: 9pt; }
+.action-table td { padding: 8pt 10pt; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.action-table tr:nth-child(even) td { background: var(--bg); }
+.owner-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding: 2pt 8pt;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.owner-us   { background: var(--teal-light);   color: #0f5f72; border: 1px solid var(--teal-mid); }
+.owner-them { background: var(--orange-light);  color: var(--orange); border: 1px solid #fdba74; }
+.deadline-badge {
+  display: inline-block;
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding: 2pt 8pt;
+  border-radius: 4px;
+}
+.dl-today { background: #fef2f2; color: var(--red);    border: 1px solid #fca5a5; }
+.dl-week  { background: var(--orange-light); color: var(--orange); border: 1px solid #fdba74; }
+.dl-2w    { background: var(--teal-light);   color: var(--teal);   border: 1px solid var(--teal-mid); }
+.blocker-banner {
+  background: linear-gradient(135deg, var(--teal), #0077a0);
+  color: white;
+  border-radius: 8px;
+  padding: 12pt 16pt;
+  margin-top: 14pt;
+  font-size: 9.5pt;
+  line-height: 1.6;
+}
+.blocker-banner strong { color: #7dd3fc; font-size: 10.5pt; }
+
+/* Misc */
+h2 { font-size: 11pt; font-weight: 700; color: var(--navy); margin: 14pt 0 6pt; padding-left: 8pt; border-left: 4px solid var(--teal); }
+h3 { font-size: 10pt; font-weight: 700; color: var(--slate); margin: 10pt 0 5pt; }
+p  { font-size: 9.5pt; margin-bottom: 6pt; }
+.note {
+  font-size: 8.5pt;
+  color: var(--slate-light);
+  background: var(--bg);
+  border-left: 3px solid var(--border);
+  padding: 5pt 10pt;
+  border-radius: 0 4px 4px 0;
+  margin-top: 6pt;
+}
+.spacer { height: 6pt; }
+.mt8  { margin-top: 8pt; }
+.mt12 { margin-top: 12pt; }
+.footer {
+  text-align: center;
+  font-size: 8pt;
+  color: var(--slate-light);
+  padding: 8pt 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 16pt;
+}
+
+@media print {
+  body { background: white; }
+  .slide { box-shadow: none; margin: 0; border-radius: 0; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- S1: COVER -->
+<div class="slide cover-slide">
+  <div class="slide-head">
+    <div class="cover-logo-text">株式会社セイノースタッフサービス御中　　AnyMind株式会社制作</div>
+    <div class="cover-company">正社員 人材紹介ポータルサイト<br>新規制作プロジェクト</div>
+    <div class="cover-project">キックオフミーティング資料</div>
+    <div class="cover-kick">2026年5月14日</div>
+  </div>
+  <div class="slide-body">
+    <div class="cover-meta" style="grid-template-columns:1fr 1fr;">
+      <div class="cover-meta-box">
+        <div class="label">プロジェクト概要</div>
+        <div class="val">既存の派遣社員紹介に加え、新規事業として正社員紹介を開始するにあたり、ATS（Toroo）と連携した新規な人材紹介専用サイトを制作する。</div>
+      </div>
+      <div class="cover-meta-box">
+        <div class="label">公開目標</div>
+        <div class="val" style="font-size:13pt;font-weight:800;color:#0097b2;">2026年7月末</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">1</div>
+</div>
+
+<!-- S2: AGENDA -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">本日のアジェンダ</span>
+  </div>
+  <div class="slide-body" style="display:flex;flex-direction:column;">
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="num">1</div>
+        <div class="part">イントロ</div>
+        <div class="desc">プロジェクト概要・体制・今回作るものの全体像</div>
+      </div>
+      <div class="agenda-card">
+        <div class="num">2</div>
+        <div class="part">技術・構成</div>
+        <div class="desc">技術スタック・Torooの仕組み・デモv2確認</div>
+      </div>
+      <div class="agenda-card">
+        <div class="num">3</div>
+        <div class="part">スケジュール</div>
+        <div class="desc">仮スケジュール・先方側タスクと期日</div>
+      </div>
+      <div class="agenda-card">
+        <div class="num">4</div>
+        <div class="part">確認・合意</div>
+        <div class="desc">全18項目の確認と合意取得</div>
+      </div>
+      <div class="agenda-card">
+        <div class="num">5</div>
+        <div class="part">ネクストアクションの確認</div>
+        <div class="desc">次のアクション・連絡体制の決定</div>
+      </div>
+    </div>
+    <div class="goal-box" style="margin-top:auto;">
+      <strong>本日のゴール：</strong> 全員が同じ認識でプロジェクトをスタートできる状態にする。
+      確認・合意事項 <strong>18項目</strong> を本日中に埋めて持ち帰る。
+    </div>
+  </div>
+  <div class="page-num">2</div>
+</div>
+
+
+<!-- S4: TEAM -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">体制・役割分担</span>
+  </div>
+  <div class="slide-body">
+    <div class="team-section">
+      <div class="team-section-label">セイノースタッフサービス様</div>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="name">橋戸 奈穂 様</div>
+          <div class="role">セイノーSS 人材紹介事業立ち上げご担当者様</div>
+          <div class="note">貴社に人材紹介事業立ち上げ支援をされており、本プロジェクトの貴社側のPL・窓口ご担当様。</div>
+        </div>
+        <div class="team-card">
+          <div class="name">川上 様</div>
+          <div class="role">セイノーSS求人担当者様</div>
+          <div class="note">貴社の求人ご担当者様。Webサイト構築完了後に、Toroo管理画面を通して求人情報のご登録等の管理業務をご担当頂く想定。</div>
+        </div>
+      </div>
+    </div>
+    <div class="team-section">
+      <div class="team-section-label partner">AnyMind</div>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="name">知野 敬太</div>
+          <div class="role">営業担当</div>
+          <div class="note"></div>
+        </div>
+        <div class="team-card">
+          <div class="name">渋谷 春樹</div>
+          <div class="role">PM・開発担当</div>
+          <div class="note"></div>
+        </div>
+        <div class="team-card">
+          <div class="name">富澤 陽仁</div>
+          <div class="role">PM・開発担当</div>
+          <div class="note"></div>
+        </div>
+        <div class="team-card">
+          <div class="name">井上 翔太</div>
+          <div class="role">PM・開発担当</div>
+          <div class="note"></div>
+        </div>
+      </div>
+    </div>
+    <div class="comm-bar">
+      日常の連絡体制（使用ツール・会議体）：<strong>本日決定</strong>
+    </div>
+  </div>
+  <div class="page-num">3</div>
+</div>
+
+<!-- S5: WHAT WE BUILD -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">本プロジェクトにおける制作物の全体像</span>
+  </div>
+  <div class="slide-body">
+    <p>人材紹介事業専用のサイトをゼロから別サイトとして立ち上げます。</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="existing">既存サイト</th>
+          <th class="new">今回作るもの <span class="tag-new">NEW</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>URL</td>
+          <td>seino-ss.jp</td>
+          <td>新規独立ドメイン または サブドメイン（本日決定）</td>
+        </tr>
+        <tr>
+          <td>対象事業</td>
+          <td>人材派遣事業</td>
+          <td>人材紹介（エージェント）事業</td>
+        </tr>
+        <tr>
+          <td>求人種別</td>
+          <td>派遣求人（JobGear経由）</td>
+          <td>正社員求人（Torooプラグイン）</td>
+        </tr>
+        <tr>
+          <td>構成</td>
+          <td>コーポレートサイト + 派遣求人</td>
+          <td>コーポレートサイト + 正社員求人（7ページ）</td>
+        </tr>
+        <tr>
+          <td>ホスティング</td>
+          <td>AWS東京（自社運用）</td>
+          <td>同AWS or 新規（本日決定）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page-num">4</div>
+</div>
+
+<!-- S6: TECH STACK -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">技術スタック</span>
+  </div>
+  <div class="slide-body">
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="layer">CMS</div>
+        <div class="tech-name">WordPress</div>
+        <div class="reason">Torooプラグインの動作検証済みCMSがWordPressのみ（Toroo社回答）。ご参考サイトmarvel-career.comも同構成。</div>
+      </div>
+      <div class="tech-card">
+        <div class="layer">ATS / 求人管理</div>
+        <div class="tech-name">Torooプラグイン</div>
+        <div class="reason">JSタグで求人UIを自動描画。</div>
+      </div>
+      <div class="tech-card">
+        <div class="layer">WordPressデザインテーマ</div>
+        <div class="tech-name">WordPress テーマ</div>
+        <div class="reason">SEO・表示速度・カスタマイズ性に優れた実績テーマを採用。</div>
+      </div>
+      <div class="tech-card">
+        <div class="layer">セキュリティ</div>
+        <div class="tech-name">SiteGuard WP</div>
+        <div class="reason">管理画面ログイン保護。Torooとの干渉リスクが低い。</div>
+      </div>
+      <div class="tech-card">
+        <div class="layer">SEO</div>
+        <div class="tech-name">SEO対策</div>
+        <div class="reason">
+          <ul style="padding-left:12pt;margin:0;">
+            <li>クリーンパーマリンク設計</li>
+            <li>全ページtitle・meta description設定</li>
+            <li>構造化データ（JSON-LD）実装</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tech-card" style="background:var(--teal-light);border-color:var(--teal-mid);">
+        <div class="layer" style="color:var(--teal);">ホスティング</div>
+        <div class="tech-name" style="color:var(--navy);">AWS or レンタルサーバー</div>
+        <div class="reason" style="color:var(--slate);">本日ご相談の上決定</div>
+      </div>
+    </div>
+    <div class="section-label mt12">ホスティング選択肢</div>
+    <div class="host-options">
+      <div class="host-option recommended">
+        <div class="plan-title">プランA：貴社の既存AWS</div>
+        <ul>
+          <li>既存AWSアカウントに新EC2インスタンスを追加</li>
+          <li>インフラ管理は貴社、アプリ層（WP）保守は弊社</li>
+          <li>前提：AWSコンソールを操作できる担当者様が社内にいること</li>
+        </ul>
+      </div>
+      <div class="host-option">
+        <div class="plan-title">プランB：レンタルサーバー（Xserver等）</div>
+        <ul>
+          <li>Xserverなら月額1,000〜3,000円程度</li>
+          <li>貴社に直接ご契約いただく</li>
+          <li>AWS担当者が社内にいない場合に有効</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">5</div>
+</div>
+
+<!-- S7: TOROO -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">Torooとは — 仕組みと実現できるUI</span>
+  </div>
+  <div class="slide-body">
+    <div class="section-label">Torooのデータフロー</div>
+    <div class="flow-row">
+      <div class="flow-box">
+        <div class="fb-label">川上様が操作</div>
+        <div class="fb-main">Toroo管理画面<br>（求人登録・更新）</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box teal-box">
+        <div class="fb-label">自動連携</div>
+        <div class="fb-main">Toroo<br>クラウドAPI</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box light-box">
+        <div class="fb-label">JSタグで自動描画</div>
+        <div class="fb-main">WordPress<br>求人ページ</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box green-box">
+        <div class="fb-label">リアルタイム反映</div>
+        <div class="fb-main">求職者が閲覧・<br>応募</div>
+      </div>
+    </div>
+    <div class="section-label">Torooが自動でやってくれること</div>
+    <div class="toroo-features">
+      <div class="feature-item">
+        <div class="fi-text"><strong>求人一覧の表示</strong>グリッドレイアウト・求人カードを自動描画</div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-text"><strong>検索・絞り込み</strong>職種・勤務地等のフィルター機能</div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-text"><strong>求人詳細ページ</strong>各求人の詳細表示・遷移</div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-text"><strong>応募フォーム・受付</strong>応募データをToroo管理画面に集約</div>
+      </div>
+    </div>
+    <div class="note">
+      <strong>参考実装：marvel-career.com</strong> — ネットワーク解析により、WordPressとTorooで構築されていることを弊社が事前確認済み。<strong>貴社のブランドカラーを設定のうえ、類似のUIが実現できます。</strong>
+    </div>
+  </div>
+  <div class="page-num">6</div>
+</div>
+
+<!-- S8: DEMO -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">デモサイト確認（v2）</span>
+  </div>
+  <div class="slide-body">
+    <div class="card teal" style="margin-bottom:12pt;">
+      <div class="card-title">デモURL</div>
+      <p style="font-size:10.5pt;font-weight:700;color:var(--navy);"><a href="https://anyreach.github.io/web-kanji/seino/index.html" target="_blank" style="color:var(--navy);">https://anyreach.github.io/web-kanji/seino/index.html</a></p>
+    </div>
+    <div class="section-label">v2の変更点（橋戸様 3/24 ご要望を反映）</div>
+    <div class="three-col">
+      <div class="card teal">
+        <div class="card-title">会社紹介イントロ</div>
+        <p>「セイノースタッフサービスとは」セクションを about.html 冒頭に追加</p>
+      </div>
+      <div class="card teal">
+        <div class="card-title">個人・法人向け説明</div>
+        <p>求職者の方へ（service.html）・採用担当者様へ（employers.html）をそれぞれ独立ページとして新設</p>
+      </div>
+      <div class="card teal">
+        <div class="card-title">支援実績・お客様の声</div>
+        <p>voices.html を新規作成。トップに実績バナー（4指標）も追加</p>
+      </div>
+    </div>
+    <div class="section-label mt12">全7ページ構成</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="background:var(--navy);color:white;text-align:left;">ページ</th>
+          <th style="background:var(--navy);color:white;text-align:left;">URL</th>
+          <th style="background:var(--navy);color:white;text-align:left;">主なコンテンツ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>トップ</td><td>index.html</td><td>ヒーロー・3つの強み・支援実績バナー・CTA</td></tr>
+        <tr><td>求職者の方へ</td><td>service.html</td><td>求人検索フォーム・求人カード一覧（サンプル5件）</td></tr>
+        <tr><td>採用担当者様へ</td><td>employers.html</td><td>採用支援サービス紹介・選ばれる理由</td></tr>
+        <tr><td>支援実績・お客様の声</td><td>voices.html</td><td>数値実績4指標 + 転職成功者の声3件</td></tr>
+        <tr><td>ご利用の流れ</td><td>flow.html</td><td>5ステップフロー（登録〜内定・入社）</td></tr>
+        <tr><td>会社案内</td><td>about.html</td><td>会社概要（設立・代表・支店一覧）・社長メッセージ</td></tr>
+        <tr><td>お問い合わせ</td><td>contact.html</td><td>お問い合わせフォーム（氏名・社名・電話・メール・内容）</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      ※支援実績数値（満足度96% / 平均内定45日 / 取引企業250社以上 / 年収UP率73%）は現在ダミーデータ。実数値をご提供いただき公開前に差し替えます。
+    </div>
+  </div>
+  <div class="page-num">7</div>
+</div>
+
+<!-- S9: SEO -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">SEO対策の方針</span>
+  </div>
+  <div class="slide-body">
+    <div class="three-col">
+      <div class="card teal">
+        <div class="card-title">URLのインデックス困難</div>
+        <p style="font-size:9pt;color:var(--slate-light);margin-bottom:6pt;">既存サイトのURLが <code style="font-size:8pt;">val91_=11&amp;KCD_=&amp;KCD_=</code> のような検索エンジンが解釈できないクエリパラメータ形式のため、ページの内容を識別できない構造になっている。</p>
+        <p style="font-size:9.5pt;font-weight:700;color:var(--navy);">対処：WordPressのクリーンパーマリンク設計（例：/jobs/職種名）を適用し、各ページが明確なURLで識別・インデックスされる状態にする。</p>
+      </div>
+      <div class="card teal">
+        <div class="card-title">メタ情報の未整備</div>
+        <p style="font-size:9pt;color:var(--slate-light);margin-bottom:6pt;">ページごとのtitleやmeta descriptionが適切に設定されておらず、検索結果での表示品質・クリック率が低下しやすい状態にある。</p>
+        <p style="font-size:9.5pt;font-weight:700;color:var(--navy);">対処：全ページにtitle・meta descriptionを個別設定し、検索結果に適切なスニペットが表示されるようにする。</p>
+      </div>
+      <div class="card teal">
+        <div class="card-title">構造化データの未実装</div>
+        <p style="font-size:9pt;color:var(--slate-light);margin-bottom:6pt;">サイトにJSON-LD形式の構造化データが設定されておらず、Googleが組織情報やページ内容を機械的に理解しにくい状態にある。</p>
+        <p style="font-size:9.5pt;font-weight:700;color:var(--navy);">対処：コーポレートページにOrganizationスキーマ等のJSON-LDを実装し、Googleが正確にサイト情報を認識できる状態にする。</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">8</div>
+</div>
+
+<!-- S10: SCHEDULE -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">仮スケジュール</span>
+  </div>
+  <div class="slide-body">
+    <style>
+      .gt { width:100%; }
+      .gt-hdr { display:flex; margin-left:138px; }
+      .gt-mon { text-align:center; font-size:8pt; font-weight:700; color:var(--navy); background:#eef2f7; border-right:1px solid #d1d9e6; padding:2px 0; box-sizing:border-box; }
+      .gt-wks { display:flex; margin-left:138px; margin-bottom:6px; }
+      .gt-wk { text-align:center; font-size:6.5pt; color:#aaa; border-right:1px dotted #ddd; box-sizing:border-box; padding-top:1px; }
+      .gt-row { display:flex; align-items:center; margin-bottom:4px; min-height:20px; }
+      .gt-lbl { width:138px; flex-shrink:0; padding-right:8px; text-align:right; line-height:1.3; }
+      .gt-lbl .gt-task { font-size:8pt; font-weight:700; color:var(--navy); display:block; }
+      .gt-lbl .gt-own { font-size:6.5pt; color:#888; }
+      .gt-track { flex:1; position:relative; height:18px; background:#f3f4f6; border-radius:3px; overflow:visible; }
+      .gt-bar { position:absolute; top:1px; height:16px; border-radius:3px; display:flex; align-items:center; padding-left:6px; font-size:6.5pt; color:white; font-weight:700; white-space:nowrap; overflow:hidden; box-sizing:border-box; }
+      .gt-bar.sn { background:var(--navy); }
+      .gt-bar.ar { background:var(--orange); }
+      .gt-bar.bo { background:linear-gradient(90deg, var(--navy) 50%, var(--orange) 50%); }
+      .gt-div { margin:5px 0 5px 138px; border-top:1px dashed #ddd; }
+      .gt-leg { display:flex; gap:14px; margin-top:8pt; font-size:8pt; align-items:center; }
+      .gt-lb { width:14px; height:10px; border-radius:2px; display:inline-block; margin-right:4px; vertical-align:middle; }
+      /* grid lines */
+      .gt-track::before {
+        content:''; position:absolute; top:0; bottom:0; left:0; right:0;
+        background: repeating-linear-gradient(90deg, transparent, transparent calc(8.974% - 1px), #e5e7eb calc(8.974% - 1px), #e5e7eb 8.974%);
+        pointer-events:none; border-radius:3px;
+      }
+    </style>
+
+    <!-- 凡例は上に -->
+    <div class="gt-leg" style="margin-top:0;margin-bottom:8pt;">
+      <span><span class="gt-lb" style="background:var(--navy);"></span>貴社</span>
+      <span><span class="gt-lb" style="background:var(--orange);"></span>AnyMind</span>
+      <span><span class="gt-lb" style="background:linear-gradient(90deg,var(--navy) 50%,var(--orange) 50%);"></span>両者</span>
+      <span style="margin-left:auto;font-size:7.5pt;color:#888;">※日程は目安。Phase 1のご対応速度が全体に影響します。</span>
+    </div>
+
+    <div class="gt">
+      <!-- 月ヘッダー (5/14-7/31 = 78日。5月:17日=21.8%、6月:30日=38.5%、7月:31日=39.7%) -->
+      <div class="gt-hdr">
+        <div class="gt-mon" style="width:21.8%;">5月</div>
+        <div class="gt-mon" style="width:38.5%;">6月</div>
+        <div class="gt-mon" style="width:39.7%;border-right:none;">7月</div>
+      </div>
+      <!-- 週ヘッダー (各7日=8.974%、最終8日=10.26%) -->
+      <div class="gt-wks">
+        <div class="gt-wk" style="width:8.974%;">5/14</div>
+        <div class="gt-wk" style="width:8.974%;">5/21</div>
+        <div class="gt-wk" style="width:8.974%;">5/28</div>
+        <div class="gt-wk" style="width:8.974%;">6/4</div>
+        <div class="gt-wk" style="width:8.974%;">6/11</div>
+        <div class="gt-wk" style="width:8.974%;">6/18</div>
+        <div class="gt-wk" style="width:8.974%;">6/25</div>
+        <div class="gt-wk" style="width:8.974%;">7/2</div>
+        <div class="gt-wk" style="width:8.974%;">7/9</div>
+        <div class="gt-wk" style="width:8.974%;">7/16</div>
+        <div class="gt-wk" style="width:8.974%;">7/23</div>
+        <div class="gt-wk" style="width:10.26%;border-right:none;">7/31</div>
+      </div>
+
+      <!-- キックオフ -->
+      <div class="gt-row">
+        <div class="gt-lbl"><span class="gt-task">キックオフ</span></div>
+        <div class="gt-track" style="background:transparent;">
+          <div class="gt-bar bo" style="left:0%;width:1.5%;padding:0;justify-content:center;">▼</div>
+          <span style="position:absolute;left:2.2%;top:1px;font-size:7.5pt;font-weight:700;color:var(--navy);">5/14（本日）</span>
+        </div>
+      </div>
+
+      <div class="gt-div"></div>
+
+      <!-- セイノーSS: Toroo・ドメイン・AWS (5/14-5/28 = day0-14 = 0-17.95%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">Toroo契約・ドメイン・AWS権限</span>
+          <span class="gt-own">貴社</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar sn" style="left:0%;width:17.95%;">5/14〜5/28</div>
+        </div>
+      </div>
+
+      <!-- セイノーSS: 素材提供 (5/14-6/4 = day0-21 = 0-26.92%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">素材提供（ロゴ・写真・テキスト）</span>
+          <span class="gt-own">貴社</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar sn" style="left:0%;width:26.92%;">5/14〜6/4</div>
+        </div>
+      </div>
+
+      <!-- AnyMind: 要件定義 (5/14-5/28 = 0-17.95%) ← 並行 -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">要件定義書確定</span>
+          <span class="gt-own">AnyMind ← 上と並行</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar ar" style="left:0%;width:17.95%;">5/14〜5/28</div>
+        </div>
+      </div>
+
+      <!-- AnyMind: 環境構築 (5/28-6/11 = day14-28 = 17.95-35.9%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">環境構築（WP・Toroo連携）</span>
+          <span class="gt-own">AnyMind</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar ar" style="left:17.95%;width:17.95%;">5/28〜6/11</div>
+        </div>
+      </div>
+
+      <div class="gt-div"></div>
+
+      <!-- AnyMind: デザイン・コーディング (6/11-6/25 = day28-42 = 35.9-53.85%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">デザイン・コーディング</span>
+          <span class="gt-own">AnyMind ← 下と並行</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar ar" style="left:35.9%;width:17.95%;">6/11〜6/25</div>
+        </div>
+      </div>
+
+      <!-- セイノーSS: コンテンツ確認・入稿 (6/11-6/25) ← 並行 -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">コンテンツ確認・入稿</span>
+          <span class="gt-own">貴社</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar sn" style="left:35.9%;width:17.95%;">6/11〜6/25</div>
+        </div>
+      </div>
+
+      <div class="gt-div"></div>
+
+      <!-- テスト・検収 両者 (6/25-7/17 = day42-63 = 53.85-80.77%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">テスト・修正・検収</span>
+          <span class="gt-own">両者</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar bo" style="left:53.85%;width:26.92%;">6/25〜7/17</div>
+        </div>
+      </div>
+
+      <!-- 公開 (7/31 = day78 = 100%) -->
+      <div class="gt-row">
+        <div class="gt-lbl"><span class="gt-task">本番リリース</span></div>
+        <div class="gt-track" style="background:transparent;">
+          <div style="position:absolute;right:0;top:1px;width:3px;height:16px;background:var(--orange);border-radius:1px;"></div>
+          <span style="position:absolute;right:4px;top:0;font-size:8pt;font-weight:800;color:var(--orange);">7/31 目標</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="schedule-note" style="margin-top:8pt;">
+      第1回ご請求はPhase 2（環境構築）完了後、第2回はご検収完了後。<strong>7月31日を公開目標</strong>としてご提案します。
+    </div>
+  </div>
+  <div class="page-num">9</div>
+</div>
+
+<!-- S10: CLIENT TASKS -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">貴社にお願いしたい作業一覧</span>
+  </div>
+  <div class="slide-body">
+    <p style="margin-bottom:10pt;">各項目が揃い次第、弊社の対応作業を開始いたします。期日について本日ご確認をお願いできますと幸いです。</p>
+    <div class="task-item">
+      <div class="task-num">1</div>
+      <div class="task-body">
+        <div class="t-name">Torooの新規契約・アカウント発行</div>
+        <div class="t-detail">橋戸様または川上様にてお手続きください。ご契約後すぐに環境構築へ着手いたします。</div>
+      </div>
+      <div class="task-deadline urgent">5/21まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">2</div>
+      <div class="task-body">
+        <div class="t-name">ドメインのご決定（新規独立 or サブドメイン）</div>
+        <div class="t-detail">DNS設定・SSL証明書発行のタイミングに影響します。</div>
+      </div>
+      <div class="task-deadline">5/21まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">3</div>
+      <div class="task-body">
+        <div class="t-name">AWSアカウントへの弊社IAMユーザー追加</div>
+        <div class="t-detail">AWS上でのWordPress構築の前提となります。</div>
+      </div>
+      <div class="task-deadline">5/21まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">4</div>
+      <div class="task-body">
+        <div class="t-name">デザイン素材のご提供（ロゴ・ブランドカラー・写真等）</div>
+        <div class="t-detail">SVGまたはPNG透過ロゴ、カラーコード、イメージ写真、会社紹介テキスト・キャッチコピー</div>
+      </div>
+      <div class="task-deadline">6/4まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">5</div>
+      <div class="task-body">
+        <div class="t-name">支援実績データ・お客様の声のご提供</div>
+        <div class="t-detail">実績数値（満足度・内定期間・取引企業数・年収UP率）、転職成功者の声3〜5名分</div>
+      </div>
+      <div class="task-deadline">6/11まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">6</div>
+      <div class="task-body">
+        <div class="t-name">コンテンツ原稿のご確認・ご承認</div>
+        <div class="t-detail">各ページの文言確定に必要です。</div>
+      </div>
+      <div class="task-deadline">6/25まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">7</div>
+      <div class="task-body">
+        <div class="t-name">既存JobGear求人データのCSVエクスポート・Torooへの初期インポート</div>
+        <div class="t-detail">JobGearから現行の求人データをCSV形式でエクスポートし、Toroo管理画面にてインポートをお願いします。（確認表Row 17でYesの場合）</div>
+      </div>
+      <div class="task-deadline">7/17まで</div>
+    </div>
+    <div class="task-item">
+      <div class="task-num">8</div>
+      <div class="task-body">
+        <div class="t-name">ご検収・公開ご承認</div>
+        <div class="t-detail">ご検収後に本番公開・第2回ご請求となります。</div>
+      </div>
+      <div class="task-deadline">7/17まで</div>
+    </div>
+  </div>
+  <div class="page-num">10</div>
+</div>
+
+<!-- S11: CONFIRMATION -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">確認・合意事項（全18項目）</span>
+  </div>
+  <div class="slide-body">
+    <div class="goal-box" style="margin-bottom:12pt;padding:8pt 14pt;">
+      本日この表を可能な限り埋めて、合意することを目標にします
+    </div>
+    <table class="confirm-table">
+      <thead>
+        <tr>
+          <th style="width:28pt;">#</th>
+          <th>確認事項</th>
+          <th style="width:160pt;">回答</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>ATSはTorooで決定でよろしかったでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>2</td><td>CMSはWordPressで問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>3</td><td>新規独立ドメインとサブドメインのどちらをご希望ですか?</td><td><span class="answer-box" contenteditable="true">新規 ／ サブドメイン</span></td></tr>
+        <tr><td>4</td><td>デモv2の構成で制作内容を決定してよろしいでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>5</td><td>既存のAWSアカウントを使う方針で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>6</td><td>AWSコンソールを操作できる担当者は社内にいらっしゃいますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>7</td><td>今回提示したSEO課題への対策を対応範囲とする決定でよろしいでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>8</td><td>公開希望時期・仮スケジュール（7月末）で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>9</td><td>Toroo契約・ドメイン・素材それぞれいつ頃までに対応いただけますか?</td><td><span class="answer-box" contenteditable="true">各　　/　　まで</span></td></tr>
+        <tr><td>10</td><td>求人UIはTorooデフォルト出力＋カラー変更のみ、という制約についてご了解いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>11</td><td>デザインの方向性についてご希望はございますか?（コーポレートカラー等）</td><td><span class="answer-box" contenteditable="true">　　　　　　　　　</span></td></tr>
+        <tr><td>12</td><td>既存サイト（seino-ss.jp）の色味を踏襲されますか?</td><td><span class="answer-box" contenteditable="true">踏襲 ／ 刷新</span></td></tr>
+        <tr><td>13</td><td>ロゴ・写真・テキスト等の素材をご提供いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　　</span></td></tr>
+        <tr><td>14</td><td>支援実績・お客様の声データはご提供いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　　</span></td></tr>
+        <tr><td>15</td><td>TorooブランドカラーのWP管理画面初期設定は弊社・先方どちらが行いますか?</td><td><span class="answer-box" contenteditable="true">弊社 ／ 先方</span></td></tr>
+        <tr><td>16</td><td>既存JobGearの求人データTorooへのCSV移行を行って頂けますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　</span></td></tr>
+        <tr><td>17</td><td>支払いは要件定義完了後・検収完了後の2段階払い、この内容でご認識いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>18</td><td>お問い合わせフォームのバックエンド実装をご選択ください。① CF7→Googleスプレッドシート連携（推奨・無料）　② CF7→メール転送のみ　③ 既存JobGearフォームへリダイレクト（現行seino-ss.jpと同運用）</td><td><span class="answer-box" contenteditable="true">① ／ ② ／ ③</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page-num">11</div>
+</div>
+
+<!-- S12: SCOPE -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">スコープ・納品物の内容</span>
+  </div>
+  <div class="slide-body">
+    <div class="section-label">今回の400,000円（税別）に含まれるもの</div>
+    <ul class="scope-list">
+      <li><span class="check">&#10003;</span>WordPress構築・初期設定（サーバーは貴社AWS または レンタルサーバー）</li>
+      <li><span class="check">&#10003;</span>Torooプラグインの連携・初期カラー設定</li>
+      <li><span class="check">&#10003;</span>デモv2ベースの7ページ制作（index / service / employers / flow / voices / about / contact）</li>
+      <li><span class="check">&#10003;</span>SEO初期設計（クリーンURL設計・メタタグ全ページ設定）</li>
+      <li><span class="check">&#10003;</span>SiteGuard WP Pluginのインストール・設定</li>
+      <li><span class="check">&#10003;</span>WordPress・Toroo管理画面のアクセス情報引き渡し</li>
+    </ul>
+    <div class="section-label mt12">納品物の内容</div>
+    <div class="deliverables">
+      <div class="deliv-item">本番公開済みサイト（合意URLで閲覧可能な状態）</div>
+      <div class="deliv-item">WordPress管理画面のURL・ログイン情報</div>
+      <div class="deliv-item">Toroo管理画面へのアクセス情報</div>
+    </div>
+  </div>
+  <div class="page-num">12</div>
+</div>
+
+<!-- S13: ADDITIONAL REQUESTS -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">スコープ外・追加ご要望について</span>
+  </div>
+  <div class="slide-body">
+    <div class="section-label">構築フェーズ中・公開後の追加ご要望発生時の流れ</div>
+    <p>追加ページや機能については随時ご相談ください。ご要望の内容を伺ったうえで工数・費用をご提示し、ご承諾いただいてから着手いたします。</p>
+    <div class="req-flow">
+      <div class="req-step">
+        <div class="rs-num">STEP 1</div>
+        <div class="rs-label">ご相談</div>
+        <div class="rs-owner">貴社</div>
+      </div>
+      <div class="req-arrow">→</div>
+      <div class="req-step">
+        <div class="rs-num">STEP 2</div>
+        <div class="rs-label">見積もりご提示</div>
+        <div class="rs-owner">弊社</div>
+      </div>
+      <div class="req-arrow">→</div>
+      <div class="req-step">
+        <div class="rs-num">STEP 3</div>
+        <div class="rs-label">ご承諾</div>
+        <div class="rs-owner">貴社</div>
+      </div>
+      <div class="req-arrow">→</div>
+      <div class="req-step">
+        <div class="rs-num">STEP 4</div>
+        <div class="rs-label">着手・納品</div>
+        <div class="rs-owner">弊社</div>
+      </div>
+      <div class="req-arrow">→</div>
+      <div class="req-step">
+        <div class="rs-num">STEP 5</div>
+        <div class="rs-label">ご請求</div>
+        <div class="rs-owner">弊社</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">13</div>
+</div>
+
+<!-- S15: NEXT STEPS -->
+<div class="slide">
+  <div class="slide-head">
+    <span class="slide-title">Next Steps — 直近の宿題</span>
+  </div>
+  <div class="slide-body">
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th style="width:30pt;">#</th>
+          <th style="width:100pt;">担当</th>
+          <th>アクション</th>
+          <th style="width:120pt;">期日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">01</td>
+          <td><span class="owner-tag owner-us">弊社</span></td>
+          <td>本日の資料・議事録をメールにて送付</td>
+          <td><span class="deadline-badge dl-today">本日中</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">02</td>
+          <td><span class="owner-tag owner-us">弊社</span></td>
+          <td>コミュニケーショングループ（Chatwork / Slack等）を作成・招待</td>
+          <td><span class="deadline-badge dl-today">本日〜明日</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">03</td>
+          <td><span class="owner-tag owner-us">弊社</span></td>
+          <td>要件定義書ドラフト作成</td>
+          <td><span class="deadline-badge dl-week">〜5/20（今週中）</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">04</td>
+          <td><span class="owner-tag owner-us">弊社</span></td>
+          <td>仮スケジュール詳細版の提示</td>
+          <td><span class="deadline-badge dl-week">〜5/20（今週中）</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">05</td>
+          <td><span class="owner-tag owner-them">貴社</span></td>
+          <td>Torooへの新規契約申し込み</td>
+          <td><span class="deadline-badge dl-week">〜5/20（今週中）</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">06</td>
+          <td><span class="owner-tag owner-them">貴社</span></td>
+          <td>ドメイン方針の最終決定（新規取得 or サブドメイン）・必要に応じて取得手続き</td>
+          <td><span class="deadline-badge dl-week">〜5/20（今週中）</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">07</td>
+          <td><span class="owner-tag owner-them">貴社</span></td>
+          <td>AWSアカウントへの弊社IAMユーザー追加</td>
+          <td><span class="deadline-badge dl-week">〜5/20（今週中）</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:var(--slate-light);">08</td>
+          <td><span class="owner-tag owner-them">貴社</span></td>
+          <td>デザイン素材のご提供（ロゴ・ブランドカラー・写真等）</td>
+          <td><span class="deadline-badge dl-2w">〜5/27（2週間以内）</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="blocker-banner">
+      <strong>1〜7が揃い次第、弊社側の環境構築作業を開始いたします。どうぞよろしくお願いいたします。</strong>
+    </div>
+  </div>
+  <div class="page-num">14</div>
+</div>
+
+</body>
+</html>

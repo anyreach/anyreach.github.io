@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>お問い合わせ | セイノースタッフサービス</title>
+  <meta name="description" content="株式会社セイノースタッフサービスへのお問い合わせ。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--color-gray-light);
+      border-radius: var(--radius);
+      font-family: var(--font-base);
+      font-size: 0.95rem;
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .form-required { color: #ef4444; margin-left: 0.3rem; }
+    .form-submit {
+      background: var(--color-accent);
+      color: var(--color-white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      width: 100%;
+    }
+    .form-submit:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+    .info-box {
+      background: var(--color-light);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+    .info-box h3 {
+      font-size: 0.95rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .info-box p {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .notice-box {
+      background: #fef9c3;
+      border: 1px solid #fcd34d;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: #78350f;
+      line-height: 1.7;
+    }
+    .consent-area {
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .consent-area a { color: var(--color-accent); }
+    @media (max-width: 768px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="page-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__main">セイノー人材紹介</span>
+        <span class="site-logo__sub">正社員求人サイト</span>
+      </a>
+      <nav class="site-nav">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">トップ</a></li>
+          <li><a href="service.html" class="site-nav__link">求職者の方へ</a></li>
+          <li><a href="employers.html" class="site-nav__link">採用担当者様へ</a></li>
+          <li><a href="voices.html" class="site-nav__link">支援実績</a></li>
+          <li><a href="flow.html" class="site-nav__link">ご利用の流れ</a></li>
+          <li><a href="about.html" class="site-nav__link">会社案内</a></li>
+          <li><a href="contact.html" class="site-nav__link site-nav__link--cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__list">
+        <li><a href="index.html" class="mobile-nav__link">トップ</a></li>
+        <li><a href="service.html" class="mobile-nav__link">求職者の方へ</a></li>
+        <li><a href="employers.html" class="mobile-nav__link">採用担当者様へ</a></li>
+        <li><a href="voices.html" class="mobile-nav__link">支援実績</a></li>
+        <li><a href="flow.html" class="mobile-nav__link">ご利用の流れ</a></li>
+        <li><a href="about.html" class="mobile-nav__link">会社案内</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" style="padding: 60px 0;">
+      <div class="container">
+        <h1 class="hero__title" style="margin-bottom: 0;">お問い合わせ</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="notice-box">
+          <strong>派遣をご依頼したい企業様へ：</strong>「大体の時給は？」「1名でも対応可能？」など簡単なご質問も大歓迎です。まずはお気軽にお問い合わせください。<br>
+          <strong>お仕事をお探しの方へ：</strong>勤務地や曜日・時間帯などご希望の条件をお問い合わせ内容欄にご記入ください。弊社よりお仕事をご案内します。
+        </div>
+
+        <div class="contact-wrapper">
+
+          <div>
+            <h2 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 1.5rem;">以下のフォームに必要事項をご入力のうえ、「送信する」ボタンを押してください。</h2>
+            <form onsubmit="handleSubmit(event)">
+
+              <div class="form-group">
+                <label for="name">氏名 <span class="form-required">*</span></label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="company">社名</label>
+                <input type="text" id="company" name="company">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">電話番号（半角数字） <span class="form-required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">メールアドレス <span class="form-required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <small style="color: var(--color-text-muted); margin-top: 0.4rem; font-size: 0.85rem;">携帯電話の場合、指定受信・拒否設定を解除してください。</small>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry">お問い合わせ内容 <span class="form-required">*</span></label>
+                <textarea id="inquiry" name="inquiry" required></textarea>
+              </div>
+
+              <div class="consent-area">
+                <label>
+                  <input type="checkbox" required style="margin-right: 0.5rem;">
+                  <a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank">個人情報取り扱いについて</a>に同意の上、送信してください。
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">送信する</button>
+
+            </form>
+          </div>
+
+          <div>
+            <div class="info-box">
+              <h3>電話でのお問い合わせ</h3>
+              <p>
+                <strong>0584-81-8848</strong><br>
+                平日 9:00〜17:30<br>
+                <small>土日祝日は休業</small>
+              </p>
+            </div>
+            <div class="info-box">
+              <h3>本社住所</h3>
+              <p>
+                〒503-0853<br>
+                岐阜県大垣市田口町1番地
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>求職者の方へ</h4>
+          <ul>
+            <li><a href="service.html">求人を探す</a></li>
+            <li><a href="flow.html">ご利用の流れ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>採用担当者様へ</h4>
+          <ul>
+            <li><a href="employers.html">採用支援サービス</a></li>
+            <li><a href="about.html">会社案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank">個人情報保護方針</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li>電話: 0584-81-8848</li>
+            <li>受付: 平日 9:00-17:30</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社セイノースタッフサービス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        hamburger.setAttribute('aria-expanded', hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      });
+    }
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('お問い合わせありがとうございます。\n\nこのデモでは実際の送信機能は実装されていません。');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
