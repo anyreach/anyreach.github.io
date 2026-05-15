@@ -611,7 +611,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       </div>
       <div class="cover-meta-box">
         <div class="label">公開目標</div>
-        <div class="val" style="font-size:13pt;font-weight:800;color:#0097b2;">2026年7月末</div>
+        <div class="val" style="font-size:13pt;font-weight:800;color:#0097b2;">2026年7月中旬〜7月末</div>
       </div>
     </div>
   </div>
@@ -643,7 +643,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       <div class="agenda-card">
         <div class="num">4</div>
         <div class="part">確認・合意</div>
-        <div class="desc">全19項目の確認と合意取得</div>
+        <div class="desc">全16項目の確認と合意取得</div>
       </div>
       <div class="agenda-card">
         <div class="num">5</div>
@@ -653,7 +653,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
     </div>
     <div class="goal-box" style="margin-top:auto;">
       <strong>本日のゴール：</strong> 全員が同じ認識でプロジェクトをスタートできる状態にする。
-      確認・合意事項 <strong>19項目</strong> を本日中に埋めて持ち帰る。
+      確認・合意事項 <strong>16項目</strong> を本日中に埋めて持ち帰る。
     </div>
   </div>
   <div class="page-num">2</div>
@@ -705,7 +705,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       </div>
     </div>
     <div class="comm-bar">
-      日常の連絡体制（使用ツール・会議体）：<strong>本日決定</strong>
+      日常の連絡体制（使用ツール・会議体）：<strong>通常Slack、証憑必要時はメール、随時会議開催</strong>
     </div>
   </div>
   <div class="page-num">3</div>
@@ -730,7 +730,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
         <tr>
           <td>URL</td>
           <td>seino-ss.jp</td>
-          <td>新規独立ドメイン または サブドメイン（本日決定）</td>
+          <td>サブドメイン (例: agent.seino-ss.jp)</td>
         </tr>
         <tr>
           <td>対象事業</td>
@@ -749,8 +749,8 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
         </tr>
         <tr>
           <td>ホスティング</td>
-          <td>AWS東京（自社運用）</td>
-          <td>同AWS or 新規（本日決定）</td>
+          <td>AWS東京（セイノー情報サービス様運用?）</td>
+          <td>同AWS (予定)</td>
         </tr>
       </tbody>
     </table>
@@ -799,25 +799,25 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       <div class="tech-card" style="background:var(--teal-light);border-color:var(--teal-mid);">
         <div class="layer" style="color:var(--teal);">ホスティング</div>
         <div class="tech-name" style="color:var(--navy);">AWS or レンタルサーバー</div>
-        <div class="reason" style="color:var(--slate);">本日ご相談の上決定</div>
+        <div class="reason" style="color:var(--slate);">ご相談の結果、AWSに決定</div>
       </div>
     </div>
-    <div class="section-label mt12">ホスティング選択肢</div>
+    <div class="section-label mt12">ホスティング選択肢（AWS採用に決定）</div>
     <div class="host-options">
       <div class="host-option recommended">
-        <div class="plan-title">プランA：貴社の既存AWS</div>
+        <div class="plan-title">プランA（採用）：貴社の既存AWS</div>
         <ul>
           <li>既存AWSアカウントに新EC2インスタンスを追加</li>
           <li>インフラ管理は貴社、アプリ層（WP）保守は弊社</li>
-          <li>前提：AWSコンソールを操作できる担当者様が社内にいること</li>
+          <li><strong>前提：</strong>セイノー情報サービス様からのIAM権限発行が必要（タスク#3）</li>
         </ul>
       </div>
       <div class="host-option">
-        <div class="plan-title">プランB：レンタルサーバー（Xserver等）</div>
+        <div class="plan-title">プランB（最終手段）：レンタルサーバー（Xserver等）</div>
         <ul>
           <li>Xserverなら月額1,000〜3,000円程度</li>
           <li>貴社に直接ご契約いただく</li>
-          <li>AWS担当者が社内にいない場合に有効</li>
+          <li>セイノー情報様のIAM発行が難しい場合の切替先</li>
         </ul>
       </div>
     </div>
@@ -972,7 +972,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
     <div class="three-col">
       <div class="card teal">
         <div class="card-title">会社紹介イントロ</div>
-        <p>「セイノースタッフサービスとは」セクションを about.html 冒頭に追加</p>
+        <p>「セイノースタッフサービスとは」セクションを about.html 冒頭に追加。<br><span style="color:var(--orange);font-size:9pt;">（要変更点: 新規サービス名をご決定頂き、差し替え）</span></p>
       </div>
       <div class="card teal">
         <div class="card-title">個人・法人向け説明</div>
@@ -980,7 +980,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       </div>
       <div class="card teal">
         <div class="card-title">支援実績・お客様の声</div>
-        <p>voices.html を新規作成。トップに実績バナー（4指標）も追加</p>
+        <p>voices.html を新規作成。トップに実績バナー（4指標）も追加。<br><span style="color:var(--orange);font-size:9pt;">（要変更点: 実績をコンサルタント紹介に差し替え）</span></p>
       </div>
     </div>
     <div class="section-label mt12">全7ページ構成</div>
@@ -1110,14 +1110,36 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
 
       <div class="gt-div"></div>
 
-      <!-- セイノーSS: Toroo・ドメイン・AWS (5/14-5/28 = day0-14 = 0-17.95%) -->
+      <!-- セイノーSS: Toroo契約 (〜7/1 = day0-48 = 0-61.54%) -->
       <div class="gt-row">
         <div class="gt-lbl">
-          <span class="gt-task">Toroo契約・ドメイン・AWS権限</span>
+          <span class="gt-task">Toroo契約</span>
           <span class="gt-own">貴社</span>
         </div>
         <div class="gt-track">
-          <div class="gt-bar sn" style="left:0%;width:17.95%;">5/14〜5/28</div>
+          <div class="gt-bar sn" style="left:0%;width:61.54%;">〜7/1</div>
+        </div>
+      </div>
+
+      <!-- セイノーSS: ドメイン決定 (〜5/28 = day0-14 = 0-17.95%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">ドメイン決定</span>
+          <span class="gt-own">貴社</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar sn" style="left:0%;width:17.95%;">〜5/28</div>
+        </div>
+      </div>
+
+      <!-- セイノーSS: AWS権限付与 (〜5/28 = day0-14 = 0-17.95%) -->
+      <div class="gt-row">
+        <div class="gt-lbl">
+          <span class="gt-task">AWS権限付与</span>
+          <span class="gt-own">貴社</span>
+        </div>
+        <div class="gt-track">
+          <div class="gt-bar sn" style="left:0%;width:17.95%;">〜5/28</div>
         </div>
       </div>
 
@@ -1196,14 +1218,14 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
         <div class="gt-lbl"><span class="gt-task">本番リリース</span></div>
         <div class="gt-track" style="background:transparent;">
           <div style="position:absolute;right:0;top:1px;width:3px;height:16px;background:var(--orange);border-radius:1px;"></div>
-          <span style="position:absolute;right:4px;top:0;font-size:8pt;font-weight:800;color:var(--orange);">7/31 目標</span>
+          <span style="position:absolute;right:4px;top:0;font-size:8pt;font-weight:800;color:var(--orange);">7月中旬〜7/31 目標</span>
         </div>
       </div>
 
     </div>
 
     <div class="schedule-note" style="margin-top:8pt;">
-      第1回ご請求はPhase 2（環境構築）完了後、第2回はご検収完了後。<strong>7月31日を公開目標</strong>としてご提案します。
+      <strong>7月中旬〜7月末を公開目標</strong>としてご提案します。
     </div>
   </div>
   <div class="page-num">10</div>
@@ -1222,27 +1244,33 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
         <div class="t-name">Torooの新規契約・アカウント発行</div>
         <div class="t-detail">橋戸様または川上様にてお手続きください。ご契約後すぐに環境構築へ着手いたします。</div>
       </div>
-      <div class="task-deadline urgent">5/21まで</div>
+      <div class="task-deadline urgent">7/1まで</div>
     </div>
     <div class="task-item">
       <div class="task-num">2</div>
       <div class="task-body">
-        <div class="t-name">ドメインのご決定・設定（新規独立 or サブドメイン）</div>
+        <div class="t-name">サブドメイン（agent.seino-ss.jp）のDNS設定</div>
         <div class="t-detail">
-          決定後、弊社にドメイン名をご連絡ください。<br>
-          ・<strong>新規独立ドメインの場合：</strong>ドメイン取得（お名前.com等）→ AWSコンソール / サーバー管理画面でIPアドレスを確認 → DNSパネルのAレコードに入力（約15分）<br>
-          ・<strong>サブドメインの場合：</strong>社内IT部門へサブドメイン追加を依頼 → AWSコンソールで確認したIPアドレスをDNSレコードに入力（IT部門対応）
+          seino-ss.jpのDNS（Route 53）はセイノー情報サービス様の管理と想定されるため、弊社作成の依頼文を橋戸様経由でセイノー情報サービス様へお送りいただき、Aレコードを1件追加していただきます。<br>
+          ・<strong>ご対応OKの場合：</strong>弊社⇔セイノー情報サービス様で直接IPアドレスを受け渡し・設定完了<br>
+          ・<strong>ご対応NGの場合：</strong>新規独立ドメイン（例: seino-jinzai.jp）取得に切り替え（貴社にてお名前.com等で取得・年間数千円）
         </div>
       </div>
-      <div class="task-deadline">5/21まで</div>
+      <div class="task-deadline">5/28まで</div>
     </div>
     <div class="task-item">
       <div class="task-num">3</div>
       <div class="task-body">
-        <div class="t-name">AWSアカウントへの弊社IAMユーザー追加</div>
-        <div class="t-detail">AWS上でのWordPress構築の前提となります。</div>
+        <div class="t-name">AWS環境の構築準備（IAM権限付与）</div>
+        <div class="t-detail">
+          既存サイトのAWSはセイノー情報サービス様の運用と想定されるため、上記タスク#2のDNS依頼と<strong>同じ依頼文</strong>でIAMユーザー発行も併せてお願いします。<br>
+          ・<strong>A（推奨）：</strong>IAM権限を弊社に発行 → 弊社が直接EC2構築・WP導入<br>
+          ・<strong>B：</strong>セイノー情報様がEC2構築まで担当 → WP導入のみ弊社対応（先方工数・費用発生）<br>
+          ・<strong>C：</strong>貴社で新規AWSアカウント開設 → 弊社が一から構築（契約管理が貴社負担）<br>
+          ・<strong>D：</strong>レンタルサーバー（Xserver等）に切替 → AWS依存をやめる最終手段
+        </div>
       </div>
-      <div class="task-deadline">5/21まで</div>
+      <div class="task-deadline">5/28まで</div>
     </div>
     <div class="task-item">
       <div class="task-num">4</div>
@@ -1280,7 +1308,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       <div class="task-num">8</div>
       <div class="task-body">
         <div class="t-name">ご検収・公開ご承認</div>
-        <div class="t-detail">ご検収後に本番公開・第2回ご請求となります。</div>
+        <div class="t-detail">ご検収後に本番公開となります。</div>
       </div>
       <div class="task-deadline">7/17まで</div>
     </div>
@@ -1291,7 +1319,7 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
 <!-- S11: CONFIRMATION -->
 <div class="slide">
   <div class="slide-head">
-    <span class="slide-title">確認・合意事項（全19項目）</span>
+    <span class="slide-title">確認・合意事項（全16項目）</span>
   </div>
   <div class="slide-body">
     <div class="goal-box" style="margin-bottom:12pt;padding:8pt 14pt;">
@@ -1308,24 +1336,20 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
       <tbody>
         <tr><td>1</td><td>ATSはTorooで決定でよろしかったでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
         <tr><td>2</td><td>CMSはWordPressで問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>3</td><td>新規独立ドメインとサブドメインのどちらをご希望ですか?</td><td><span class="answer-box" contenteditable="true">新規 ／ サブドメイン</span></td></tr>
+        <tr><td>3</td><td>ドメインはサブドメイン（agent.seino-ss.jp）を優先し、セイノー情報サービス様にDNSレコード追加をご依頼いただく方針で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
         <tr><td>4</td><td>デモv2の構成で制作内容を決定してよろしいでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>5</td><td>既存のAWSアカウントを使う方針で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>6</td><td>AWSコンソールを操作できる担当者は社内にいらっしゃいますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>7</td><td>今回提示したSEO課題への対策を対応範囲とする決定でよろしいでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>8</td><td>公開希望時期・仮スケジュール（7月末）で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>9</td><td>Toroo契約・ドメイン・素材それぞれいつ頃までに対応いただけますか?</td><td><span class="answer-box" contenteditable="true">各　　/　　まで</span></td></tr>
-        <tr><td>10</td><td>求人UIはTorooデフォルト出力＋カラー変更のみ、という制約についてご了解いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>11</td><td>デザインの方向性についてご希望はございますか?（コーポレートカラー等）</td><td><span class="answer-box" contenteditable="true">　　　　　　　　　</span></td></tr>
-        <tr><td>12</td><td>既存サイト（seino-ss.jp）の色味を踏襲されますか?</td><td><span class="answer-box" contenteditable="true">踏襲 ／ 刷新</span></td></tr>
-        <tr><td>13</td><td>ロゴ・写真・テキスト等の素材をご提供いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　　</span></td></tr>
-        <tr><td>14</td><td>支援実績・お客様の声データはご提供いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　　</span></td></tr>
-        <tr><td>15</td><td>TorooブランドカラーのWP管理画面初期設定は弊社・先方どちらが行いますか?</td><td><span class="answer-box" contenteditable="true">弊社 ／ 先方</span></td></tr>
-        <tr><td>16</td><td>既存JobGearの求人データTorooへのCSV移行を行って頂けますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　</span></td></tr>
-        <tr><td>17</td><td>支払いは要件定義完了後・検収完了後の2段階払い、この内容でご認識いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
-        <tr><td>18</td><td>お問い合わせフォームのバックエンド実装をご選択ください。① Googleスプレッドシート連携（推奨・無料）　② メール転送　③ 現行seino-ss.jpフォームの方式を踏襲 (具体的な連携先をご教示ください)</td><td><span class="answer-box" contenteditable="true">① ／ ② ／ ③</span></td></tr>
-        <tr><td>19</td><td>構築中サイトへのフィードバック手段をご選択ください。文言・レイアウト等のご意見を画面上に直接コメントいただける方法が必要です。① Figmaにてコメント　② PDF書き出しに注釈　③ その他</td><td><span class="answer-box" contenteditable="true">① ／ ② ／ ③（　　　　）</span></td></tr>
-        <tr><td>20</td><td>TorooプラグインページのURLスラッグをご選択ください。（例：サイトURL/<strong>recruit</strong> ／ サイトURL/<strong>job</strong> ／ サイトURL/<strong>saiyo</strong>）</td><td><span class="answer-box" contenteditable="true">recruit ／ job ／ saiyo</span></td></tr>
+        <tr><td>5</td><td>新サイトで掲出する人材紹介サービス名をご教示ください。<br>※「セイノースタッフサービス」と名乗ると派遣（スタッフ）の印象を与え、正社員紹介事業のブランディングが弱まる懸念があるため、新サイト用に別ブランド名（例: セイノーエージェント／セイノーキャリア 等）のご検討をお願いします。</td><td><span class="answer-box" contenteditable="true">　　　　　　　　　</span></td></tr>
+        <tr><td>6</td><td>既存サイトと同じAWSを使用する方針で確定。セイノー情報サービス様にIAM権限発行をご依頼いただく方針で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>7</td><td>セイノー情報サービス様からのIAM発行が難しい場合、レンタルサーバー（Xserver等）への切替も許容いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>8</td><td>今回提示したSEO課題への対策を対応範囲とする決定でよろしいでしょうか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>9</td><td>公開希望時期・仮スケジュール（7月中旬〜7月末）で問題ございませんか?</td><td><span class="answer-box" contenteditable="true">Yes ／ No</span></td></tr>
+        <tr><td>10</td><td>Toroo契約・ドメイン・素材それぞれいつ頃までに対応いただけますか?</td><td><span class="answer-box" contenteditable="true">各　　/　　まで</span></td></tr>
+        <tr><td>11</td><td>既存サイト（seino-ss.jp）の色味を踏襲されますか?</td><td><span class="answer-box" contenteditable="true">踏襲 ／ 刷新</span></td></tr>
+        <tr><td>12</td><td>ロゴ・写真・テキスト等の素材をご提供いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　　</span></td></tr>
+        <tr><td>13</td><td>コンサルタント紹介・お客様の声データはご提供いただけますか?</td><td><span class="answer-box" contenteditable="true">Yes 期限:　　/　　</span></td></tr>
+        <tr><td>14</td><td>お問い合わせフォームの到着先をご選択ください。① Googleスプレッドシート連携（推奨・無料）　② メール転送　③ 現行seino-ss.jpフォームの方式を踏襲 (具体的な連携先をご教示ください)</td><td><span class="answer-box" contenteditable="true">① ／ ② ／ ③</span></td></tr>
+        <tr><td>15</td><td>構築中サイトへのフィードバック手段をご選択ください。文言・レイアウト等のご意見を画面上に直接コメントいただける方法が必要です。① Figmaにてコメント　② PDF書き出しに注釈　③ その他</td><td><span class="answer-box" contenteditable="true">① ／ ② ／ ③（　　　　）</span></td></tr>
+        <tr><td>16</td><td>TorooプラグインページのURLスラッグをご選択ください。（例：サイトURL/<strong>recruit</strong> ／ サイトURL/<strong>job</strong> ／ サイトURL/<strong>saiyo</strong>）</td><td><span class="answer-box" contenteditable="true">recruit ／ job ／ saiyo</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -1392,12 +1416,6 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
         <div class="rs-label">着手・納品</div>
         <div class="rs-owner">弊社</div>
       </div>
-      <div class="req-arrow">→</div>
-      <div class="req-step">
-        <div class="rs-num">STEP 5</div>
-        <div class="rs-label">ご請求</div>
-        <div class="rs-owner">弊社</div>
-      </div>
     </div>
   </div>
   <div class="page-num">14</div>
@@ -1447,19 +1465,19 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
           <td style="font-weight:700;color:var(--slate-light);">05</td>
           <td><span class="owner-tag owner-them">貴社</span></td>
           <td>Torooへの新規契約申し込み</td>
-          <td><span class="deadline-badge dl-week">〜5/21（来週中）</span></td>
+          <td><span class="deadline-badge dl-week">〜7/1まで</span></td>
         </tr>
         <tr>
           <td style="font-weight:700;color:var(--slate-light);">06</td>
           <td><span class="owner-tag owner-them">貴社</span></td>
-          <td>ドメイン方針の最終決定（新規取得 or サブドメイン）・必要に応じて取得手続き</td>
-          <td><span class="deadline-badge dl-week">〜5/21（来週中）</span></td>
+          <td>セイノー情報サービス様へDNSレコード追加依頼（弊社作成の依頼文を転送）<br><span style="font-size:8.5pt;color:var(--slate-light);">NG時：独立ドメインを新規取得（お名前.com等）</span></td>
+          <td><span class="deadline-badge dl-week">〜5/28（2週間以内）</span></td>
         </tr>
         <tr>
           <td style="font-weight:700;color:var(--slate-light);">07</td>
           <td><span class="owner-tag owner-them">貴社</span></td>
-          <td>AWSアカウントへの弊社IAMユーザー追加</td>
-          <td><span class="deadline-badge dl-week">〜5/21（来週中）</span></td>
+          <td>セイノー情報サービス様へIAM権限発行依頼（上記06と同じ依頼文に同梱）<br><span style="font-size:8.5pt;color:var(--slate-light);">NG時：B/C/D（先方EC2構築・新規AWS開設・レンタルサーバー）に切替</span></td>
+          <td><span class="deadline-badge dl-week">〜5/28（2週間以内）</span></td>
         </tr>
         <tr>
           <td style="font-weight:700;color:var(--slate-light);">08</td>
@@ -1469,9 +1487,6 @@ p  { font-size: 9.5pt; margin-bottom: 6pt; }
         </tr>
       </tbody>
     </table>
-    <div class="blocker-banner">
-      <strong>1〜7が揃い次第、弊社側の環境構築作業を開始いたします。どうぞよろしくお願いいたします。</strong>
-    </div>
   </div>
   <div class="page-num">15</div>
 </div>

@@ -4,12 +4,954 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
-  <title>セイノースタッフサービス | 人材紹介・求人サイト</title>
-  <meta name="description" content="セイノースタッフサービスは、30年以上の実績を持つ人材紹介サービスです。正社員求人に特化し、キャリアコンサルタントによる専任サポートで、あなたの理想の職場を見つけるお手伝いをします。">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>SEINO STAFF SERVICE | 人材紹介・求人サイト</title>
+  <meta name="description" content="セイノー運輸グループの新規人材紹介サービス。正社員求人に特化し、専任キャリアコンサルタントがあなたの理想の職場を見つけるお手伝いをします。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+:root {
+  --color-primary: #1f8cda;
+  --color-primary-dark: #1670b8;
+  --color-primary-light: #4ba3e3;
+  --color-white: #ffffff;
+  --color-light: #f8f9fa;
+  --color-text: #2c3e50;
+  --color-text-light: #666666;
+  --color-border: #e5e7eb;
+  --color-accent-warm: #ff6b6b;
+  --color-accent-orange: #ff9f43;
+  --color-bg-cream: #fefaf6;
+
+  --font-base: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Noto Sans JP', sans-serif;
+
+  --container-max: 1200px;
+  --container-pad: 1.5rem;
+
+  --radius: 4px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.12);
+
+  --transition: 0.3s ease;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.section {
+  padding: 100px 0 60px 0;
+}
+
+/* Header & Navigation */
+.site-header {
+  background: var(--color-white);
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.site-logo__text {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.site-nav__link {
+  display: block;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition);
+}
+
+.site-nav__link:hover::after,
+.site-nav__link:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-links a {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: var(--color-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  transition: background var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger__line {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  transition: all var(--transition);
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  background:
+    linear-gradient(135deg, rgba(31, 140, 218, 0.85) 0%, rgba(22, 112, 184, 0.90) 100%),
+    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80&fm=webp') center/cover no-repeat;
+  color: var(--color-white);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  display: none;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__tagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero__desc {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero__cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-base);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+  text-align: center;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn:focus {
+  outline-color: var(--color-primary);
+}
+
+.btn--primary {
+  background: var(--color-accent-warm);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: var(--color-white);
+  color: var(--color-accent-warm);
+  transform: translateY(-2px);
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background: var(--color-light);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-content strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Culture Section */
+.culture-section h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.culture-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: var(--color-light);
+  border-radius: var(--radius);
+}
+
+.culture-intro p {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.culture-card {
+  background: var(--color-white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  border: none;
+  border-bottom: 3px solid var(--color-primary);
+  transition: all var(--transition);
+}
+
+.culture-card:hover {
+  box-shadow: 0 12px 40px rgba(31, 140, 218, 0.2);
+  transform: translateY(-8px);
+  border-bottom-color: var(--color-primary-dark);
+}
+
+.culture-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 28px;
+  color: white;
+  transition: all var(--transition);
+}
+
+.culture-card:hover .culture-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.culture-card h3 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.culture-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Interviews Section */
+.interviews-section h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.interviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.interview-card {
+  text-align: center;
+  background: transparent;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  border: none;
+  border-top: 2px solid var(--color-primary);
+  transition: all var(--transition);
+}
+
+.interview-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.interview-image {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.interview-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.interview-title {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.interview-year {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.interview-content {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Jobs Section */
+.jobs-section h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.job-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.job-card:hover {
+  box-shadow: 0 8px 32px rgba(31, 140, 218, 0.15);
+  transform: translateY(-6px);
+  border-top-color: var(--color-primary-dark);
+}
+
+.job-badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.job-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.job-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.job-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.job-salary {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.job-body {
+  padding: 1.5rem;
+}
+
+.job-location {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.job-type {
+  font-size: 0.85rem;
+  background: var(--color-light);
+  color: var(--color-text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.job-footer {
+  padding: 1rem 1.5rem;
+  background: var(--color-light);
+  text-align: center;
+}
+
+.job-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.job-footer a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* CTA Section */
+.cta-section {
+  background:
+    linear-gradient(135deg, rgba(31, 140, 218, 0.85) 0%, rgba(22, 112, 184, 0.90) 100%),
+    url('https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=1920&q=80&fm=webp') center/cover no-repeat;
+  color: var(--color-white);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cta-section p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cta-section p {
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Consultants Section */
+.consultants-section {
+  background: var(--color-bg-cream);
+  padding: 80px 0;
+}
+
+.consultants-section .section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.consultants-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.consultants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.consultant-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 2.5rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.consultant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.consultant-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-warm));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 2.5rem;
+}
+
+.consultant-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.consultant-role {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.consultant-message {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-text);
+  color: var(--color-white);
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.footer-section a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.mobile-nav.active {
+  display: block;
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 500;
+  transition: background var(--transition);
+}
+
+.mobile-nav__link:hover {
+  background: var(--color-light);
+  color: var(--color-primary);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Tablet Responsive (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    padding: 100px 0;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .culture-grid,
+  .jobs-grid,
+  .interviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-nav__list {
+    gap: 1.5rem;
+  }
+
+  .site-nav__link {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 1rem;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active .hamburger__line:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .hamburger.active .hamburger__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .hamburger__line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .hero {
+    padding: 60px 0 80px 0;
+  }
+
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    right: -5%;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
+    line-height: 1.4;
+  }
+
+  .hero__desc {
+    font-size: 0.95rem;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .about-section h2,
+  .culture-section h2,
+  .interviews-section h2,
+  .jobs-section h2,
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .culture-grid,
+  .jobs-grid,
+  .interviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .culture-card,
+  .interview-card,
+  .job-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .interview-image {
+    width: 100px;
+    height: 100px;
+    font-size: 1rem;
+  }
+
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-buttons {
+    gap: 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+  </style>
 </head>
 <body class="page-body">
 
@@ -17,18 +959,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
-        <span class="site-logo__main">セイノー人材紹介</span>
-        <span class="site-logo__sub">正社員求人サイト</span>
+        <span class="site-logo__text">SEINO STAFF SERVICE</span>
       </a>
       <nav class="site-nav">
         <ul class="site-nav__list">
           <li><a href="index.html" class="site-nav__link">トップ</a></li>
-          <li><a href="service.html" class="site-nav__link">求職者の方へ</a></li>
-          <li><a href="employers.html" class="site-nav__link">採用担当者様へ</a></li>
-          <li><a href="voices.html" class="site-nav__link">支援実績</a></li>
+          <li><a href="service.html" class="site-nav__link">募集一覧</a></li>
           <li><a href="flow.html" class="site-nav__link">ご利用の流れ</a></li>
-          <li><a href="about.html" class="site-nav__link">会社案内</a></li>
-          <li><a href="contact.html" class="site-nav__link site-nav__link--cta">お問い合わせ</a></li>
+          <li><a href="about.html" class="site-nav__link">会社概要</a></li>
         </ul>
       </nav>
       <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
@@ -40,12 +978,9 @@
     <nav class="mobile-nav">
       <ul class="mobile-nav__list">
         <li><a href="index.html" class="mobile-nav__link">トップ</a></li>
-        <li><a href="service.html" class="mobile-nav__link">求職者の方へ</a></li>
-        <li><a href="employers.html" class="mobile-nav__link">採用担当者様へ</a></li>
-        <li><a href="voices.html" class="mobile-nav__link">支援実績</a></li>
+        <li><a href="service.html" class="mobile-nav__link">募集一覧</a></li>
         <li><a href="flow.html" class="mobile-nav__link">ご利用の流れ</a></li>
-        <li><a href="about.html" class="mobile-nav__link">会社案内</a></li>
-        <li><a href="contact.html" class="mobile-nav__link">お問い合わせ</a></li>
+        <li><a href="about.html" class="mobile-nav__link">会社概要</a></li>
       </ul>
     </nav>
   </header>
@@ -55,95 +990,325 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="container">
-        <p class="hero__eyebrow">Recruitment Agency</p>
+        <p class="hero__tagline">目指すのは、エンジニアの想いを理解した最高のマッチング</p>
         <h1 class="hero__title">
-          あなたのキャリアの<br>
-          <span>新しいステージへ。</span>
+          あなたのキャリアを<br>次のステージへ
         </h1>
         <p class="hero__desc">
-          30年以上の人材派遣実績を持つセイノースタッフサービスが、<br>
-          正社員採用を本気でサポート。<br>
-          専任キャリアコンサルタントが、あなたの理想の職場を見つけるお手伝いをします。
+          30年以上の人材派遣実績を持つセイノー運輸グループが、<br>
+          正社員採用を本気でサポート。専任キャリアコンサルタントが、<br>
+          あなたにぴったりの職場を見つけるお手伝いをします。
         </p>
         <div class="hero__cta">
-          <a href="contact.html" class="btn btn--primary">お問い合わせ</a>
-          <a href="service.html" class="btn btn--outline">求人情報を見る</a>
+          <a href="service.html" class="btn btn--primary">求人を探す</a>
+          <a href="contact.html" class="btn btn--secondary">無料相談する</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== FEATURES ===== -->
-    <section class="section section--gray">
+    <!-- ===== CONSULTANTS ===== -->
+    <section class="consultants-section">
       <div class="container">
-        <h2 class="section-title fade-in">セイノー人材紹介の3つの強み</h2>
-        <p class="section-subtitle fade-in">Why Seino</p>
-        <div class="features-grid">
-
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006.11 2.695c-.5 1.79-.585 4.154.213 6.141.49 1.366 1.3 2.91 2.602 3.719M12 6.042A8.967 8.967 0 0118.89 2.695c.5 1.79.585 4.154-.213 6.141-.49 1.366-1.3 2.91-2.602 3.719m0 0A8.966 8.966 0 0112 12.75m0 0a8.966 8.966 0 01-6.89-2.796m6.89 2.796v4.413m0-11.209a8.954 8.954 0 016.89 2.796c.6-.992.765-2.603.457-4.207m0 0a9.01 9.01 0 00-4.606 1.275" />
-              </svg>
+        <h2 class="section-title">弊社の人材紹介コンサルタント</h2>
+        <p class="consultants-intro">
+          あなたのキャリアパートナーとして、業界経験豊富な専任コンサルタントが伴走します。
+        </p>
+        <div class="consultants-grid">
+          <div class="consultant-card">
+            <div class="consultant-avatar">
+              <i class="fas fa-user-tie"></i>
             </div>
-            <h3 class="feature-card__title">30年以上の人材紹介実績</h3>
-            <p class="feature-card__desc">
-              人材派遣事業で培ったネットワークと信頼を背景に、正社員採用をサポート。企業とのパイプが太く、未公開求人も豊富です。
+            <div class="consultant-name">コンサルタント A</div>
+            <div class="consultant-role">SENIOR CONSULTANT</div>
+            <p class="consultant-message">
+              IT・エンジニア領域の人材紹介を専門としております。技術的なバックグラウンドの理解を大切にし、求職者様の志向と企業文化のマッチングを支援します。
             </p>
           </div>
-
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-              </svg>
+          <div class="consultant-card">
+            <div class="consultant-avatar">
+              <i class="fas fa-user-tie"></i>
             </div>
-            <h3 class="feature-card__title">専任キャリアコンサルタント</h3>
-            <p class="feature-card__desc">
-              あなたのキャリア目標や希望条件をヒアリングし、最適な求人をマッチング。面接対策から給与交渉まで、全て無料でサポートします。
+            <div class="consultant-name">コンサルタント B</div>
+            <div class="consultant-role">CAREER ADVISOR</div>
+            <p class="consultant-message">
+              営業・企画・管理部門のキャリア支援に従事しております。中長期のキャリア設計を一緒に考え、納得感のあるご転職をご支援いたします。
             </p>
           </div>
-
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+          <div class="consultant-card">
+            <div class="consultant-avatar">
+              <i class="fas fa-user-tie"></i>
             </div>
-            <h3 class="feature-card__title">厳選された求人情報</h3>
-            <p class="feature-card__desc">
-              すべての求人は企業との直接取引で確保。労働条件や企業文化を徹底調査し、あなたが本当に働きたい職場だけをご紹介します。
+            <div class="consultant-name">コンサルタント C</div>
+            <div class="consultant-role">RECRUITMENT PARTNER</div>
+            <p class="consultant-message">
+              地域企業の採用課題に深く向き合っております。求職者様と企業様の双方の想いを汲み取り、長く活躍いただけるご縁づくりを大切にしております。
             </p>
           </div>
+        </div>
+        <p class="consultants-intro" style="margin-top:2rem;font-size:0.85rem;color:#64748b;">
+          ※コンサルタント情報は仮プレースホルダーです。実際の担当者情報を公開前にご提供いただき差し替えます。
+        </p>
+      </div>
+    </section>
 
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section">
+      <div class="container">
+        <h2>SEINO について</h2>
+        <div class="about-content">
+          <p>
+            <strong>SEINO STAFF SERVICE</strong> は、エンジニアとキャリアを求める企業のマッチングを専門にした人材紹介サービスです。
+            30年以上の人材派遣実績を背景に、単なる求人紹介ではなく、あなたのキャリアパートナーとしてサポートします。
+          </p>
+          <p>
+            私たちが大切にしているのは、<strong>「本当に働きたい職場」</strong> を見つけることです。
+            労働条件や給与だけでなく、企業文化や成長性、やりがいを総合的に判断し、
+            最高のマッチングを実現します。
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ===== VOICES BANNER ===== -->
-    <section class="section" style="padding: 3rem 0;">
+    <!-- ===== CULTURE ===== -->
+    <section class="section">
       <div class="container">
-        <h2 class="section-title fade-in" style="margin-bottom: 0.5rem;">支援実績</h2>
-        <p class="section-subtitle fade-in" style="margin-bottom: 2rem;">Track Record</p>
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem;">
-          <div style="background: var(--color-light); border-top: 3px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem 2rem; text-align: center; min-width: 140px;">
-            <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); line-height: 1;">96%</div>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;">満足度</div>
+        <h2 class="section-title">SEINO の強み</h2>
+        <div class="culture-intro">
+          <p>セイノー運輸グループの人材事業ノウハウに基づく、確かなサポート体制。</p>
+        </div>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="culture-icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3>豊富な求人ネットワーク</h3>
+            <p>
+              セイノー運輸グループの強力なネットワークで、大手企業から成長企業まで、
+              多数の非公開求人を保有しています。
+            </p>
           </div>
-          <div style="background: var(--color-light); border-top: 3px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem 2rem; text-align: center; min-width: 140px;">
-            <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); line-height: 1;">45日</div>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;">平均内定</div>
+          <div class="culture-card">
+            <div class="culture-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>専任キャリアコンサルタント</h3>
+            <p>
+              あなたのキャリアプランをじっくりお聞きし、最適な求人マッチングから
+              面接対策、給与交渉まで、全てサポートします。
+            </p>
           </div>
-          <div style="background: var(--color-light); border-top: 3px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem 2rem; text-align: center; min-width: 140px;">
-            <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); line-height: 1;">250社+</div>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;">取引企業</div>
-          </div>
-          <div style="background: var(--color-light); border-top: 3px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem 2rem; text-align: center; min-width: 140px;">
-            <div style="font-size: 2rem; font-weight: 700; color: var(--color-accent); line-height: 1;">73%</div>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;">年収UP</div>
+          <div class="culture-card">
+            <div class="culture-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>厳選された優良求人のみ</h3>
+            <p>
+              企業との直接取引で確保した求人のみを厳選。労働条件、企業文化、
+              成長性を徹底チェックしています。
+            </p>
           </div>
         </div>
-        <div style="text-align: center;">
-          <a href="voices.html" class="btn btn--outline">詳しく見る</a>
+      </div>
+    </section>
+
+    <!-- ===== INTERVIEWS ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="interviews-section h2">利用者の声</h2>
+        <div class="interviews-grid">
+          <div class="interview-card">
+            <div class="interview-image">田中太郎</div>
+            <div class="interview-name">田中太郎</div>
+            <div class="interview-title">営業職</div>
+            <div class="interview-year">入社 2023年</div>
+            <div class="interview-content">
+              「プロフェッショナルなサポートで、自分に合った企業が見つかりました。」
+            </div>
+          </div>
+
+          <div class="interview-card">
+            <div class="interview-image">佐藤花子</div>
+            <div class="interview-name">佐藤花子</div>
+            <div class="interview-title">企画職</div>
+            <div class="interview-year">入社 2023年</div>
+            <div class="interview-content">
+              「面接対策から給与交渉まで、全力でサポートしてくれました。」
+            </div>
+          </div>
+
+          <div class="interview-card">
+            <div class="interview-image">鈴木次郎</div>
+            <div class="interview-name">鈴木次郎</div>
+            <div class="interview-title">技術職</div>
+            <div class="interview-year">入社 2024年</div>
+            <div class="interview-content">
+              「キャリアについて親身に相談できるコンサルタントがいて心強かった。」
+            </div>
+          </div>
+
+          <div class="interview-card">
+            <div class="interview-image">山田美咲</div>
+            <div class="interview-name">山田美咲</div>
+            <div class="interview-title">事務職</div>
+            <div class="interview-year">入社 2024年</div>
+            <div class="interview-content">
+              「複数の企業を紹介してもらえて、自分のペースで選べました。」
+            </div>
+          </div>
+
+          <div class="interview-card">
+            <div class="interview-image">伊藤健太</div>
+            <div class="interview-name">伊藤健太</div>
+            <div class="interview-title">営業企画職</div>
+            <div class="interview-year">入社 2022年</div>
+            <div class="interview-content">
+              「非公開求人を紹介していただき、理想の職場に出会えました。」
+            </div>
+          </div>
+
+          <div class="interview-card">
+            <div class="interview-image">渡辺由美</div>
+            <div class="interview-name">渡辺由美</div>
+            <div class="interview-title">総務職</div>
+            <div class="interview-year">入社 2023年</div>
+            <div class="interview-content">
+              「相談しやすい雰囲気で、安心して転職活動を進められました。」
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JOBS ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="jobs-section h2">新着求人</h2>
+        <div class="jobs-grid">
+          <div class="job-card">
+            <span class="job-badge">NEW</span>
+            <div class="job-header">
+              <div class="job-title">営業職（B2B営業）</div>
+              <div class="job-meta">
+                <span>営業</span>
+                <span>正社員</span>
+              </div>
+              <div class="job-salary">年収 350万〜500万</div>
+            </div>
+            <div class="job-body">
+              <div class="job-location">📍 東京都渋谷区</div>
+              <div class="job-type">正社員</div>
+            </div>
+            <div class="job-footer">
+              <a href="#">詳細を見る →</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <span class="job-badge">NEW</span>
+            <div class="job-header">
+              <div class="job-title">システムエンジニア</div>
+              <div class="job-meta">
+                <span>技術職</span>
+                <span>正社員</span>
+              </div>
+              <div class="job-salary">年収 400万〜600万</div>
+            </div>
+            <div class="job-body">
+              <div class="job-location">📍 東京都中央区</div>
+              <div class="job-type">正社員</div>
+            </div>
+            <div class="job-footer">
+              <a href="#">詳細を見る →</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <span class="job-badge">NEW</span>
+            <div class="job-header">
+              <div class="job-title">企画・マーケティング</div>
+              <div class="job-meta">
+                <span>企画</span>
+                <span>正社員</span>
+              </div>
+              <div class="job-salary">年収 320万〜450万</div>
+            </div>
+            <div class="job-body">
+              <div class="job-location">📍 東京都新宿区</div>
+              <div class="job-type">正社員</div>
+            </div>
+            <div class="job-footer">
+              <a href="#">詳細を見る →</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <span class="job-badge">NEW</span>
+            <div class="job-header">
+              <div class="job-title">事務職（管理業務）</div>
+              <div class="job-meta">
+                <span>事務</span>
+                <span>正社員</span>
+              </div>
+              <div class="job-salary">年収 280万〜380万</div>
+            </div>
+            <div class="job-body">
+              <div class="job-location">📍 東京都港区</div>
+              <div class="job-type">正社員</div>
+            </div>
+            <div class="job-footer">
+              <a href="#">詳細を見る →</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <span class="job-badge">NEW</span>
+            <div class="job-header">
+              <div class="job-title">営業マネージャー</div>
+              <div class="job-meta">
+                <span>管理職</span>
+                <span>正社員</span>
+              </div>
+              <div class="job-salary">年収 500万〜700万</div>
+            </div>
+            <div class="job-body">
+              <div class="job-location">📍 東京都千代田区</div>
+              <div class="job-type">正社員</div>
+            </div>
+            <div class="job-footer">
+              <a href="#">詳細を見る →</a>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <span class="job-badge">NEW</span>
+            <div class="job-header">
+              <div class="job-title">データアナリスト</div>
+              <div class="job-meta">
+                <span>技術職</span>
+                <span>正社員</span>
+              </div>
+              <div class="job-salary">年収 420万〜620万</div>
+            </div>
+            <div class="job-body">
+              <div class="job-location">📍 東京都品川区</div>
+              <div class="job-type">正社員</div>
+            </div>
+            <div class="job-footer">
+              <a href="#">詳細を見る →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>あなたの理想の職場が、ここにあります</h2>
+        <p>SEINO で、あなたのキャリアの可能性を広げましょう</p>
+        <div class="cta-buttons">
+          <a href="service.html" class="btn btn--primary">求人を見る</a>
+          <a href="contact.html" class="btn btn--secondary">無料相談をする</a>
         </div>
       </div>
     </section>
@@ -155,51 +1320,80 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>求職者の方へ</h4>
+          <h4>サービス</h4>
           <ul>
             <li><a href="service.html">求人を探す</a></li>
-            <li><a href="flow.html">ご利用の流れ</a></li>
+            <li><a href="contact.html">無料相談</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h4>採用担当者様へ</h4>
+          <h4>企業情報</h4>
           <ul>
-            <li><a href="employers.html">採用支援サービス</a></li>
-            <li><a href="about.html">会社案内</a></li>
+            <li><a href="about.html">企業情報</a></li>
+            <li><a href="flow.html">利用の流れ</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>その他</h4>
           <ul>
-            <li><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank">個人情報保護方針</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">利用規約</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>お問い合わせ</h4>
           <ul>
-            <li>電話: 0584-81-8848</li>
+            <li>電話: 0584-XX-XXXX</li>
+            <li>メール: info@seino-ss.jp</li>
             <li>受付: 平日 9:00-17:30</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 株式会社セイノースタッフサービス All Rights Reserved.</p>
+        <p>&copy; 2026 SEINO STAFF SERVICE All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // モバイルメニュー
     const hamburger = document.querySelector('.hamburger');
     const mobileNav = document.querySelector('.mobile-nav');
+    const mobileLinks = document.querySelectorAll('.mobile-nav__link');
+
+    function toggleMenu() {
+      const isOpen = hamburger.classList.contains('active');
+      if (isOpen) {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      } else {
+        hamburger.classList.add('active');
+        mobileNav.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+    }
 
     if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
-        hamburger.setAttribute('aria-expanded', hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-      });
+      hamburger.addEventListener('click', toggleMenu);
     }
+
+    // Close mobile menu when a link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.site-header')) {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
   </script>
 </body>
 </html>
