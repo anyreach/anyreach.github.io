@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Redirecting…</title>
+<script>
+(function () {
+  var target = location.hash ? location.hash.slice(1) : 'index.html';
+  // Clear all caches we own
+  if ('caches' in window) {
+    caches.keys().then(function (names) {
+      names.forEach(function (n) { caches.delete(n); });
+    });
+  }
+  location.replace(target + '?nocache=' + Date.now() + '_' + Math.random().toString(36).slice(2));
+})();
+</script>
+</head><body>Redirecting…</body></html>
