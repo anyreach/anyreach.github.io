@@ -92,9 +92,68 @@ img, svg { max-width: 100%; height: auto; display: block; }
   gap: 14px;
   flex-shrink: 0;
 }
-.brand__text-img { height: 38px; width: auto; display: block; }
 .brand__logo {
   height: 60px;
+  width: auto;
+  display: block;
+}
+.brand__text-img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+/* === Group badge (header) === */
+.group-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-left: 1px solid var(--line);
+  margin-left: 4px;
+}
+.group-badge__img { height: 32px; width: auto; display: block; }
+.group-badge__txt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+/* === Group block (footer) === */
+.footer-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.footer-group__img { height: 42px; width: auto; }
+.footer-group__label {
+  font-size: 10px;
+  font-style: italic;
+  color: var(--text-soft);
+  letter-spacing: 0.16em;
+  margin-bottom: 2px;
+}
+.footer-group__name {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  letter-spacing: 0.10em;
+}
+
+/* === Group hero (about page) === */
+.group-hero {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 28px;
+}
+.group-hero__img {
+  height: 120px;
   width: auto;
   display: block;
 }
