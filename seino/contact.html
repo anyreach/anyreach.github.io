@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <!-- gh-pages-fresh-url:begin -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="x-fresh" content="1779445004-09y2xv">
-  <script>(function(){try{if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});});}if("caches" in window){caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});});}}catch(e){}})();</script>
-  <!-- gh-pages-fresh-url:end -->
   <meta charset="UTF-8">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
@@ -108,63 +101,164 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
       <!-- Form -->
       <div>
-        <div style="margin-bottom:30px;">
-          <div class="section-eyebrow" style="justify-content:flex-start; margin-bottom:10px;">Free Consultation</div>
-          <h2 style="font-family:var(--serif); font-weight:700; font-size:28px; letter-spacing:0.05em; color:var(--navy); line-height:1.5;">無料相談のお申し込み</h2>
-          <p style="margin-top:10px; font-size:13.5px; color:var(--text-soft); line-height:1.85;">下記フォームよりお気軽にご相談ください。<br>3営業日以内に専任のキャリアコンサルタントよりご連絡いたします。</p>
+        <!-- Tabs -->
+        <div role="tablist" style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:2px solid var(--line); margin-bottom:30px;">
+          <button type="button" role="tab" id="tab-seeker" aria-selected="true" class="contact-tab is-active" style="padding:18px 16px; background:transparent; border:0; font-family:inherit; font-size:15px; font-weight:700; color:var(--navy); cursor:pointer; border-bottom:3px solid var(--red); margin-bottom:-2px;">
+            お仕事をお探しの方
+          </button>
+          <button type="button" role="tab" id="tab-employer" aria-selected="false" class="contact-tab" style="padding:18px 16px; background:transparent; border:0; font-family:inherit; font-size:15px; font-weight:700; color:var(--text-soft); cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px;">
+            採用ご担当者様
+          </button>
         </div>
 
-        <form style="display:flex; flex-direction:column; gap:20px;">
-          <div>
-            <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
-              氏名
-              <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
-            </label>
-            <input type="text" id="f-name" data-required="氏名" placeholder="山田 太郎" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+        <!-- Panel: 求職者 -->
+        <div role="tabpanel" id="panel-seeker" data-panel="seeker">
+          <div style="margin-bottom:30px;">
+            <div class="section-eyebrow" style="justify-content:flex-start; margin-bottom:10px;">Free Consultation</div>
+            <h2 style="font-family:var(--serif); font-weight:700; font-size:28px; letter-spacing:0.05em; color:var(--navy); line-height:1.5;">無料キャリア相談のお申し込み</h2>
+            <p style="margin-top:10px; font-size:13.5px; color:var(--text-soft); line-height:1.85;">転職をお考えの方は下記フォームよりご相談ください。<br>3営業日以内に専任のキャリアコンサルタントよりご連絡いたします。</p>
           </div>
-          <div>
-            <label style="display:block; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">社名</label>
-            <input type="text" id="f-company" placeholder="（採用ご担当者様の場合のみご記入ください）" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
-          </div>
-          <div>
-            <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
-              電話番号
-              <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
-            </label>
-            <div style="display:flex; align-items:center; gap:10px;">
-              <input type="tel" id="f-tel" data-required="電話番号" placeholder="0901234567" pattern="[0-9]*" inputmode="numeric" style="flex:0 0 280px; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
-              <span style="font-size:13px; color:var(--text-soft);">（半角数字）</span>
+
+          <form data-form="seeker" style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                氏名
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <input type="text" data-required="氏名" placeholder="山田 太郎" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
             </div>
-          </div>
-          <div>
-            <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
-              メールアドレス
-              <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                電話番号
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <input type="tel" data-required="電話番号" placeholder="0901234567" pattern="[0-9]*" inputmode="numeric" style="flex:0 0 280px; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+                <span style="font-size:13px; color:var(--text-soft);">（半角数字）</span>
+              </div>
+            </div>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                メールアドレス
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <input type="email" data-required="メールアドレス" placeholder="example@example.com" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+              <p style="margin-top:8px; font-size:13px; color:var(--red); font-weight:700; line-height:1.7;">携帯電話の場合、指定受信・拒否設定を解除してください。</p>
+              <p style="margin-top:4px; font-size:13px; line-height:1.7;"><a href="https://entry.job-gear.net/f/email_notice" target="_blank" rel="noopener" style="color:#1956d4; text-decoration:underline;">ご利用いただけないメールアドレスについて</a></p>
+            </div>
+            <div>
+              <label style="display:block; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">ご関心職種</label>
+              <select style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+                <option>選択してください</option>
+                <option>営業・販売</option>
+                <option>IT・エンジニア</option>
+                <option>企画・マーケティング</option>
+                <option>管理部門（経理・人事・総務）</option>
+                <option>製造・生産技術</option>
+                <option>物流・倉庫</option>
+                <option>専門職・その他</option>
+                <option>未定・相談したい</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">希望勤務地</label>
+              <input type="text" placeholder="例：愛知県名古屋市、岐阜県大垣市" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            </div>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                ご相談内容
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <textarea class="msg-body" data-required="ご相談内容" rows="6" maxlength="200" placeholder="現在のお仕事、転職希望時期、ご希望条件などをご記入ください。" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit; resize:vertical;"></textarea>
+              <p style="margin-top:6px; font-size:13px; color:var(--text-soft);">残り<span class="msg-rem">200</span>文字</p>
+            </div>
+            <div style="font-size:11.5px; color:var(--text-soft); line-height:1.85; padding:14px 18px; background:var(--paper); border-left:3px solid var(--gold);">
+              ご入力いただいた個人情報は、本サービスのご案内・ご相談対応のみに使用し、<br>
+              <a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a> に基づき適切に管理いたします。
+            </div>
+            <label style="display:flex; align-items:center; gap:10px; padding:14px 18px; background:var(--white); border:1px solid var(--line); font-size:14px; cursor:pointer;">
+              <input type="checkbox" class="agree-privacy" style="width:18px; height:18px; flex-shrink:0; cursor:pointer;">
+              <span><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a>に同意します</span>
             </label>
-            <input type="email" id="f-email" data-required="メールアドレス" placeholder="example@example.com" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
-            <p style="margin-top:8px; font-size:13px; color:var(--red); font-weight:700; line-height:1.7;">携帯電話の場合、指定受信・拒否設定を解除してください。</p>
-            <p style="margin-top:4px; font-size:13px; line-height:1.7;"><a href="https://entry.job-gear.net/f/email_notice" target="_blank" rel="noopener" style="color:#1956d4; text-decoration:underline;">ご利用いただけないメールアドレスについて</a></p>
+            <p class="required-error" style="display:none; color:var(--red); font-size:14px; font-weight:700; line-height:1.7; padding:12px 16px; background:#fdebcb; border-left:3px solid var(--red);"></p>
+            <p class="agree-error" style="display:none; color:var(--red); font-size:13px; font-weight:700; margin:-8px 0 0;">同意がありません。チェックボックスにチェックを入れてください。</p>
+            <button type="submit" class="btn btn-red" style="padding:18px; justify-content:center; letter-spacing:0.18em;">送信する</button>
+          </form>
+        </div>
+
+        <!-- Panel: 採用担当者 -->
+        <div role="tabpanel" id="panel-employer" data-panel="employer" style="display:none;">
+          <div style="margin-bottom:30px;">
+            <div class="section-eyebrow" style="justify-content:flex-start; margin-bottom:10px;">For Hiring Managers</div>
+            <h2 style="font-family:var(--serif); font-weight:700; font-size:28px; letter-spacing:0.05em; color:var(--navy); line-height:1.5;">採用ご相談のお申し込み</h2>
+            <p style="margin-top:10px; font-size:13.5px; color:var(--text-soft); line-height:1.85;">採用支援サービスのご検討は下記フォームよりお問い合わせください。<br>3営業日以内に担当よりご連絡いたします。</p>
           </div>
-          <div>
-            <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
-              お問い合わせ内容
-              <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+
+          <form data-form="employer" style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                ご担当者様 氏名
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <input type="text" data-required="ご担当者様 氏名" placeholder="山田 太郎" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            </div>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                社名
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <input type="text" data-required="社名" placeholder="株式会社○○○○" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            </div>
+            <div>
+              <label style="display:block; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">部署・役職</label>
+              <input type="text" placeholder="例：人事部 採用担当" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            </div>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                電話番号
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <input type="tel" data-required="電話番号" placeholder="0584000000" pattern="[0-9]*" inputmode="numeric" style="flex:0 0 280px; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+                <span style="font-size:13px; color:var(--text-soft);">（半角数字）</span>
+              </div>
+            </div>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                メールアドレス
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <input type="email" data-required="メールアドレス" placeholder="example@example.com" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            </div>
+            <div>
+              <label style="display:block; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">ご検討中のサービス</label>
+              <select style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+                <option>選択してください</option>
+                <option>人材紹介（正社員）</option>
+                <option>未定・まずは話を聞きたい</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
+                お問い合わせ内容
+                <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
+              </label>
+              <textarea class="msg-body" data-required="お問い合わせ内容" rows="6" maxlength="300" placeholder="採用要件、ご希望時期、想定ポジション、ご質問などをご記入ください。" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit; resize:vertical;"></textarea>
+              <p style="margin-top:6px; font-size:13px; color:var(--text-soft);">残り<span class="msg-rem">300</span>文字</p>
+            </div>
+            <div style="font-size:11.5px; color:var(--text-soft); line-height:1.85; padding:14px 18px; background:var(--paper); border-left:3px solid var(--gold);">
+              ご入力いただいた個人情報は、本サービスのご案内・ご相談対応のみに使用し、<br>
+              <a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a> に基づき適切に管理いたします。
+            </div>
+            <label style="display:flex; align-items:center; gap:10px; padding:14px 18px; background:var(--white); border:1px solid var(--line); font-size:14px; cursor:pointer;">
+              <input type="checkbox" class="agree-privacy" style="width:18px; height:18px; flex-shrink:0; cursor:pointer;">
+              <span><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a>に同意します</span>
             </label>
-            <textarea id="inquiry-body" data-required="お問い合わせ内容" rows="6" maxlength="200" placeholder="ご相談内容・ご質問をご記入ください。" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit; resize:vertical;"></textarea>
-            <p style="margin-top:6px; font-size:13px; color:var(--text-soft);">残り<span id="inquiry-remaining">200</span>文字</p>
-          </div>
-          <div style="font-size:11.5px; color:var(--text-soft); line-height:1.85; padding:14px 18px; background:var(--paper); border-left:3px solid var(--gold);">
-            ご入力いただいた個人情報は、本サービスのご案内・ご相談対応のみに使用し、<br>
-            <a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a> に基づき適切に管理いたします。
-          </div>
-          <label style="display:flex; align-items:center; gap:10px; padding:14px 18px; background:var(--white); border:1px solid var(--line); font-size:14px; cursor:pointer;">
-            <input type="checkbox" id="agree-privacy" name="agree-privacy" style="width:18px; height:18px; flex-shrink:0; cursor:pointer;">
-            <span><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a>に同意します</span>
-          </label>
-          <p id="required-error" style="display:none; color:var(--red); font-size:14px; font-weight:700; line-height:1.7; padding:12px 16px; background:#fdebcb; border-left:3px solid var(--red);"></p>
-          <p id="agree-error" style="display:none; color:var(--red); font-size:13px; font-weight:700; margin:-8px 0 0;">同意がありません。チェックボックスにチェックを入れてください。</p>
-          <button type="submit" class="btn btn-red" style="padding:18px; justify-content:center; letter-spacing:0.18em;">送信する</button>
-        </form>
+            <p class="required-error" style="display:none; color:var(--red); font-size:14px; font-weight:700; line-height:1.7; padding:12px 16px; background:#fdebcb; border-left:3px solid var(--red);"></p>
+            <p class="agree-error" style="display:none; color:var(--red); font-size:13px; font-weight:700; margin:-8px 0 0;">同意がありません。チェックボックスにチェックを入れてください。</p>
+            <button type="submit" class="btn btn-red" style="padding:18px; justify-content:center; letter-spacing:0.18em;">送信する</button>
+          </form>
+        </div>
         <div id="submit-success" style="display:none; position:fixed; inset:0; background:rgba(255,255,255,0.96); z-index:99999; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:40px;">
           <div style="width:88px; height:88px; border-radius:50%; background:var(--red); color:var(--white); display:flex; align-items:center; justify-content:center; margin-bottom:28px;">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
@@ -174,47 +268,70 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
         </div>
         <script>
         (function(){
-          var form = document.currentScript.previousElementSibling.previousElementSibling;
-          var overlay = document.getElementById('submit-success');
-          var cb = form.querySelector('#agree-privacy');
-          var err = form.querySelector('#agree-error');
-          var reqErr = document.getElementById('required-error');
-          form.addEventListener('submit', function(e){
-            e.preventDefault();
-            // Required field validation
-            var missing = [];
-            form.querySelectorAll('[data-required]').forEach(function(el){
-              if (!el.value || !el.value.trim()) missing.push(el.getAttribute('data-required'));
-            });
-            if (missing.length > 0) {
-              reqErr.textContent = missing.map(function(m){ return m + 'が入力されていません'; }).join('／');
-              reqErr.style.display = 'block';
-              reqErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              return;
-            }
-            reqErr.style.display = 'none';
-            if (!cb.checked) {
-              err.style.display = 'block';
-              err.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              return;
-            }
-            err.style.display = 'none';
-            overlay.style.display = 'flex';
-            window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
-            setTimeout(function(){
-              window.location.href = 'index.html';
-            }, 1800);
-          });
-          cb.addEventListener('change', function(){
-            if (cb.checked) err.style.display = 'none';
-          });
-          var ta = document.getElementById('inquiry-body');
-          var rem = document.getElementById('inquiry-remaining');
-          if (ta && rem) {
-            ta.addEventListener('input', function(){
-              rem.textContent = String(Math.max(0, 200 - ta.value.length));
-            });
+          // Tab toggle
+          var tabSeeker = document.getElementById('tab-seeker');
+          var tabEmployer = document.getElementById('tab-employer');
+          var panelSeeker = document.getElementById('panel-seeker');
+          var panelEmployer = document.getElementById('panel-employer');
+          function activate(which){
+            var isSeeker = which === 'seeker';
+            tabSeeker.classList.toggle('is-active', isSeeker);
+            tabEmployer.classList.toggle('is-active', !isSeeker);
+            tabSeeker.setAttribute('aria-selected', isSeeker);
+            tabEmployer.setAttribute('aria-selected', !isSeeker);
+            tabSeeker.style.color = isSeeker ? 'var(--navy)' : 'var(--text-soft)';
+            tabEmployer.style.color = isSeeker ? 'var(--text-soft)' : 'var(--navy)';
+            tabSeeker.style.borderBottomColor = isSeeker ? 'var(--red)' : 'transparent';
+            tabEmployer.style.borderBottomColor = isSeeker ? 'transparent' : 'var(--red)';
+            panelSeeker.style.display = isSeeker ? '' : 'none';
+            panelEmployer.style.display = isSeeker ? 'none' : '';
           }
+          tabSeeker.addEventListener('click', function(){ activate('seeker'); });
+          tabEmployer.addEventListener('click', function(){ activate('employer'); });
+          if (location.hash === '#employer') activate('employer');
+
+          // Bind both forms
+          var overlay = document.getElementById('submit-success');
+          var home = 'index.html';
+          document.querySelectorAll('form[data-form]').forEach(function(form){
+            var cb = form.querySelector('.agree-privacy');
+            var err = form.querySelector('.agree-error');
+            var reqErr = form.querySelector('.required-error');
+            var ta = form.querySelector('.msg-body');
+            var rem = form.querySelector('.msg-rem');
+            if (ta && rem) {
+              var max = parseInt(ta.getAttribute('maxlength'), 10) || 200;
+              ta.addEventListener('input', function(){
+                rem.textContent = String(Math.max(0, max - ta.value.length));
+              });
+            }
+            cb.addEventListener('change', function(){
+              if (cb.checked) err.style.display = 'none';
+            });
+            form.addEventListener('submit', function(e){
+              e.preventDefault();
+              var missing = [];
+              form.querySelectorAll('[data-required]').forEach(function(el){
+                if (!el.value || !el.value.trim()) missing.push(el.getAttribute('data-required'));
+              });
+              if (missing.length > 0) {
+                reqErr.textContent = missing.map(function(m){ return m + 'が入力されていません'; }).join('／');
+                reqErr.style.display = 'block';
+                reqErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+              }
+              reqErr.style.display = 'none';
+              if (!cb.checked) {
+                err.style.display = 'block';
+                err.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+              }
+              err.style.display = 'none';
+              overlay.style.display = 'flex';
+              window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+              setTimeout(function(){ window.location.href = home; }, 1800);
+            });
+          });
         })();
         </script>
       </div>
