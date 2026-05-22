@@ -126,18 +126,18 @@ img, svg { max-width: 100%; height: auto; display: block; }
   padding-top: 18px;
   border-top: 1px solid var(--line);
 }
-.footer-group__img { height: 42px; width: auto; }
+.footer-group__img { height: 48px; width: auto; }
 .footer-group__label {
-  font-size: 10px;
+  font-size: 12px;
   font-style: italic;
   color: var(--text-soft);
   letter-spacing: 0.16em;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 .footer-group__name {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--navy);
   letter-spacing: 0.10em;
 }
@@ -1084,18 +1084,18 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .footer-col h4 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--navy);
-  margin-bottom: 22px;
-  letter-spacing: 0.20em;
+  margin-bottom: 24px;
+  letter-spacing: 0.18em;
 }
 .footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 12px; font-size: 13px; }
+.footer-col li { margin-bottom: 14px; font-size: 15px; }
 .footer-col a { color: var(--text-soft); transition: color 0.2s; }
 .footer-col a:hover { color: var(--red); }
 .footer-bottom {
   text-align: center;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.15em;
   color: var(--text-soft);
 }
