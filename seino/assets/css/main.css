@@ -1040,9 +1040,10 @@ img, svg { max-width: 100%; height: auto; display: block; }
 }
 .logo-strip {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
   align-items: center;
+  justify-content: center;
 }
 .logo-strip__item {
   font-family: var(--serif);
