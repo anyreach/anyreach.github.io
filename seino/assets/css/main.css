@@ -393,6 +393,11 @@ img, svg { max-width: 100%; height: auto; display: block; }
   background: var(--gold);
   margin-top: 12px;
 }
+.hero-brand__img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
 
 .hero-desc {
   font-size: 15.5px;
