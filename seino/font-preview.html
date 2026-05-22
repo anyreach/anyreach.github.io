@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>フォント比較プレビュー — SEINO AGENT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;900&family=Kosugi+Maru&family=BIZ+UDPGothic:wght@400;700&family=Klee+One:wght@400;600&family=Kaisei+Tokumin:wght@500;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1d3a;
+    --red: #b9292f;
+    --gold: #b8943a;
+    --paper: #f5f1ea;
+    --line: #e6dfd0;
+    --text: #2a2f3a;
+    --text-soft: #5a6373;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #fff;
+    font-family: "Zen Kaku Gothic Antique", system-ui, sans-serif;
+    color: var(--text);
+    padding: 40px 20px 120px;
+  }
+  .page-head {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+  .page-head h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--navy);
+  }
+  .page-head p { font-size: 14px; color: var(--text-soft); }
+
+  .specimen {
+    max-width: 1100px;
+    margin: 0 auto 36px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 36px 36px;
+    position: relative;
+  }
+  .specimen__label {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--navy);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 4px 14px;
+    border-radius: 999px;
+  }
+  .specimen__meta {
+    font-size: 11.5px;
+    color: var(--text-soft);
+    margin-bottom: 22px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Sample block — mimics the actual case-studies section */
+  .demo { background: #fff; padding: 36px 32px 32px; border: 1px solid var(--line); }
+  .demo__eyebrow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.40em;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .demo__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    color: var(--navy);
+  }
+  .demo__sub {
+    text-align: center;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--text-soft);
+    margin-bottom: 22px;
+  }
+  .demo__hero {
+    margin: 18px 0 22px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .demo__hero-tagline {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.20em;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .demo__hero-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--navy);
+  }
+  .demo__hero-title em { font-style: normal; color: var(--red); }
+
+  .demo__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .demo__card {
+    border: 1px solid var(--line);
+    padding: 16px 18px;
+    background: #fff;
+  }
+  .demo__card-name {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+  .demo__card-head {
+    display: flex; align-items: center;
+    margin-bottom: 14px;
+  }
+  .demo__card-role {
+    background: var(--red); color: #fff; font-size: 10px; font-weight: 700;
+    padding: 3px 10px; letter-spacing: 0.06em;
+  }
+  .demo__card-title {
+    font-weight: 700; font-size: 14px; line-height: 1.6;
+    color: var(--navy);
+  }
+  .demo__card-meta {
+    margin-top: 12px; padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 11px; color: var(--text-soft);
+    letter-spacing: 0.08em;
+  }
+  .demo__link {
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-soft);
+    letter-spacing: 0.04em;
+    margin-top: 14px;
+  }
+
+  /* === Font variants === */
+  .v1 .demo__eyebrow,
+  .v1 .demo__title,
+  .v1 .demo__sub,
+  .v1 .demo__hero-title,
+  .v1 .demo__card-title,
+  .v1 .demo__link { font-family: "Zen Maru Gothic", system-ui, sans-serif; }
+
+  .v2 .demo__eyebrow,
+  .v2 .demo__title,
+  .v2 .demo__sub,
+  .v2 .demo__hero-title,
+  .v2 .demo__card-title,
+  .v2 .demo__link { font-family: "M PLUS Rounded 1c", system-ui, sans-serif; }
+
+  .v3 .demo__eyebrow,
+  .v3 .demo__title,
+  .v3 .demo__sub,
+  .v3 .demo__hero-title,
+  .v3 .demo__card-title,
+  .v3 .demo__link { font-family: "Kosugi Maru", system-ui, sans-serif; }
+
+  .v4 .demo__eyebrow,
+  .v4 .demo__title,
+  .v4 .demo__sub,
+  .v4 .demo__hero-title,
+  .v4 .demo__card-title,
+  .v4 .demo__link { font-family: "BIZ UDPGothic", system-ui, sans-serif; }
+
+  .v5 .demo__eyebrow,
+  .v5 .demo__title,
+  .v5 .demo__sub,
+  .v5 .demo__hero-title,
+  .v5 .demo__card-title,
+  .v5 .demo__link { font-family: "Klee One", "BIZ UDPGothic", system-ui, sans-serif; }
+
+  /* Bonus 6th: softer mincho (still less executive than Shippori) */
+  .v6 .demo__eyebrow,
+  .v6 .demo__title,
+  .v6 .demo__sub,
+  .v6 .demo__hero-title,
+  .v6 .demo__card-title,
+  .v6 .demo__link { font-family: "Kaisei Tokumin", serif; }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>SEINO AGENT — フォント候補比較</h1>
+  <p>同一コンテンツを6種のフォントで描画。すべて Google Fonts で日本語対応・商用無料。良いと感じたパターンをご指示ください。</p>
+</div>
+
+<!-- specimen template repeated 6 times -->
+<section class="specimen v1">
+  <div class="specimen__label">案① Zen Maru Gothic（現在適用中）</div>
+  <div class="specimen__meta">角丸ゴシック。柔らかく洗練された印象。ポップすぎず堅すぎない中庸。</div>
+  <div class="demo">
+    <div class="demo__hero">
+      <div class="demo__hero-tagline">東海エリアに強い総合人材紹介</div>
+      <div class="demo__hero-title">あなたの経験を、<br><em>次のキャリアへ。</em></div>
+    </div>
+    <div class="demo__eyebrow">— SUCCESS STORIES —</div>
+    <div class="demo__title">転職成功事例</div>
+    <div class="demo__sub">— real stories, real outcomes —</div>
+    <div class="demo__cards">
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">T.K.</div><div class="demo__card-role">法人営業</div></div><div class="demo__card-title">業界知識ある担当者の支援で、希望以上の好条件に出会えました。</div><div class="demo__card-meta">40代男性 / 愛知県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">M.Y.</div><div class="demo__card-role">マーケ</div></div><div class="demo__card-title">ワークライフバランスを重視した転職が叶いました。</div><div class="demo__card-meta">30代女性 / 岐阜県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">R.S.</div><div class="demo__card-role">IT</div></div><div class="demo__card-title">専門アドバイザーの支援で理想の企業に出会えました。</div><div class="demo__card-meta">30代男性 / リモート</div></div>
+    </div>
+    <div class="demo__link">すべての事例を見る →</div>
+  </div>
+</section>
+
+<section class="specimen v2">
+  <div class="specimen__label">案② M PLUS Rounded 1c</div>
+  <div class="specimen__meta">完全角丸サンセリフ。明朗・モダン・親しみやすさ最大。スタートアップLP的。</div>
+  <div class="demo">
+    <div class="demo__hero">
+      <div class="demo__hero-tagline">東海エリアに強い総合人材紹介</div>
+      <div class="demo__hero-title">あなたの経験を、<br><em>次のキャリアへ。</em></div>
+    </div>
+    <div class="demo__eyebrow">— SUCCESS STORIES —</div>
+    <div class="demo__title">転職成功事例</div>
+    <div class="demo__sub">— real stories, real outcomes —</div>
+    <div class="demo__cards">
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">T.K.</div><div class="demo__card-role">法人営業</div></div><div class="demo__card-title">業界知識ある担当者の支援で、希望以上の好条件に出会えました。</div><div class="demo__card-meta">40代男性 / 愛知県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">M.Y.</div><div class="demo__card-role">マーケ</div></div><div class="demo__card-title">ワークライフバランスを重視した転職が叶いました。</div><div class="demo__card-meta">30代女性 / 岐阜県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">R.S.</div><div class="demo__card-role">IT</div></div><div class="demo__card-title">専門アドバイザーの支援で理想の企業に出会えました。</div><div class="demo__card-meta">30代男性 / リモート</div></div>
+    </div>
+    <div class="demo__link">すべての事例を見る →</div>
+  </div>
+</section>
+
+<section class="specimen v3">
+  <div class="specimen__label">案③ Kosugi Maru</div>
+  <div class="specimen__meta">教科書フォント系譜。素朴で温かい。中庸的だが画面密度が低めで軽い印象。</div>
+  <div class="demo">
+    <div class="demo__hero">
+      <div class="demo__hero-tagline">東海エリアに強い総合人材紹介</div>
+      <div class="demo__hero-title">あなたの経験を、<br><em>次のキャリアへ。</em></div>
+    </div>
+    <div class="demo__eyebrow">— SUCCESS STORIES —</div>
+    <div class="demo__title">転職成功事例</div>
+    <div class="demo__sub">— real stories, real outcomes —</div>
+    <div class="demo__cards">
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">T.K.</div><div class="demo__card-role">法人営業</div></div><div class="demo__card-title">業界知識ある担当者の支援で、希望以上の好条件に出会えました。</div><div class="demo__card-meta">40代男性 / 愛知県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">M.Y.</div><div class="demo__card-role">マーケ</div></div><div class="demo__card-title">ワークライフバランスを重視した転職が叶いました。</div><div class="demo__card-meta">30代女性 / 岐阜県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">R.S.</div><div class="demo__card-role">IT</div></div><div class="demo__card-title">専門アドバイザーの支援で理想の企業に出会えました。</div><div class="demo__card-meta">30代男性 / リモート</div></div>
+    </div>
+    <div class="demo__link">すべての事例を見る →</div>
+  </div>
+</section>
+
+<section class="specimen v4">
+  <div class="specimen__label">案④ BIZ UDPGothic</div>
+  <div class="specimen__meta">ユニバーサルデザイン規格。最も読みやすい。「親しみがあるが大人」のバランス。</div>
+  <div class="demo">
+    <div class="demo__hero">
+      <div class="demo__hero-tagline">東海エリアに強い総合人材紹介</div>
+      <div class="demo__hero-title">あなたの経験を、<br><em>次のキャリアへ。</em></div>
+    </div>
+    <div class="demo__eyebrow">— SUCCESS STORIES —</div>
+    <div class="demo__title">転職成功事例</div>
+    <div class="demo__sub">— real stories, real outcomes —</div>
+    <div class="demo__cards">
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">T.K.</div><div class="demo__card-role">法人営業</div></div><div class="demo__card-title">業界知識ある担当者の支援で、希望以上の好条件に出会えました。</div><div class="demo__card-meta">40代男性 / 愛知県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">M.Y.</div><div class="demo__card-role">マーケ</div></div><div class="demo__card-title">ワークライフバランスを重視した転職が叶いました。</div><div class="demo__card-meta">30代女性 / 岐阜県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">R.S.</div><div class="demo__card-role">IT</div></div><div class="demo__card-title">専門アドバイザーの支援で理想の企業に出会えました。</div><div class="demo__card-meta">30代男性 / リモート</div></div>
+    </div>
+    <div class="demo__link">すべての事例を見る →</div>
+  </div>
+</section>
+
+<section class="specimen v5">
+  <div class="specimen__label">案⑤ Klee One</div>
+  <div class="specimen__meta">手書き教科書風。最も「親しみ・人間味」を演出。砕けた印象になるリスク有。</div>
+  <div class="demo">
+    <div class="demo__hero">
+      <div class="demo__hero-tagline">東海エリアに強い総合人材紹介</div>
+      <div class="demo__hero-title">あなたの経験を、<br><em>次のキャリアへ。</em></div>
+    </div>
+    <div class="demo__eyebrow">— SUCCESS STORIES —</div>
+    <div class="demo__title">転職成功事例</div>
+    <div class="demo__sub">— real stories, real outcomes —</div>
+    <div class="demo__cards">
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">T.K.</div><div class="demo__card-role">法人営業</div></div><div class="demo__card-title">業界知識ある担当者の支援で、希望以上の好条件に出会えました。</div><div class="demo__card-meta">40代男性 / 愛知県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">M.Y.</div><div class="demo__card-role">マーケ</div></div><div class="demo__card-title">ワークライフバランスを重視した転職が叶いました。</div><div class="demo__card-meta">30代女性 / 岐阜県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">R.S.</div><div class="demo__card-role">IT</div></div><div class="demo__card-title">専門アドバイザーの支援で理想の企業に出会えました。</div><div class="demo__card-meta">30代男性 / リモート</div></div>
+    </div>
+    <div class="demo__link">すべての事例を見る →</div>
+  </div>
+</section>
+
+<section class="specimen v6">
+  <div class="specimen__label">案⑥ Kaisei Tokumin（参考：柔らかい明朝）</div>
+  <div class="specimen__meta">Shippori より柔らかい明朝。執行感を抑えつつ品位は維持したい場合の中間案。</div>
+  <div class="demo">
+    <div class="demo__hero">
+      <div class="demo__hero-tagline">東海エリアに強い総合人材紹介</div>
+      <div class="demo__hero-title">あなたの経験を、<br><em>次のキャリアへ。</em></div>
+    </div>
+    <div class="demo__eyebrow">— SUCCESS STORIES —</div>
+    <div class="demo__title">転職成功事例</div>
+    <div class="demo__sub">— real stories, real outcomes —</div>
+    <div class="demo__cards">
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">T.K.</div><div class="demo__card-role">法人営業</div></div><div class="demo__card-title">業界知識ある担当者の支援で、希望以上の好条件に出会えました。</div><div class="demo__card-meta">40代男性 / 愛知県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">M.Y.</div><div class="demo__card-role">マーケ</div></div><div class="demo__card-title">ワークライフバランスを重視した転職が叶いました。</div><div class="demo__card-meta">30代女性 / 岐阜県</div></div>
+      <div class="demo__card"><div class="demo__card-head"><div class="demo__card-name">R.S.</div><div class="demo__card-role">IT</div></div><div class="demo__card-title">専門アドバイザーの支援で理想の企業に出会えました。</div><div class="demo__card-meta">30代男性 / リモート</div></div>
+    </div>
+    <div class="demo__link">すべての事例を見る →</div>
+  </div>
+</section>
+
+</body>
+</html>
