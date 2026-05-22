@@ -19,7 +19,7 @@
   --muted:     #8a8e98;
   --white:     #ffffff;
 
-  --serif:  "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN", system-ui, sans-serif;
+  --serif:  "Noto Sans JP", "Hiragino Sans", "ヒラギノ角ゴ ProN", "Yu Gothic", system-ui, sans-serif;
   --sans:   "Zen Kaku Gothic Antique", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
   --mono:   "JetBrains Mono", "SF Mono", ui-monospace, monospace;
 }
