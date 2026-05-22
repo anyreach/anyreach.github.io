@@ -19,7 +19,7 @@
   --muted:     #8a8e98;
   --white:     #ffffff;
 
-  --serif:  "Shippori Mincho", "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --serif:  "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN", system-ui, sans-serif;
   --sans:   "Zen Kaku Gothic Antique", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
   --mono:   "JetBrains Mono", "SF Mono", ui-monospace, monospace;
 }
