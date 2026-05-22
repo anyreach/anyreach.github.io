@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <!-- gh-pages-fresh-url:begin -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="x-fresh" content="1779444073-2kc1gm">
-  <script>(function(){try{if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});});}if("caches" in window){caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});});}}catch(e){}})();</script>
-  <!-- gh-pages-fresh-url:end -->
   <meta charset="UTF-8">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
@@ -120,7 +113,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
               お名前
               <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
             </label>
-            <input type="text" placeholder="山田 太郎" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            <input type="text" id="f-name" data-required="お名前" placeholder="山田 太郎" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
           </div>
           <div>
             <label style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.10em; color:var(--text); margin-bottom:8px;">
@@ -128,7 +121,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
               <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
             </label>
             <div style="display:flex; align-items:center; gap:10px;">
-              <input type="tel" placeholder="0901234567" pattern="[0-9]*" inputmode="numeric" style="flex:0 0 280px; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+              <input type="tel" id="f-tel" data-required="電話番号" placeholder="0901234567" pattern="[0-9]*" inputmode="numeric" style="flex:0 0 280px; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
               <span style="font-size:13px; color:var(--text-soft);">（半角数字）</span>
             </div>
           </div>
@@ -137,7 +130,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
               メールアドレス
               <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
             </label>
-            <input type="email" placeholder="example@example.com" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
+            <input type="email" id="f-email" data-required="メールアドレス" placeholder="example@example.com" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit;">
             <p style="margin-top:8px; font-size:13px; color:var(--red); font-weight:700; line-height:1.7;">携帯電話の場合、指定受信・拒否設定を解除してください。</p>
             <p style="margin-top:4px; font-size:13px; line-height:1.7;"><a href="https://entry.job-gear.net/f/email_notice" target="_blank" rel="noopener" style="color:#1956d4; text-decoration:underline;">ご利用いただけないメールアドレスについて</a></p>
           </div>
@@ -162,7 +155,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
               ご相談内容
               <span style="background:var(--red); color:var(--white); font-size:10px; padding:2px 6px; letter-spacing:0.05em;">必須</span>
             </label>
-            <textarea id="inquiry-body" rows="6" maxlength="200" placeholder="現在のお仕事、転職希望時期、ご希望条件などをご記入ください。" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit; resize:vertical;"></textarea>
+            <textarea id="inquiry-body" data-required="ご相談内容" rows="6" maxlength="200" placeholder="現在のお仕事、転職希望時期、ご希望条件などをご記入ください。" style="width:100%; padding:14px 16px; border:1px solid var(--line); background:var(--paper); font-size:14px; font-family:inherit; resize:vertical;"></textarea>
             <p style="margin-top:6px; font-size:13px; color:var(--text-soft);">残り<span id="inquiry-remaining">200</span>文字</p>
           </div>
           <div style="font-size:11.5px; color:var(--text-soft); line-height:1.85; padding:14px 18px; background:var(--paper); border-left:3px solid var(--gold);">
@@ -173,6 +166,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
             <input type="checkbox" id="agree-privacy" name="agree-privacy" style="width:18px; height:18px; flex-shrink:0; cursor:pointer;">
             <span><a href="https://www.seino.co.jp/sss/kojinjyohohogohoshin.pdf" target="_blank" rel="noopener" style="color:var(--red); text-decoration:underline;">個人情報保護方針</a>に同意します</span>
           </label>
+          <p id="required-error" style="display:none; color:var(--red); font-size:14px; font-weight:700; line-height:1.7; padding:12px 16px; background:#fdebcb; border-left:3px solid var(--red);"></p>
           <p id="agree-error" style="display:none; color:var(--red); font-size:13px; font-weight:700; margin:-8px 0 0;">同意がありません。チェックボックスにチェックを入れてください。</p>
           <button type="submit" class="btn btn-red" style="padding:18px; justify-content:center; letter-spacing:0.18em;">送信する</button>
         </form>
@@ -189,8 +183,21 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
           var overlay = document.getElementById('submit-success');
           var cb = form.querySelector('#agree-privacy');
           var err = form.querySelector('#agree-error');
+          var reqErr = document.getElementById('required-error');
           form.addEventListener('submit', function(e){
             e.preventDefault();
+            // Required field validation
+            var missing = [];
+            form.querySelectorAll('[data-required]').forEach(function(el){
+              if (!el.value || !el.value.trim()) missing.push(el.getAttribute('data-required'));
+            });
+            if (missing.length > 0) {
+              reqErr.textContent = missing.map(function(m){ return m + 'が入力されていません'; }).join('／');
+              reqErr.style.display = 'block';
+              reqErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              return;
+            }
+            reqErr.style.display = 'none';
             if (!cb.checked) {
               err.style.display = 'block';
               err.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -230,7 +237,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
           <h3 style="font-family:var(--serif); font-weight:700; font-size:16px; color:var(--navy); margin-bottom:14px;">よくあるご質問</h3>
           <ul style="font-size:13px; color:var(--text-soft); line-height:1.95; list-style:none;">
             <li style="padding:10px 0; border-bottom:1px solid var(--line);">Q. 利用料金はかかりますか？</li>
-            <li style="padding:10px 0; border-bottom:1px solid var(--line);">Q. 登録後、必ず転職しなければ?</li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--line);">Q. 登録後、必ず転職しなければいけませんか?</li>
             <li style="padding:10px 0; border-bottom:1px solid var(--line);">Q. 在職中でも相談できますか？</li>
             <li style="padding:10px 0; border-bottom:1px solid var(--line);">Q. 秘密は守られますか？</li>
             <li style="padding:10px 0;">Q. どのくらいで転職できますか？</li>
