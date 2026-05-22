@@ -1099,6 +1099,24 @@ img, svg { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.15em;
   color: var(--text-soft);
 }
+.footer-hq {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.footer-hq__label {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--navy);
+  letter-spacing: 0.16em;
+  margin-bottom: 10px;
+}
+.footer-hq__addr {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-soft);
+}
 
 /* === SUBPAGE === */
 .subpage-hero {
