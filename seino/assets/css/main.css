@@ -103,23 +103,19 @@ img, svg { max-width: 100%; height: auto; display: block; }
   display: block;
 }
 
-/* === Group badge (header) === */
+/* === Brand + Group badge cluster (header) === */
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 .group-badge {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
+  padding-left: 16px;
   border-left: 1px solid var(--line);
-  margin-left: 4px;
 }
 .group-badge__img { height: 32px; width: auto; display: block; }
-.group-badge__txt {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--text-soft);
-  white-space: nowrap;
-}
 
 /* === Group block (footer) === */
 .footer-group {
