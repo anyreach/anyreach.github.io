@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
-  <!-- gh-pages-fresh-url:begin -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="x-fresh" content="1779689267-q4pr1s">
-  <script>(function(){try{if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});});}if("caches" in window){caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});});}}catch(e){}})();</script>
-  <!-- gh-pages-fresh-url:end -->
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>人材派遣アイコン候補 — SEINO AGENT</title>
+<title>人材派遣アイコン候補 v2 — SEINO AGENT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
@@ -21,35 +14,160 @@
   .head { max-width: 1100px; margin: 0 auto 32px; }
   .head h1 { font-family:"Noto Sans JP"; font-weight:900; font-size: 22px; color: var(--navy); margin-bottom: 8px; }
   .head p { font-size: 14px; color: var(--text-soft); line-height: 1.85; }
-
   .grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .card-wrap { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 24px; position: relative; }
   .card-wrap__label { position:absolute; top:-12px; left:18px; background:var(--red); color:#fff; font-size:12px; font-weight:700; letter-spacing:0.10em; padding:4px 14px; border-radius:999px; }
   .card-wrap__note { font-size: 12px; color: var(--text-soft); margin-bottom: 16px; }
-
-  /* Mirror the actual employers-page service card style */
-  .svc-card {
-    background:#fff; border:1px solid var(--line); padding:36px 36px 32px; position:relative;
-  }
+  .svc-card { background:#fff; border:1px solid var(--line); padding:36px 36px 32px; position:relative; }
   .svc-card__bar { position:absolute; left:0; top:0; bottom:0; width:4px; background: linear-gradient(180deg, var(--navy), var(--red)); }
   .svc-card__head { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
   .svc-icon { width:56px; height:56px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .svc-icon svg { width:28px; height:28px; }
+  .svc-icon svg { width:30px; height:30px; }
   .svc-card__title { font-family:"Noto Sans JP"; font-weight:700; font-size:20px; letter-spacing:0.04em; color:var(--navy); }
   .svc-card__desc { font-size:14px; line-height:1.95; color: var(--text-soft); }
 </style>
 </head><body>
 
 <div class="head">
-  <h1>人材派遣アイコン候補（5案）</h1>
-  <p>採用担当者様ページ「人材派遣」カードのアイコンに使う5案を、実際のカードと同じスタイルで並べました。気に入った案の番号を指示してください。</p>
+  <h1>人材派遣アイコン候補 v2 — 「人 → 矢印 → 建物」改良版5案</h1>
+  <p>案①のコンセプトを踏襲しつつ、要素間の余白確保と建物の太さを改善した5バリエーション。</p>
 </div>
 
 <div class="grid">
 
+  <!-- A: 人(左下) ・矢印(中央上) ・建物(右、横幅広め) -->
   <div class="card-wrap">
-    <div class="card-wrap__label">案①</div>
-    <div class="card-wrap__note">「派遣先へ送り出す」イメージ。建物（派遣先）+ 人（スタッフ）+ 矢印で「派遣」の動きを表現。</div>
+    <div class="card-wrap__label">案A</div>
+    <div class="card-wrap__note">人と建物の間に余白を確保。建物は2階建てで横幅を取り、入口窓も明確に。矢印は中央配置。</div>
+    <article class="svc-card">
+      <div class="svc-card__bar"></div>
+      <div class="svc-card__head">
+        <div class="svc-icon">
+          <svg viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- person -->
+            <circle cx="4.5" cy="8" r="2"/>
+            <path d="M2 17v-2a2.5 2.5 0 012.5-2.5h0A2.5 2.5 0 017 15v2"/>
+            <!-- arrow -->
+            <path d="M10 12h7"/>
+            <path d="M15 9.5l2.5 2.5L15 14.5"/>
+            <!-- building -->
+            <rect x="20" y="6" width="10" height="12" rx="0.6"/>
+            <path d="M22 9.5h2M26 9.5h2M22 12.5h2M26 12.5h2M24 16h2"/>
+          </svg>
+        </div>
+        <h3 class="svc-card__title">人材派遣</h3>
+      </div>
+      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
+    </article>
+  </div>
+
+  <!-- B: 人(左) → 大きい矢印(中央) → 建物(右、屋根付き) -->
+  <div class="card-wrap">
+    <div class="card-wrap__label">案B</div>
+    <div class="card-wrap__note">屋根付きの建物で「会社らしさ」を強調。矢印は長めにとり、流れを明確に。</div>
+    <article class="svc-card">
+      <div class="svc-card__bar"></div>
+      <div class="svc-card__head">
+        <div class="svc-icon">
+          <svg viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="4.5" cy="8" r="2"/>
+            <path d="M2 17v-2a2.5 2.5 0 012.5-2.5A2.5 2.5 0 017 15v2"/>
+            <path d="M10 12.5h8"/>
+            <path d="M16 10l2.5 2.5L16 15"/>
+            <!-- building with roof -->
+            <path d="M20 11l5-3 5 3"/>
+            <path d="M21 11v7h8v-7"/>
+            <rect x="24" y="13" width="2.5" height="5"/>
+            <rect x="22" y="13" width="1.5" height="1.5"/>
+            <rect x="27" y="13" width="1.5" height="1.5"/>
+          </svg>
+        </div>
+        <h3 class="svc-card__title">人材派遣</h3>
+      </div>
+      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
+    </article>
+  </div>
+
+  <!-- C: 人 → 矢印 → ビル(縦長 + 窓グリッド) -->
+  <div class="card-wrap">
+    <div class="card-wrap__label">案C</div>
+    <div class="card-wrap__note">建物を「オフィスビル」風に。窓グリッドできっちり感を演出。間隔広め。</div>
+    <article class="svc-card">
+      <div class="svc-card__bar"></div>
+      <div class="svc-card__head">
+        <div class="svc-icon">
+          <svg viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="8" r="2"/>
+            <path d="M2.5 17v-2A2.5 2.5 0 015 12.5A2.5 2.5 0 017.5 15v2"/>
+            <path d="M10.5 12.5h7"/>
+            <path d="M15 10l2.5 2.5L15 15"/>
+            <rect x="20" y="5" width="9" height="14" rx="0.5"/>
+            <path d="M22 8h2M26 8h2M22 11h2M26 11h2M22 14h2M26 14h2"/>
+            <path d="M24 17h2v2h-2z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="svc-card__title">人材派遣</h3>
+      </div>
+      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
+    </article>
+  </div>
+
+  <!-- D: 上下配置 - 人(上) / 矢印(中) / 建物(下) でゆったり -->
+  <div class="card-wrap">
+    <div class="card-wrap__label">案D</div>
+    <div class="card-wrap__note">縦方向に「人→下向き矢印→建物」と配置。要素ごとにしっかり間が取れる。</div>
+    <article class="svc-card">
+      <div class="svc-card__bar"></div>
+      <div class="svc-card__head">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="5" r="2"/>
+            <path d="M9 12v-2a3 3 0 013-3h0a3 3 0 013 3v2"/>
+            <path d="M12 15v6"/>
+            <path d="M9.5 18.5L12 21l2.5-2.5"/>
+            <rect x="6" y="23" width="12" height="8" rx="0.5"/>
+            <path d="M8 26h2M14 26h2M11 26h2"/>
+            <path d="M10.5 28.5h3v2.5h-3z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="svc-card__title">人材派遣</h3>
+      </div>
+      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
+    </article>
+  </div>
+
+  <!-- E: 人(複数) → 矢印 → 建物(幅広・倉庫/工場風) -->
+  <div class="card-wrap">
+    <div class="card-wrap__label">案E</div>
+    <div class="card-wrap__note">人を2人配置（複数スタッフ）、建物は幅広の倉庫/工場風で東海エリアの産業を示唆。</div>
+    <article class="svc-card">
+      <div class="svc-card__bar"></div>
+      <div class="svc-card__head">
+        <div class="svc-icon">
+          <svg viewBox="0 0 36 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="3.5" cy="8" r="1.8"/>
+            <path d="M1.5 16v-1.5A2 2 0 013.5 12.5h0A2 2 0 015.5 14.5V16"/>
+            <circle cx="9" cy="8" r="1.8"/>
+            <path d="M7 16v-1.5a2 2 0 012-2h0a2 2 0 012 2V16"/>
+            <path d="M14 12.5h6"/>
+            <path d="M18 10l2.5 2.5L18 15"/>
+            <!-- factory building -->
+            <path d="M23 19v-7l3 2v-2l3 2v-2l3 2v5"/>
+            <rect x="25" y="15" width="1.5" height="2"/>
+            <rect x="28" y="15" width="1.5" height="2"/>
+            <rect x="31" y="15" width="1.5" height="2"/>
+          </svg>
+        </div>
+        <h3 class="svc-card__title">人材派遣</h3>
+      </div>
+      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
+    </article>
+  </div>
+
+  <!-- Reference: old 案① -->
+  <div class="card-wrap">
+    <div class="card-wrap__label">参考：旧①</div>
+    <div class="card-wrap__note">前回の案①（密集していて読み取りづらかった）。比較用。</div>
     <article class="svc-card">
       <div class="svc-card__bar"></div>
       <div class="svc-card__head">
@@ -61,105 +179,6 @@
             <rect x="17" y="6" width="5" height="12" rx="0.5"/>
             <path d="M19 10h1M19 13h1M19 16h1"/>
           </svg>
-        </div>
-        <h3 class="svc-card__title">人材派遣</h3>
-      </div>
-      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
-    </article>
-  </div>
-
-  <div class="card-wrap">
-    <div class="card-wrap__label">案②</div>
-    <div class="card-wrap__note">「期間限定で働く」イメージ。カレンダー + 人。時限・契約期間を示唆。</div>
-    <article class="svc-card">
-      <div class="svc-card__bar"></div>
-      <div class="svc-card__head">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="16" rx="1.5"/>
-            <path d="M3 10h18M8 3v4M16 3v4"/>
-            <circle cx="9" cy="14" r="1.8"/>
-            <path d="M6.5 19v-1.2a2 2 0 012-2h1a2 2 0 012 2V19"/>
-            <path d="M14 14h4M14 17h3"/>
-          </svg>
-        </div>
-        <h3 class="svc-card__title">人材派遣</h3>
-      </div>
-      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
-    </article>
-  </div>
-
-  <div class="card-wrap">
-    <div class="card-wrap__label">案③</div>
-    <div class="card-wrap__note">「マッチング」イメージ。握手で求人企業×スタッフの仲介関係を表現。</div>
-    <article class="svc-card">
-      <div class="svc-card__bar"></div>
-      <div class="svc-card__head">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 11L6 14a2 2 0 002.8 2.8L11 14.6"/>
-            <path d="M15 13l3-3a2 2 0 00-2.8-2.8L13 9.4"/>
-            <path d="M9 11l3-3 3 5-3 3-3-5z"/>
-            <path d="M2 14l4-4M22 10l-4 4"/>
-          </svg>
-        </div>
-        <h3 class="svc-card__title">人材派遣</h3>
-      </div>
-      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
-    </article>
-  </div>
-
-  <div class="card-wrap">
-    <div class="card-wrap__label">案④</div>
-    <div class="card-wrap__note">「複数スタッフのプール」イメージ。3人並列で派遣スタッフの母集団を示唆。</div>
-    <article class="svc-card">
-      <div class="svc-card__bar"></div>
-      <div class="svc-card__head">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="6" cy="8" r="2"/>
-            <circle cx="12" cy="7" r="2.2"/>
-            <circle cx="18" cy="8" r="2"/>
-            <path d="M3 17v-1a3 3 0 013-3h0a3 3 0 013 3v1"/>
-            <path d="M9 17v-1.2a3 3 0 013-3h0a3 3 0 013 3V17"/>
-            <path d="M15 17v-1a3 3 0 013-3h0a3 3 0 013 3v1"/>
-          </svg>
-        </div>
-        <h3 class="svc-card__title">人材派遣</h3>
-      </div>
-      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
-    </article>
-  </div>
-
-  <div class="card-wrap">
-    <div class="card-wrap__label">案⑤</div>
-    <div class="card-wrap__note">「ID/契約書」イメージ。書類+人で契約・雇用形態を示唆（書類アイコン）。</div>
-    <article class="svc-card">
-      <div class="svc-card__bar"></div>
-      <div class="svc-card__head">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="3" width="13" height="18" rx="1.5"/>
-            <circle cx="10.5" cy="9" r="2"/>
-            <path d="M7.5 16v-1a2 2 0 012-2h2a2 2 0 012 2v1"/>
-            <path d="M14 7h2M14 10h2M14 13h2"/>
-            <path d="M17 17l3-3-3-3" opacity="0"/>
-          </svg>
-        </div>
-        <h3 class="svc-card__title">人材派遣</h3>
-      </div>
-      <p class="svc-card__desc">柔軟な雇用形態で即戦力人材をご提供。長年の派遣実績で培ったマッチング力と、登録スタッフの質に自信があります。</p>
-    </article>
-  </div>
-
-  <div class="card-wrap">
-    <div class="card-wrap__label">参考：現在</div>
-    <div class="card-wrap__note">現状のアイコン（横向きの双方向矢印）— 何を意味しているか分かりづらい。</div>
-    <article class="svc-card">
-      <div class="svc-card__bar"></div>
-      <div class="svc-card__head">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7h-9M14 17H5M10 4l-7 7 7 7M14 20l7-7-7-7"/></svg>
         </div>
         <h3 class="svc-card__title">人材派遣</h3>
       </div>
