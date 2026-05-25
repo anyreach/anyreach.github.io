@@ -861,7 +861,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .stats-banner {
   background: var(--paper);
   color: var(--text);
-  padding: 80px 0;
+  padding: 64px 0;
   position: relative;
   overflow: hidden;
 }
@@ -896,7 +896,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .stat-num {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 56px;
+  font-size: 45px;
   line-height: 1;
   letter-spacing: 0.04em;
   color: var(--red);
