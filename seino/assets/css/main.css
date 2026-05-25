@@ -772,6 +772,13 @@ img, svg { max-width: 100%; height: auto; display: block; }
   transition: background 0.3s, transform 0.3s;
 }
 .strength-icon svg { width: 30px; height: 30px; }
+.strength-icon--kangaroo {
+  background: transparent;
+  width: 88px;
+  height: 88px;
+}
+.strength-card:hover .strength-icon--kangaroo { background: transparent; transform: scale(1.05); }
+.strength-icon__img { width: 100%; height: auto; display: block; }
 .strength-title {
   font-family: var(--serif);
   font-weight: 700;
