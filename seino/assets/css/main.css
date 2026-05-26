@@ -32,7 +32,7 @@ body {
   font-size: 15.5px;
   line-height: 1.85;
   color: var(--text);
-  background: #ffffff url("../img/bg-seino-cover.png") center top / cover no-repeat fixed;
+  background: #ffffff url("../img/bg-cover-1779794458.png") center top / cover no-repeat fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
@@ -310,7 +310,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   position: relative;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.3) 100%),
-    url("../img/bg-seino-cover.png") center center / cover no-repeat;
+    url("../img/bg-cover-1779794458.png") center center / cover no-repeat;
   color: var(--text);
   overflow: hidden;
   padding: 80px 0 110px;
