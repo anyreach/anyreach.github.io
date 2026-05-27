@@ -2312,7 +2312,6 @@
 <use xlink:href="#source-55" transform="matrix(0.239365, 0, 0, 0.239613, 500.337526, 746.089772)"/>
 </g>
 
-<!-- Cover overlays to hide logo/text/illustrations -->
 <rect x="605" y="345" width="565" height="170" fill="white"/>
 <rect x="200" y="380" width="250" height="170" fill="white"/>
 <rect x="395" y="775" width="170" height="80" fill="white"/>
