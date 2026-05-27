@@ -870,8 +870,8 @@ img, svg { max-width: 100%; height: auto; display: block; }
 
 /* === STATS === */
 .stats-banner {
-  background: var(--paper);
-  color: var(--text);
+  background: linear-gradient(135deg, #173c88 0%, #3a6bc8 100%);
+  color: #ffffff;
   padding: 64px 0;
   position: relative;
   overflow: hidden;
@@ -893,7 +893,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   position: absolute;
   left: 0; top: 18%; bottom: 18%;
   width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(10,29,58,0.18), transparent);
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,0.28), transparent);
 }
 .stat-label {
   font-family: var(--serif);
@@ -901,7 +901,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 0.20em;
-  color: var(--text-soft);
+  color: rgba(255,255,255,0.8);
   margin-bottom: 18px;
 }
 .stat-num {
@@ -910,20 +910,20 @@ img, svg { max-width: 100%; height: auto; display: block; }
   font-size: 45px;
   line-height: 1;
   letter-spacing: 0.04em;
-  color: var(--red);
+  color: #ffffff;
 }
 .stat-num__suffix {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 700;
   margin-left: 6px;
-  color: var(--red);
-  -webkit-text-fill-color: var(--red);
+  color: var(--gold);
+  -webkit-text-fill-color: var(--gold);
 }
 .stat-note {
   text-align: center;
   font-size: 11px;
-  color: var(--text-soft);
+  color: rgba(255,255,255,0.7);
   margin-top: 32px;
   letter-spacing: 0.08em;
 }
