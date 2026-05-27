@@ -39,6 +39,11 @@
   .v5 .site-footer{background:linear-gradient(180deg,#070f24 0%,#0e1e4c 100%)}
   .v5 .footer-col h4{color:#e8c877}
   .v5 .site-footer::before{background:#e8c877}
+
+  /* ⑥ = ④ベース：青を少しだけ明るく＋見出しを金 */
+  .v6 .site-footer{background:#1a3a80;background-image:linear-gradient(rgba(24,52,116,.78),rgba(18,40,92,.85)),url('assets/img/seino_bg_top_180.webp');background-size:cover,100% 100%;background-position:center;background-repeat:no-repeat}
+  .v6 .footer-col h4{color:#e8c877}
+  .v6 .site-footer::before{background:#e8c877}
 </style>
 </head>
 <body>
@@ -61,6 +66,9 @@
 
 <div class="vlabel"><h2>⑤ ほぼ黒紺＋金見出し</h2><p>上 #070f24 → 下 #0e1e4c、見出しとトップ罫を金に。高級・プレミアム路線。</p></div>
 <div class="variant v5 fdark" id="s5"></div>
+
+<div class="vlabel"><h2>⑥ ④を少し明るく＋金見出し</h2><p>④の青三角柄ベースで、青の深みを少しだけ明るく(白め)に寄せ、見出し＆トップ罫を金色に。</p></div>
+<div class="variant v6 fdark" id="s6"></div>
 
 <script>
 var FOOTER = `
@@ -118,7 +126,7 @@ var FOOTER = `
     </div>
   </div>
 </footer>`;
-['s1','s2','s3','s4','s5'].forEach(function(id){document.getElementById(id).innerHTML=FOOTER;});
+['s1','s2','s3','s4','s5','s6'].forEach(function(id){document.getElementById(id).innerHTML=FOOTER;});
 </script>
 </body>
 </html>
