@@ -315,8 +315,8 @@ img, svg { max-width: 100%; height: auto; display: block; }
       url("../img/seino_bg_top.webp") type("image/webp"),
       url("../img/seino_bg_top.png") type("image/png")),
     url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAApADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDnZ7VZMsvDfzrOmRkBDDBrYrb0bwwdWTzbsFLf+Ejq30r0pyildnPG97HDom7k9KmHtXQ6z4Vm0xywLPB2cDp9ayDZOPusDSptW0HIrZx9aAcVKbaUfw5+lMMbr1Uj8K1JO38O+Hmu2W5u1IhHKqf4v/rV2yIqKFQAKBgAUoAUYAwBS15k5ubuzeMbDZESRCjqGU8EEVyOt+FSu6fTxkdTF/hXYUlKM3F6DaTPJ2VkYq4KsOCDSV6FrOgW+pKXUCOfHDgdfrXDX+n3GnzGO4Qr6Hsa76dVSOecLHqNFFFecdIUUUUAFV7yzgvYTFcRh1Pr2qxRRsB//9k=");
-  background-size: cover, cover, cover;
-  background-position: center, center, center;
+  background-size: cover, auto 100%, auto 100%;
+  background-position: center, right center, right center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   color: var(--text);
   overflow: hidden;
