@@ -1147,28 +1147,20 @@ img, svg { max-width: 100%; height: auto; display: block; }
 
 /* === SUBPAGE === */
 .subpage-hero {
-  background-color: #0e1e4c;
-  background-image:
-    linear-gradient(rgba(8,20,52,0.62), rgba(8,20,52,0.62)),
-    image-set(
-      url("../img/seino_bg_top.webp") type("image/webp"),
-      url("../img/seino_bg_top.png") type("image/png"));
-  background-size: cover, 100% 100%;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
-  color: #ffffff;
-  padding: 60px 0 54px;
+  background: var(--paper);
+  color: var(--navy);
+  padding: 45px 0 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: none;
+  border-bottom: 1px solid var(--line);
 }
 .subpage-hero::before { display: none; }
 .subpage-hero__eyebrow {
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.40em;
-  color: #e8c877;
+  color: var(--red);
   margin-bottom: 8px;
   position: relative;
 }
@@ -1178,8 +1170,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   font-size: 32px;
   letter-spacing: 0.08em;
   position: relative;
-  color: #ffffff;
-  text-shadow: 0 1px 12px rgba(0,0,0,0.25);
+  color: var(--navy);
 }
 
 /* === REVEAL ON SCROLL === */
