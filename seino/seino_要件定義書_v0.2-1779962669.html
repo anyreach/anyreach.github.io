@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SEINO AGENT 求人ポータルサイト 要件定義書 v0.2</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  body{max-width:980px;margin:40px auto;padding:0 24px;font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.75;color:#1c2330;background:#fafbfc}
+  h1{font-size:26px;border-bottom:3px solid #173c88;padding-bottom:8px;color:#0a1d3a}
+  h2{font-size:20px;margin-top:36px;padding:8px 12px;background:linear-gradient(90deg,#173c88,#3a6bc8);color:#fff;border-radius:4px}
+  h3{font-size:16px;margin-top:24px;color:#173c88;border-left:4px solid #e8c877;padding-left:10px}
+  h4{font-size:14px;margin-top:20px;color:#0a1d3a}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px}
+  th{background:#0e2654;color:#fff;padding:8px 10px;text-align:left;border:1px solid #ccc}
+  td{padding:7px 10px;border:1px solid #ddd;vertical-align:top}
+  tr:nth-child(even){background:#f5f7fa}
+  code{background:#eef1f5;padding:2px 6px;border-radius:3px;font-size:13px}
+  pre{background:#0e1e4c;color:#dfe6f5;padding:14px;border-radius:6px;overflow:auto}
+  blockquote{border-left:4px solid #b9292f;padding:6px 14px;background:#fff8f8;color:#5a2530;margin:14px 0}
+  #TOC{background:#fff;border:1px solid #d9dde3;border-radius:6px;padding:16px 22px;margin:20px 0;font-size:13.5px}
+  #TOC ul{list-style:none;padding-left:18px}
+  #TOC > ul{padding-left:0}
+  #TOC a{color:#173c88;text-decoration:none}
+  #TOC a:hover{text-decoration:underline}
+  strong{color:#b9292f}
+  hr{border:none;border-top:2px dashed #c5cbd6;margin:32px 0}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">SEINO AGENT 求人ポータルサイト 要件定義書 v0.2</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#seino-agent-求人ポータルサイト-要件定義書-v0.2"
+id="toc-seino-agent-求人ポータルサイト-要件定義書-v0.2">SEINO AGENT
+求人ポータルサイト 要件定義書 v0.2</a>
+<ul>
+<li><a href="#改訂履歴" id="toc-改訂履歴">改訂履歴</a></li>
+<li><a href="#第1章-背景目的" id="toc-第1章-背景目的">第1章
+背景・目的</a></li>
+<li><a href="#第2章-プロジェクト体制スケジュール"
+id="toc-第2章-プロジェクト体制スケジュール">第2章
+プロジェクト体制・スケジュール</a></li>
+<li><a href="#第3章-サイト構成" id="toc-第3章-サイト構成">第3章
+サイト構成</a></li>
+<li><a href="#第4章-デザイン要件" id="toc-第4章-デザイン要件">第4章
+デザイン要件</a></li>
+<li><a href="#第5章-コンテンツ要件" id="toc-第5章-コンテンツ要件">第5章
+コンテンツ要件</a></li>
+<li><a href="#第6章-機能要件ページ別"
+id="toc-第6章-機能要件ページ別">第6章 機能要件(ページ別)</a></li>
+<li><a href="#第7章-システム技術要件"
+id="toc-第7章-システム技術要件">第7章 システム・技術要件</a></li>
+<li><a href="#第8章-インフラ要件" id="toc-第8章-インフラ要件">第8章
+インフラ要件</a></li>
+<li><a href="#第9章-seo-要件" id="toc-第9章-seo-要件">第9章 SEO
+要件</a></li>
+<li><a href="#第10章-セキュリティ要件"
+id="toc-第10章-セキュリティ要件">第10章 セキュリティ要件</a></li>
+<li><a href="#第11章-リリーステスト要件"
+id="toc-第11章-リリーステスト要件">第11章 リリース・テスト要件</a></li>
+<li><a href="#第12章-運用保守sla" id="toc-第12章-運用保守sla">第12章
+運用保守・SLA</a></li>
+<li><a href="#第13章-責任範囲免責契約整合"
+id="toc-第13章-責任範囲免責契約整合">第13章
+責任範囲・免責・契約整合</a></li>
+<li><a href="#第14章-変更管理手戻り防止"
+id="toc-第14章-変更管理手戻り防止">第14章 変更管理(手戻り防止)</a></li>
+<li><a href="#第15章-別紙" id="toc-第15章-別紙">第15章 別紙</a></li>
+<li><a href="#第16章-合意" id="toc-第16章-合意">第16章 合意</a></li>
+<li><a href="#第17章-残課題キックオフ確認項目-v0.2-追加分"
+id="toc-第17章-残課題キックオフ確認項目-v0.2-追加分">第17章
+残課題(キックオフ確認項目 + v0.2 追加分)</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="seino-agent-求人ポータルサイト-要件定義書-v0.2">SEINO AGENT
+求人ポータルサイト 要件定義書 v0.2</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>サービス名</strong></td>
+<td>SEINO AGENT(セイノーエージェント)</td>
+</tr>
+<tr>
+<td><strong>発注者(甲)</strong></td>
+<td>株式会社セイノースタッフサービス</td>
+</tr>
+<tr>
+<td><strong>受注者(乙)</strong></td>
+<td>AnyReach 株式会社</td>
+</tr>
+<tr>
+<td><strong>対象業務</strong></td>
+<td>正社員紹介事業向け求人ポータルサイト 新規構築</td>
+</tr>
+<tr>
+<td><strong>公開目標</strong></td>
+<td>2026年7月中旬〜7月末</td>
+</tr>
+<tr>
+<td><strong>本書版数</strong></td>
+<td>v0.2(ドラフト)</td>
+</tr>
+<tr>
+<td><strong>作成日</strong></td>
+<td>2026年5月28日</td>
+</tr>
+<tr>
+<td><strong>作成者</strong></td>
+<td>AnyReach 渋谷春樹</td>
+</tr>
+<tr>
+<td><strong>参照資料</strong></td>
+<td>キックオフ資料(2026/5/14)、お申込書(2026/5/25)、構築/保守業務委託契約書、NDA、デモサイト本体(anyreach.github.io/seino/)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="改訂履歴">改訂履歴</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>版数</th>
+<th>日付</th>
+<th>内容</th>
+<th>作成者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v0.1</td>
+<td>2026/5/28</td>
+<td>初版ドラフト(契約書・キックオフ資料ベース)</td>
+<td>AnyReach</td>
+</tr>
+<tr>
+<td>v0.2</td>
+<td>2026/5/28</td>
+<td>デモサイト本体の全7ページ実コンテンツを反映</td>
+<td>AnyReach</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="第1章-背景目的">第1章 背景・目的</h2>
+<h3 id="背景">1.1 背景</h3>
+<p>発注者(甲)は、既存の人材派遣事業に加え、<strong>正社員紹介(エージェント)事業</strong>を新規に立ち上げる。当該事業の求職者・企業双方への情報発信および応募受付チャネルとして、専用
+Web サイト「SEINO AGENT(セイノーエージェント)」を構築する。</p>
+<h3 id="サイトコンセプト本体メタディスクリプションより">1.2
+サイトコンセプト(本体メタディスクリプションより)</h3>
+<blockquote>
+<p>SEINO
+AGENT(セイノーエージェント)は、セイノーホールディングスグループの正社員向け人材紹介サービス。東海エリアを中心に、業種・職種を問わない転職支援と、国家資格キャリアコンサルタントによる伴走をご提供します。</p>
+</blockquote>
+<h3 id="ブランディング">1.3 ブランディング</h3>
+<ul>
+<li><strong>キャッチコピー:</strong>
+「あなたの経験を、次のキャリアへ。」</li>
+<li><strong>ブランドカラー(青):</strong>
+<code>#173c88 → #3a6bc8</code>(135度グラデーション)</li>
+<li><strong>アクセントカラー(赤):</strong> <code>#b9292f</code> /
+<strong>金:</strong> <code>#e8c877</code></li>
+</ul>
+<h3 id="ゴール-kpi参考合意外">1.4 ゴール KPI(参考、合意外)</h3>
+<ol type="1">
+<li>公開後 3ヶ月以内に月間 PV 5,000 を達成</li>
+<li>公開後 6ヶ月以内に Web 経由の応募/問い合わせを月 20 件以上獲得</li>
+<li>「東海 転職エージェント」「岐阜 正社員転職」等の SEO
+検索流入を確保</li>
+</ol>
+<h3 id="用語定義">1.5 用語定義</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>用語</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本サイト</td>
+<td>SEINO AGENT サイト(本要件で構築する求人ポータル)</td>
+</tr>
+<tr>
+<td>トルー(Toroo)</td>
+<td>株式会社ダトラ提供の求人サイト構築・ATS プラグイン</td>
+</tr>
+<tr>
+<td>ATS</td>
+<td>Applicant Tracking System(応募者管理システム)</td>
+</tr>
+<tr>
+<td>エンドユーザー</td>
+<td>本サイトを閲覧・応募する求職者、および採用相談する企業担当者</td>
+</tr>
+<tr>
+<td>別紙①</td>
+<td>「掲載原稿一覧 v1.0」</td>
+</tr>
+<tr>
+<td>別紙②</td>
+<td>「素材提供リスト」</td>
+</tr>
+<tr>
+<td>別紙③</td>
+<td>「サイトマップ図」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="第2章-プロジェクト体制スケジュール">第2章
+プロジェクト体制・スケジュール</h2>
+<h3 id="体制">2.1 体制</h3>
+<h4
+id="甲株式会社セイノースタッフサービス-お申込書より">甲(株式会社セイノースタッフサービス)
+— お申込書より</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>役割</th>
+<th>氏名</th>
+<th>連絡先</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人材紹介事業立ち上げ担当</td>
+<td>橋戸 様</td>
+<td>n.hashido@bridgedoor.jp</td>
+</tr>
+<tr>
+<td>メイン担当(求人担当)</td>
+<td>川上 紘矢 様</td>
+<td>hkawakami@sss.seino.co.jp</td>
+</tr>
+<tr>
+<td>サブ担当</td>
+<td>野間 様</td>
+<td>knoma@sss.seino.co.jp</td>
+</tr>
+<tr>
+<td>緊急時連絡先</td>
+<td>川上 紘矢 様</td>
+<td>080-8654-7172 / hkawakami@sss.seino.co.jp</td>
+</tr>
+</tbody>
+</table>
+<h4 id="乙anyreach-株式会社">乙(AnyReach 株式会社)</h4>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>氏名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>営業担当</td>
+<td>知野 敬太</td>
+</tr>
+<tr>
+<td>PM・開発</td>
+<td>渋谷 春樹、富澤 陽仁、井上 翔太</td>
+</tr>
+</tbody>
+</table>
+<h3 id="連絡手段">2.2 連絡手段</h3>
+<table>
+<thead>
+<tr>
+<th>場面</th>
+<th>手段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通常連絡・進捗共有</td>
+<td>Slack(専用チャネル)</td>
+</tr>
+<tr>
+<td>証憑必要時 / 要件確定通知</td>
+<td>メール</td>
+</tr>
+<tr>
+<td>仕様検討・方向性議論</td>
+<td>Google Meet(必要時)</td>
+</tr>
+<tr>
+<td>定例 MTG</td>
+<td>必要に応じ週1〜隔週(最大10回まで)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="全体スケジュール">2.3 全体スケジュール</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>フェーズ</th>
+<th>期間</th>
+<th>主担当</th>
+<th>成果物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>キックオフ</td>
+<td>2026/5/14</td>
+<td>両者</td>
+<td>キックオフ資料</td>
+</tr>
+<tr>
+<td>要件定義</td>
+<td>5/14〜5/28</td>
+<td>乙</td>
+<td><strong>本要件定義書 v1.0</strong></td>
+</tr>
+<tr>
+<td>Toroo 契約</td>
+<td>〜7/1</td>
+<td>甲</td>
+<td>Toroo アカウント</td>
+</tr>
+<tr>
+<td>DNS / AWS IAM 手配</td>
+<td>〜5/28</td>
+<td>甲(セイノー情報サービス様調整)</td>
+<td>サブドメイン / IAM 発行</td>
+</tr>
+<tr>
+<td>素材提供(ロゴ・写真・カラー)</td>
+<td>〜6/4</td>
+<td>甲</td>
+<td>別紙② に従う</td>
+</tr>
+<tr>
+<td>環境構築</td>
+<td>5/28〜6/11</td>
+<td>乙</td>
+<td>WP + Toroo 連携環境</td>
+</tr>
+<tr>
+<td>デザイン・コーディング</td>
+<td>6/11〜6/25</td>
+<td>乙</td>
+<td>全7ページ</td>
+</tr>
+<tr>
+<td>コンテンツ入稿確認</td>
+<td>〜6/25</td>
+<td>甲</td>
+<td>別紙① の確定</td>
+</tr>
+<tr>
+<td>テスト・修正</td>
+<td>6/25〜7/17</td>
+<td>両者</td>
+<td>テスト完了報告</td>
+</tr>
+<tr>
+<td>検収・本番リリース</td>
+<td>7/17〜7/31</td>
+<td>両者</td>
+<td>公開サイト</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注:</strong>
+甲側タスクの遅延発生時、リリース日も同日数スライドする(構築契約書
+第4条1項(2))。</p>
+<hr />
+<h2 id="第3章-サイト構成">第3章 サイト構成</h2>
+<h3 id="サイトマップ">3.1 サイトマップ</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>ページ</th>
+<th>URL</th>
+<th><code>&lt;title&gt;</code></th>
+<th>meta description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>トップ</td>
+<td><code>/</code></td>
+<td><code>SEINO AGENT</code></td>
+<td>SEINO
+AGENT(セイノーエージェント)はセイノーホールディングスグループの正社員向け人材紹介サービス。東海エリアを中心に、業種・職種を問わない転職支援と、国家資格キャリアコンサルタントによる伴走をご提供します。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>求人を探す</td>
+<td><code>/service.html</code></td>
+<td><code>求職者の方へ – SEINO AGENT</code></td>
+<td>東海エリアを中心とした正社員求人を多数掲載。職種・勤務地・雇用形態から条件にあった求人をお探しいただけます。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>採用担当者様へ</td>
+<td><code>/employers.html</code></td>
+<td><code>採用担当者様へ – SEINO AGENT</code></td>
+<td>完全成功報酬型の人材紹介。東海エリアに特化した採用活動と、セイノーグループ・採用代行で培ったノウハウで貴社の採用課題を解決します。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>実績・利用者様の声</td>
+<td><code>/voices.html</code></td>
+<td><code>実績・利用者様の声 – SEINO AGENT</code></td>
+<td>SEINO AGENT
+をご利用いただいた求職者の声と転職成功事例。年収アップ、地元定着、専門領域への転職など、東海エリアでの実績をご紹介します。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ご利用の流れ</td>
+<td><code>/flow.html</code></td>
+<td><code>ご利用の流れ – SEINO AGENT</code></td>
+<td>無料相談・ご登録から内定・入社までの5ステップと、よくあるご質問。専任のキャリアコンサルタントが平均3営業日以内にご連絡いたします。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>会社案内</td>
+<td><code>/about.html</code></td>
+<td><code>会社案内 – SEINO AGENT</code></td>
+<td>株式会社セイノースタッフサービスの会社概要・社長メッセージ。セイノーホールディングスグループの一員として、東海エリアの正社員転職を支援します。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>お問い合わせ</td>
+<td><code>/contact.html</code></td>
+<td><code>お問い合わせ – SEINO AGENT</code></td>
+<td>お仕事をお探しの方・採用ご担当者様、それぞれ専用フォームをご用意。平均3営業日以内にご連絡いたします。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="求人ページ-urltoroo">3.2 求人ページ URL(Toroo)</h3>
+<p>キックオフ確認項目 #16 で甲が選択:<code>/recruit/</code> /
+<code>/job/</code> / <code>/saiyo/</code>
+のいずれか。<strong>初期値:</strong> <code>/recruit/</code>(確定要)</p>
+<h3 id="対応環境">3.3 対応環境</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 10/11 最新、macOS 14 以降、iOS 17 以降、Android 14 以降</td>
+</tr>
+<tr>
+<td>ブラウザ</td>
+<td>Chrome / Safari / Edge(各最新版2バージョン)</td>
+</tr>
+<tr>
+<td>画面幅</td>
+<td>375px(モバイル) 〜 1440px(デスクトップ)レスポンシブ</td>
+</tr>
+<tr>
+<td>対象外</td>
+<td>Internet Explorer、各ブラウザのレガシーバージョン</td>
+</tr>
+</tbody>
+</table>
+<h3 id="共通ヘッダー-ナビゲーション">3.4 共通ヘッダー /
+ナビゲーション</h3>
+<ul>
+<li>左:SEINO AGENT ロゴ + セイノー HD グループ バッジ</li>
+<li>中央:7 ページのナビ(トップ / 求人を探す / 採用担当者様へ /
+実績・利用者様の声 / ご利用の流れ / 会社案内 / お問い合わせ)</li>
+<li>右:CTA ボタン「無料相談する →」</li>
+</ul>
+<h3 id="共通フッター">3.5 共通フッター</h3>
+<ul>
+<li>4 カラム:SEINO AGENT(紹介文+HD グループ)/ 求職者の方へ /
+採用ご担当者様 / お問い合わせ</li>
+<li>本社住所:〒503-0853 岐阜県大垣市田口町1番地、TEL 0584-81-8848、FAX
+0584-81-8853</li>
+<li>コピーライト:© 2026 株式会社セイノースタッフサービス All Rights
+Reserved.</li>
+<li>背景:青グラデ(<code>#173c88→#3a6bc8</code>)、見出し金、本文白系</li>
+</ul>
+<hr />
+<h2 id="第4章-デザイン要件">第4章 デザイン要件</h2>
+<h3 id="デザインコンセプト">4.1 デザインコンセプト</h3>
+<p>キックオフ確認項目
+#11:「<strong>踏襲ではなく刷新</strong>」(セイノーHDの信頼感は継承しつつ、エージェント事業向けに洗練)</p>
+<h3 id="ブランドカラー">4.2 ブランドカラー</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>カラーコード</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>プライマリ(青グラデ)</td>
+<td><code>linear-gradient(135deg,#173c88 0%,#3a6bc8 100%)</code></td>
+<td>セイノーブルー</td>
+</tr>
+<tr>
+<td>アクセント(赤)</td>
+<td><code>#b9292f</code></td>
+<td>セイノーレッド</td>
+</tr>
+<tr>
+<td>金(見出し・アクセント)</td>
+<td><code>#e8c877</code></td>
+<td>ゴールド</td>
+</tr>
+<tr>
+<td>白</td>
+<td><code>#ffffff</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>紺(本文用)</td>
+<td><code>#0a1d3a</code></td>
+<td>ネイビー</td>
+</tr>
+</tbody>
+</table>
+<p>青グラデは以下のセクション共通で使用: -
+全サブページのヒーロー(<code>.subpage-hero</code>) -
+クリーム色だったセクション(<code>.section--paper</code>)—
+会社概要・FAQ・採用支援サービス等 - 各ページ末尾の
+CTA帯(<code>.enterprise-cta</code>) - フッター -
+実績バナー(<code>.stats-banner</code>)</p>
+<h3 id="フォント">4.3 フォント</h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>フォント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本文(和文)</td>
+<td>Noto Sans JP / Zen Kaku Gothic Antique</td>
+</tr>
+<tr>
+<td>見出し(英文 eyebrow)</td>
+<td>システムサンセリフ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="フィードバック手段">4.4 フィードバック手段</h3>
+<p>キックオフ確認項目 #15:① Figma コメント / ② PDF 注釈 / ③ その他
+のいずれか。<strong>初期値:</strong> PDF 注釈(確定要)</p>
+<hr />
+<h2 id="第5章-コンテンツ要件">第5章 コンテンツ要件</h2>
+<h3 id="文言コピー">5.1 文言(コピー)</h3>
+<p>本サイトに掲載するすべての文言は、<strong>別紙①「掲載原稿一覧
+v1.0」</strong>に定める内容を本要件の一部とみなす。別紙①は Google
+スプレッドシートで管理し、本要件定義書 v1.0
+合意時点で「確定」とする。</p>
+<h4 id="主要文言本体から確認済み確定対象">5.1.1
+主要文言(本体から確認済み、確定対象)</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>ページ</th>
+<th>種別</th>
+<th>文言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全ページヘッダー</td>
+<td>タグライン</td>
+<td>東海エリアに強い総合人材紹介</td>
+</tr>
+<tr>
+<td>全ページヘッダー</td>
+<td>ヘッダーCTA</td>
+<td>無料相談する →</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>ヒーロー H1</td>
+<td>あなたの経験を、次のキャリアへ。</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>ヒーローCTA1</td>
+<td>無料でキャリア相談する →</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>ヒーローCTA2</td>
+<td>求人を検索する →</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>セクション見出し</td>
+<td>SEINO AGENT の強み</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>セクション見出し</td>
+<td>転職成功事例</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>セクション見出し</td>
+<td>企業の採用ご担当者様へ</td>
+</tr>
+<tr>
+<td>トップ</td>
+<td>CTA</td>
+<td>採用担当者様はこちら</td>
+</tr>
+<tr>
+<td>求人を探す</td>
+<td>サブヒーロー eyebrow</td>
+<td>Search Jobs</td>
+</tr>
+<tr>
+<td>求人を探す</td>
+<td>サブヒーロー H1</td>
+<td>求人を探す</td>
+</tr>
+<tr>
+<td>求人を探す</td>
+<td>CTA帯 eyebrow</td>
+<td>Career Consulting</td>
+</tr>
+<tr>
+<td>求人を探す</td>
+<td>CTA帯 見出し</td>
+<td>まずは、無料でキャリア相談を。</td>
+</tr>
+<tr>
+<td>求人を探す</td>
+<td>CTA帯 サブ</td>
+<td>あなたに合う求人を、プロが一緒に探します。</td>
+</tr>
+<tr>
+<td>求人を探す</td>
+<td>CTA帯 ボタン</td>
+<td>無料キャリア相談はこちら</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>サブヒーロー eyebrow</td>
+<td>For Hiring Managers</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>サブヒーロー H1</td>
+<td>採用担当者様へ</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>サブヒーロー本文</td>
+<td>セイノーHDグループの総合人材サービス会社として、貴社の採用課題を、業種・職種を問わず幅広くご支援いたします。</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>CTAボタン</td>
+<td>採用のご相談はこちら</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>セクション見出し</td>
+<td>OUR SERVICES / 採用支援サービス</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>4サービス名</td>
+<td>人材紹介(エージェント)/ 人材派遣 / アウトソーシング /
+外国人就労支援</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>セクション見出し</td>
+<td>WHY CHOOSE US / SEINO AGENTが選ばれる理由</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>CTA帯 eyebrow</td>
+<td>Free Consultation</td>
+</tr>
+<tr>
+<td>採用担当者様へ</td>
+<td>CTA帯 見出し</td>
+<td>まずはご相談ください</td>
+</tr>
+<tr>
+<td>実績・利用者様の声</td>
+<td>サブヒーロー eyebrow</td>
+<td>Track Record &amp; Voices</td>
+</tr>
+<tr>
+<td>実績・利用者様の声</td>
+<td>サブヒーロー H1</td>
+<td>実績・利用者様の声</td>
+</tr>
+<tr>
+<td>実績・利用者様の声</td>
+<td>実績指標(4軸)</td>
+<td>取引企業数 / 公開求人数 / 転職支援実績 / 利用者満足度</td>
+</tr>
+<tr>
+<td>実績・利用者様の声</td>
+<td>セクション見出し</td>
+<td>CUSTOMER VOICES / 利用者様の声(6件)</td>
+</tr>
+<tr>
+<td>実績・利用者様の声</td>
+<td>CTA帯 eyebrow</td>
+<td>Start Your Career</td>
+</tr>
+<tr>
+<td>実績・利用者様の声</td>
+<td>CTA帯 見出し</td>
+<td>あなたもキャリアアップを実現しませんか ※将来見直し検討項目</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>サブヒーロー eyebrow</td>
+<td>Service Flow</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>サブヒーロー H1</td>
+<td>ご利用の流れ</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>セクション見出し</td>
+<td>5 STEPS / 登録から内定・入社まで</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>5ステップ</td>
+<td>無料相談・ご登録 / キャリア面談 / 求人ご提案 / 応募・面接対策 /
+内定・入社</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>セクション見出し</td>
+<td>FAQ / よくあるご質問(5問)</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>CTA帯 eyebrow</td>
+<td>Start Today</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>CTA帯 見出し</td>
+<td>まずは無料相談から。</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>CTA帯 サブ</td>
+<td>平均3営業日以内にご連絡いたします。お気軽にお問い合わせください。</td>
+</tr>
+<tr>
+<td>ご利用の流れ</td>
+<td>CTA帯 ボタン</td>
+<td>無料相談する</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>サブヒーロー eyebrow</td>
+<td>About Us</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>サブヒーロー H1</td>
+<td>会社案内</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>セクション見出し</td>
+<td>OUR MISSION / あなたのキャリアに、最適な出会いを。</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>セクション見出し</td>
+<td>COMPANY PROFILE / 会社概要</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>セクション見出し</td>
+<td>MESSAGE FROM CEO / 社長メッセージ</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>セクション見出し</td>
+<td>PRIVACY POLICY / 個人情報の取り扱い</td>
+</tr>
+<tr>
+<td>会社案内</td>
+<td>セクション見出し</td>
+<td>SEINO GROUP / セイノーホールディングスグループの一員として</td>
+</tr>
+<tr>
+<td>お問い合わせ</td>
+<td>サブヒーロー eyebrow</td>
+<td>Contact Form</td>
+</tr>
+<tr>
+<td>お問い合わせ</td>
+<td>サブヒーロー H1</td>
+<td>お問い合わせ</td>
+</tr>
+<tr>
+<td>お問い合わせ</td>
+<td>求職者タブ見出し</td>
+<td>FREE CONSULTATION / 無料キャリア相談のお申し込み</td>
+</tr>
+<tr>
+<td>お問い合わせ</td>
+<td>企業タブ見出し</td>
+<td>For Hiring Managers / 採用ご相談のお申し込み</td>
+</tr>
+<tr>
+<td>お問い合わせ</td>
+<td>ボタン</td>
+<td>送信する</td>
+</tr>
+</tbody>
+</table>
+<h3 id="素材提供別紙②">5.2 素材提供(別紙②)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>提供素材</th>
+<th>形式</th>
+<th>提供期限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ロゴ(SEINO AGENT、セイノーHDグループ)</td>
+<td>SVG または PNG透過</td>
+<td>〜2026/6/4</td>
+</tr>
+<tr>
+<td>イメージ写真(オフィス・社員・業務シーン)</td>
+<td>JPG/PNG 1920px幅以上</td>
+<td>〜2026/6/4</td>
+</tr>
+<tr>
+<td>ブランドカラーコード</td>
+<td>テキスト指定</td>
+<td>〜2026/6/4</td>
+</tr>
+<tr>
+<td>会社紹介テキスト・キャッチコピー</td>
+<td>テキスト</td>
+<td>〜2026/6/4</td>
+</tr>
+<tr>
+<td>実績数値(4指標)</td>
+<td>テキスト</td>
+<td>〜2026/6/11</td>
+</tr>
+<tr>
+<td>利用者の声(コンサルタント紹介を含む)</td>
+<td>テキスト+顔写真または匿名</td>
+<td>〜2026/6/11</td>
+</tr>
+</tbody>
+</table>
+<p>提供がない素材は乙が業種別ストック写真または汎用プレースホルダで代替する。</p>
+<h3 id="求人データの取扱い">5.3 求人データの取扱い</h3>
+<ul>
+<li><strong>求人情報の登録は甲(セイノー採用担当)が Toroo
+管理画面で実施</strong>する</li>
+<li>求人ごとの画像(サムネイル)は、初期に乙がカテゴリ別(営業/IT/製造/物流
+等)の汎用画像 10〜15枚を Toroo
+に登録、運用フェーズで甲が必要に応じて差し替える</li>
+<li>既存 JobGear からの求人データ移行が必要な場合、甲が CSV
+エクスポートし Toroo にインポートする(キックオフ確認項目 #17)</li>
+</ul>
+<h3 id="コンテンツ提供責任">5.4 コンテンツ提供責任</h3>
+<p><strong>テキスト・画像素材等のコンテンツは甲よりご提供いただきます。</strong>
+提供遅延・不足に起因する納期遅延は乙の責に帰さない(構築契約書
+第4条1項(2))。</p>
+<hr />
+<h2 id="第6章-機能要件ページ別">第6章 機能要件(ページ別)</h2>
+<h3 id="共通機能全ページ">6.1 共通機能(全ページ)</h3>
+<ul>
+<li>固定ヘッダー(スクロール時も常時表示):ロゴ + ナビ +
+右上「無料相談する」CTA</li>
+<li>フッター(共通、青グラデ):4 カラム</li>
+<li>パンくずナビ(サブページ):トップ &gt; ページ名</li>
+<li>レスポンシブ(モバイル〜デスクトップ)</li>
+<li>スクロール時フェードイン演出(<code>.reveal</code> クラス)</li>
+<li>青ブランディング(青ヒーロー・section–paper
+の青化・CTA帯・フッター)</li>
+</ul>
+<h3 id="トップページ">6.2 トップページ(<code>/</code>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>セクション</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ヒーロー</td>
+<td>青グラデ背景・「あなたの経験を、次のキャリアへ。」+ 2
+CTA「無料でキャリア相談する」「求人を検索する」+
+写真コラージュ(ビジネスウーマン/作業員/ビジネスマン)</td>
+</tr>
+<tr>
+<td>検索シミュレーション(Toroo)</td>
+<td>DEMO 注意書き(モノクロ)+ 検索フォーム + おすすめ求人カード一覧</td>
+</tr>
+<tr>
+<td>SEINO AGENT の強み</td>
+<td>3 つの強み(東海エリア特化 等)</td>
+</tr>
+<tr>
+<td>転職成功事例</td>
+<td>カード型 3〜6 件のサクセスストーリー(別紙①にて確定)</td>
+</tr>
+<tr>
+<td>企業の採用ご担当者様へ</td>
+<td>採用担当者向け CTA → employers.html へリンク</td>
+</tr>
+<tr>
+<td>CTA帯</td>
+<td>終盤のキャリア相談誘導(<code>.enterprise-cta</code>)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="トップヒーロー画像">6.2.1 トップヒーロー画像</h4>
+<ul>
+<li>背景:<code>seino_bg_top.webp</code>(2560px、表紙忠実な青三角パターン)+
+左白スクリム(可読性確保)</li>
+<li>preload + LQIP(base64)で初期表示高速化済み</li>
+</ul>
+<h3 id="求人を探すページservice.html">6.3
+求人を探すページ(<code>/service.html</code>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>セクション</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サブヒーロー</td>
+<td>青グラデ・「Search Jobs / 求人を探す」</td>
+</tr>
+<tr>
+<td>検索フォーム(Toroo)</td>
+<td>職種・勤務地・雇用形態・フリーワード</td>
+</tr>
+<tr>
+<td>求人カード一覧(Toroo)</td>
+<td>カード型グリッド、ページネーション(契約後 Toroo が描画)</td>
+</tr>
+<tr>
+<td>求人詳細ページ(Toroo)</td>
+<td>カードから遷移、Toroo がルーティング(URL スラッグはキックオフ #16
+で決定)</td>
+</tr>
+<tr>
+<td>CTA帯</td>
+<td>「まずは、無料でキャリア相談を。」+「無料キャリア相談はこちら」ボタン</td>
+</tr>
+</tbody>
+</table>
+<h3 id="採用担当者様へページemployers.html">6.4
+採用担当者様へページ(<code>/employers.html</code>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>セクション</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サブヒーロー(青)</td>
+<td>「For Hiring Managers / 採用担当者様へ」+ 採用相談 CTA</td>
+</tr>
+<tr>
+<td>OUR SERVICES / 採用支援サービス(4種)</td>
+<td>人材紹介(エージェント)、人材派遣、アウトソーシング、外国人就労支援(各カード:アイコン・タイトル・説明)</td>
+</tr>
+<tr>
+<td>WHY CHOOSE US / SEINO AGENTが選ばれる理由</td>
+<td>強み訴求</td>
+</tr>
+<tr>
+<td>CTA帯</td>
+<td>「Free Consultation /
+まずはご相談ください」+「採用のご相談はこちら」ボタン</td>
+</tr>
+</tbody>
+</table>
+<h3 id="実績利用者様の声ページvoices.html">6.5
+実績・利用者様の声ページ(<code>/voices.html</code>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>セクション</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サブヒーロー(青)</td>
+<td>「Track Record &amp; Voices / 実績・利用者様の声」</td>
+</tr>
+<tr>
+<td>実績バナー(<code>.stats-banner</code>、青地)</td>
+<td>取引企業数 / 公開求人数 / 転職支援実績 /
+利用者満足度(4指標、数字=白、単位=金)</td>
+</tr>
+<tr>
+<td>CUSTOMER VOICES / 利用者様の声</td>
+<td>6 件の体験談カード(タイトル+本文+属性)</td>
+</tr>
+<tr>
+<td>CTA帯</td>
+<td>「Start Your Career / あなたもキャリアアップを実現しませんか」</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ご利用の流れページflow.html">6.6
+ご利用の流れページ(<code>/flow.html</code>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>セクション</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サブヒーロー(青)</td>
+<td>「Service Flow / ご利用の流れ」</td>
+</tr>
+<tr>
+<td>5 STEPS / 登録から内定・入社まで</td>
+<td>① 無料相談・ご登録 ② キャリア面談 ③ 求人ご提案 ④ 応募・面接対策 ⑤
+内定・入社</td>
+</tr>
+<tr>
+<td>FAQ / よくあるご質問(青地、白カード)</td>
+<td>5 問(利用料金、登録後の義務、現職継続、期間、秘密)</td>
+</tr>
+<tr>
+<td>CTA帯</td>
+<td>「Start Today / まずは無料相談から。」+「無料相談する」ボタン</td>
+</tr>
+</tbody>
+</table>
+<h4 id="faq-全-5-問">6.6.1 FAQ 全 5 問</h4>
+<ol type="1">
+<li>利用料金はかかりますか?</li>
+<li>登録後、必ず転職しなければなりませんか?</li>
+<li>現職を続けながら相談できますか?</li>
+<li>どのくらいの期間で転職できますか?</li>
+<li>秘密は守られますか?</li>
+</ol>
+<h3 id="会社案内ページabout.html">6.7
+会社案内ページ(<code>/about.html</code>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>セクション</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サブヒーロー(青)</td>
+<td>「About Us / 会社案内」</td>
+</tr>
+<tr>
+<td>OUR MISSION</td>
+<td>「あなたのキャリアに、最適な出会いを。」</td>
+</tr>
+<tr>
+<td>COMPANY PROFILE / 会社概要(青地、白テーブル)</td>
+<td>社名、サービス名、設立、代表者、資本金、従業員数、本社所在地、代表電話、全国9拠点、事業内容、許可番号、認証、所属団体、親会社、グループ会社</td>
+</tr>
+<tr>
+<td>MESSAGE FROM CEO / 社長メッセージ</td>
+<td>テキスト+顔写真</td>
+</tr>
+<tr>
+<td>PRIVACY POLICY / 個人情報の取り扱い(青地、ボックスなし白文字)</td>
+<td>プライバシーマーク取得告知+方針 PDF リンク</td>
+</tr>
+<tr>
+<td>SEINO GROUP / セイノーホールディングスグループの一員として</td>
+<td>グループ紹介</td>
+</tr>
+</tbody>
+</table>
+<h4 id="会社概要本体確認済み確定値">6.7.1
+会社概要(本体確認済み、確定値)</h4>
+<ul>
+<li>社名:株式会社セイノースタッフサービス</li>
+<li>サービス名:SEINO AGENT(セイノーエージェント)</li>
+<li>設立:平成8年(1996年)9月5日</li>
+<li>代表者:取締役社長 岩村 彰憲</li>
+<li>資本金:4,500万円</li>
+<li>従業員数:109名(2025年4月時点)</li>
+<li>本社所在地:〒503-0853 岐阜県大垣市田口町1番地</li>
+<li>代表電話:0584-81-8848(FAX:0584-81-8853)</li>
+<li>全国拠点:関東支店(東京)/北関東出張所(群馬)/仙台出張所(宮城)/東海支店(愛知)/静岡営業所/中部支店(岐阜)/関出張所(岐阜)/関西支店(大阪)/広島営業所(全9拠点)</li>
+<li>事業内容:人材派遣事業 / 人材紹介事業 / アウトソーシング事業 /
+外国人就労支援事業</li>
+<li>許可番号:有料職業紹介事業 21-ユ-300130、労働者派遣事業
+派21-020010、登録支援機関 20登-003844</li>
+<li>認証:プライバシーマーク(2025年9月取得)</li>
+<li>所属団体:日本人材派遣協会(JASSA)/ 日本BPO協会</li>
+<li>親会社:セイノーホールディングス株式会社(東証プライム上場)</li>
+<li>グループ会社:西濃運輸 / 西濃シェンカー / セイノー情報サービス /
+セイノー商事 / 岐阜日野自動車 他</li>
+</ul>
+<h3 id="お問い合わせフォームcontact.html">6.8
+お問い合わせフォーム(<code>/contact.html</code>)</h3>
+<h4 id="構造">6.8.1 構造</h4>
+<p>2 タブ構成。タブ切替で表示フォームを切り替え。</p>
+<h4 id="求職者タブ無料キャリア相談のお申し込み">6.8.2
+求職者タブ「無料キャリア相談のお申し込み」</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>項目</th>
+<th>種別</th>
+<th>必須</th>
+<th>プレースホルダ/値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>お名前</td>
+<td>text</td>
+<td>⭕</td>
+<td>山田 太郎</td>
+</tr>
+<tr>
+<td>2</td>
+<td>電話番号</td>
+<td>tel</td>
+<td>⭕</td>
+<td>0901234567</td>
+</tr>
+<tr>
+<td>3</td>
+<td>メールアドレス</td>
+<td>email</td>
+<td>⭕</td>
+<td>example@example.com</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ご希望職種</td>
+<td>select</td>
+<td>⭕</td>
+<td>(職種マスタからの選択)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ご希望勤務地</td>
+<td>text</td>
+<td>—</td>
+<td>例:愛知県名古屋市、岐阜県大垣市</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ご相談内容</td>
+<td>textarea</td>
+<td>⭕</td>
+<td>現在のお仕事、転職希望時期、ご希望条件などをご記入ください。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>プライバシーポリシー同意</td>
+<td>checkbox</td>
+<td>⭕</td>
+<td>同意する</td>
+</tr>
+</tbody>
+</table>
+<h4 id="企業タブ採用ご相談のお申し込み">6.8.3
+企業タブ「採用ご相談のお申し込み」</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>項目</th>
+<th>種別</th>
+<th>必須</th>
+<th>プレースホルダ/値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ご担当者名</td>
+<td>text</td>
+<td>⭕</td>
+<td>山田 太郎</td>
+</tr>
+<tr>
+<td>2</td>
+<td>会社名</td>
+<td>text</td>
+<td>⭕</td>
+<td>株式会社○○○○</td>
+</tr>
+<tr>
+<td>3</td>
+<td>部署・役職</td>
+<td>text</td>
+<td>—</td>
+<td>例:人事部 採用担当</td>
+</tr>
+<tr>
+<td>4</td>
+<td>電話番号</td>
+<td>tel</td>
+<td>⭕</td>
+<td>0584000000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>メールアドレス</td>
+<td>email</td>
+<td>⭕</td>
+<td>example@example.com</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ご相談内容(業種・職種)</td>
+<td>select</td>
+<td>⭕</td>
+<td>(業種マスタからの選択)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ご相談内容</td>
+<td>textarea</td>
+<td>⭕</td>
+<td>採用要件、ご希望時期、想定ポジション、ご質問などをご記入ください。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>プライバシーポリシー同意</td>
+<td>checkbox</td>
+<td>⭕</td>
+<td>同意する</td>
+</tr>
+</tbody>
+</table>
+<h4 id="バリデーション">6.8.4 バリデーション</h4>
+<ul>
+<li>必須項目チェック</li>
+<li>メール形式チェック(<code>@</code> 含む形式)</li>
+<li>電話番号は数字のみ</li>
+<li>送信前にプライバシーポリシー同意必須</li>
+<li>送信ボタンクリック後、完了画面 or トースト表示</li>
+</ul>
+<h4 id="送信先送信方式">6.8.5 送信先・送信方式</h4>
+<p>キックオフ確認項目 #14 で甲が選択: - <strong>① Google
+スプレッドシート連携(推奨・無料)</strong> ← <strong>初期推奨</strong> -
+② 指定メールアドレスへ転送 - ③ 既存 seino-ss.jp と同方式</p>
+<h4 id="送信先メールアドレス複数可">6.8.6
+送信先メールアドレス(複数可)</h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>タブ</th>
+<th>送信先(初期想定)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>求職者タブ</td>
+<td>hkawakami@sss.seino.co.jp, knoma@sss.seino.co.jp</td>
+</tr>
+<tr>
+<td>企業タブ</td>
+<td>hkawakami@sss.seino.co.jp, knoma@sss.seino.co.jp,
+n.hashido@bridgedoor.jp</td>
+</tr>
+</tbody>
+</table>
+<p>→ v1.0 までに甲側で確定要。複数宛先は WP Mail SMTP のヘッダー To/Cc
+設定で対応。</p>
+<h4 id="送信タイミング">6.8.7 送信タイミング</h4>
+<p>フォーム送信から <strong>数秒以内</strong>(SMTP 経由、Brevo 等)。</p>
+<h4 id="自動返信">6.8.8 自動返信</h4>
+<ul>
+<li>送信者(エンドユーザー)宛に「お問い合わせを受け付けました。平均3営業日以内にご連絡いたします。」の自動返信メール</li>
+</ul>
+<h3 id="seo解析機能">6.9 SEO・解析機能</h3>
+<ul>
+<li>全ページ <code>&lt;title&gt;</code> / <code>meta description</code>
+個別設定(第3.1章の表に確定値あり)</li>
+<li>構造化データ:Organization JSON-LD(about.html に実装済み)</li>
+<li>クリーンパーマリンク(<code>/service.html</code>、<code>/recruit/{slug}/</code>
+等)</li>
+<li>sitemap.xml / robots.txt 自動生成</li>
+<li>Google Analytics 4 / Google Search Console 連携(初期設定のみ)</li>
+<li>robots <code>noindex</code> 解除(本番リリース時のみ。検証中は
+noindex 保持)</li>
+</ul>
+<h3 id="表示パフォーマンス要件">6.10 表示パフォーマンス要件</h3>
+<ul>
+<li>トップヒーローは preload + LQIP で初期表示 0.3
+秒以内に基本構図を見せる(現状実装済みの方針を継承)</li>
+<li>画像は WebP + PNG フォールバック</li>
+<li>PageSpeed Insights モバイルスコア 70 以上を目標</li>
+</ul>
+<h3 id="スコープ外本案件で含まない">6.11
+スコープ外(本案件で含まない)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>カテゴリ</th>
+<th>含まないもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>会員機能</td>
+<td>求職者マイページ、お気に入り保存、パスワード管理</td>
+</tr>
+<tr>
+<td>決済</td>
+<td>任意の決済処理</td>
+</tr>
+<tr>
+<td>多言語</td>
+<td>英語/中国語切替</td>
+</tr>
+<tr>
+<td>ブログ・コラム機能</td>
+<td>WordPress 投稿テーマ拡張</td>
+</tr>
+<tr>
+<td>メルマガ配信</td>
+<td>配信スタンド構築</td>
+</tr>
+<tr>
+<td>LINE / Chat 連携</td>
+<td>LINE 公式・チャットボット</td>
+</tr>
+<tr>
+<td>既存サイト改修</td>
+<td>seino-ss.jp への変更</td>
+</tr>
+<tr>
+<td>動画コンテンツ制作</td>
+<td>撮影・編集</td>
+</tr>
+<tr>
+<td>デザイン以外の追加ページ</td>
+<td>上記7ページ以外</td>
+</tr>
+<tr>
+<td>求人原稿・コンサルタント紹介の執筆代行</td>
+<td>全てクライアント原稿提供前提</td>
+</tr>
+</tbody>
+</table>
+<p>スコープ外要望は第14章「変更管理」に従い別途見積。</p>
+<hr />
+<h2 id="第7章-システム技術要件">第7章 システム・技術要件</h2>
+<h3 id="技術スタック">7.1 技術スタック</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>区分</th>
+<th>採用技術</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMS</td>
+<td>WordPress(最新安定版)</td>
+<td>Toroo 動作検証済みは WordPress のみ(Toroo 社確認)</td>
+</tr>
+<tr>
+<td>求人管理</td>
+<td>Toroo プラグイン(株式会社ダトラ)</td>
+<td>キックオフ #1 確定</td>
+</tr>
+<tr>
+<td>テーマ</td>
+<td>カスタムテーマ(本案件用)</td>
+<td>既に anyreach.github.io/seino
+でデモ実装中、SEO・速度・カスタマイズ性◎</td>
+</tr>
+<tr>
+<td>セキュリティ</td>
+<td>SiteGuard WP Plugin</td>
+<td>管理画面保護、Toroo との干渉低</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>All in One SEO 等(無料版)</td>
+<td>meta / JSON-LD 出力</td>
+</tr>
+<tr>
+<td>バックアップ</td>
+<td>UpdraftPlus 等(無料版、保守費に含む)</td>
+<td>日次自動</td>
+</tr>
+<tr>
+<td>メール送信</td>
+<td>WP Mail SMTP + Brevo(無料 9,000 通/月)</td>
+<td>フォーム送信メール</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toroo-連携">7.2 Toroo 連携</h3>
+<ul>
+<li>Toroo は
+SaaS(株式会社ダトラ提供)。<strong>甲が直接ダトラ社と契約</strong>(キックオフ
+#1)</li>
+<li>求人 UI は Toroo の JS タグを WordPress ページに埋め込んで描画</li>
+<li>求人登録・応募者管理は <strong>Toroo
+管理画面で甲が実施</strong>(乙はサイト構築のみ担当、Toroo
+運用研修は別途)</li>
+<li><strong>Toroo プラグイン側の不具合は乙の責任範囲外</strong>(構築契約
+第17条1項、保守契約 第12条1項)</li>
+</ul>
+<h3 id="wordpress-管理画面">7.3 WordPress 管理画面</h3>
+<ul>
+<li>管理画面
+URL:カスタムスラッグ(セキュリティ強化、<code>/wp-admin</code>
+直接アクセス制限)</li>
+<li>権限:Administrator(甲側 1〜2 名)、Editor(必要に応じ追加)</li>
+<li>乙は構築期間中のみアクセス権を保有、検収完了時に甲へ移譲(構築契約
+第9条1項)</li>
+</ul>
+<hr />
+<h2 id="第8章-インフラ要件">第8章 インフラ要件</h2>
+<h3 id="ドメイン">8.1 ドメイン</h3>
+<ul>
+<li><strong>第一候補:</strong> サブドメイン(例
+<code>career.seino-ss.jp</code>)</li>
+<li>セイノー情報サービス様の DNS(Route 53)に A
+レコード追加を依頼(キックオフ タスク #2)</li>
+<li><strong>フォールバック:</strong> 独立ドメイン(例
+<code>seino-jinzai.jp</code>)を甲が新規取得(お名前.com
+等、年間数千円、甲負担)</li>
+</ul>
+<h3 id="サーバホスティング">8.2 サーバ・ホスティング</h3>
+<p>キックオフ確認項目 #6:<strong>プラン A(既存 AWS 活用)</strong></p>
+<ul>
+<li>AWS アカウント:甲既存(セイノー情報サービス様運用)</li>
+<li>インスタンス:新規 EC2 を当該アカウントに追加</li>
+<li>インフラ層(EC2/OS/ミドルウェア)の保守:<strong>甲(セイノー情報サービス様)</strong></li>
+<li>アプリケーション層(WordPress
+本体・テーマ・プラグイン)の保守:<strong>乙</strong>(保守契約)</li>
+<li>フォールバック:レンタルサーバー(Xserver 等、月額 1,000〜3,000
+円、甲直接契約)</li>
+</ul>
+<h3 id="ssl">8.3 SSL</h3>
+<ul>
+<li>Let’s Encrypt(自動更新)、全ページ HTTPS、HSTS ヘッダ設定</li>
+</ul>
+<h3 id="メール送信">8.4 メール送信</h3>
+<ul>
+<li><strong>Brevo(旧 Sendinblue)無料プラン</strong>(月 9,000 通 / 日 300
+通)を初期採用</li>
+<li>超過時は甲負担で有料プラン移行(月額 ¥3,000 〜)</li>
+<li>送信元アドレス:甲指定(例
+<code>noreply@career.seino-ss.jp</code>)</li>
+<li>SPF/DKIM 設定:乙が初期実施</li>
+</ul>
+<h3 id="費用負担区分">8.5 費用負担区分</h3>
+<table>
+<thead>
+<tr>
+<th>費用</th>
+<th>負担</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ドメイン取得・更新費</td>
+<td><strong>甲</strong></td>
+</tr>
+<tr>
+<td>AWS / レンタルサーバー利用料</td>
+<td><strong>甲</strong></td>
+</tr>
+<tr>
+<td>Toroo 利用料(月額)</td>
+<td><strong>甲</strong></td>
+</tr>
+<tr>
+<td>SSL 証明書</td>
+<td>無料(Let’s Encrypt)</td>
+</tr>
+<tr>
+<td>WP / プラグイン本体</td>
+<td>無料</td>
+</tr>
+<tr>
+<td>Brevo SMTP</td>
+<td>無料枠内 0 円、超過時 甲負担</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="第9章-seo-要件">第9章 SEO 要件</h2>
+<h3 id="対策範囲キックオフ-8">9.1 対策範囲(キックオフ #8)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>課題</th>
+<th>対応</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URL の検索エンジン解釈困難(既存サイトの val91_ パラメータ等)</td>
+<td>クリーンパーマリンク(<code>/service.html</code>、<code>/recruit/{slug}/</code>)</td>
+</tr>
+<tr>
+<td>meta 情報未整備</td>
+<td>全ページ title / description 個別設定(第3.1章で確定済み)</td>
+</tr>
+<tr>
+<td>構造化データ未実装</td>
+<td>JSON-LD(Organization スキーマ等)を実装</td>
+</tr>
+</tbody>
+</table>
+<h3 id="スコープ外">9.2 スコープ外</h3>
+<ul>
+<li>公開後の SEO 順位改善コンサル(別契約での提案可)</li>
+<li>被リンク獲得施策</li>
+<li>Google 広告運用</li>
+</ul>
+<hr />
+<h2 id="第10章-セキュリティ要件">第10章 セキュリティ要件</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>対応</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ログイン保護</td>
+<td>SiteGuard WP(管理画面 URL 変更、試行制限、画像認証)</td>
+</tr>
+<tr>
+<td>通信</td>
+<td>全ページ HTTPS、HSTS</td>
+</tr>
+<tr>
+<td>個人情報</td>
+<td>フォーム送信は SSL 暗号化、プライバシーポリシー同意必須</td>
+</tr>
+<tr>
+<td>バックアップ</td>
+<td>UpdraftPlus 等で日次自動、30日保持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="スコープ外-1">スコープ外</h3>
+<ul>
+<li>WAF / DDoS 対策(必要時は甲側 AWS WAF 活用)</li>
+<li>脆弱性診断(別契約)</li>
+<li>ペネトレーションテスト</li>
+</ul>
+<hr />
+<h2 id="第11章-リリーステスト要件">第11章 リリース・テスト要件</h2>
+<h3 id="検証環境">11.1 検証環境</h3>
+<ul>
+<li>構築中:GitHub Pages 等の検証用 URL(現状の anyreach.github.io/seino
+と同等)</li>
+<li>本番リリース直前:AWS Staging 環境で最終確認</li>
+</ul>
+<h3 id="テスト項目">11.2 テスト項目</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>区分</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>機能テスト</td>
+<td>全7ページ表示、ナビゲーション、フォーム送信(2タブ)、Toroo 連携、SEO
+メタ出力、自動返信メール到達</td>
+</tr>
+<tr>
+<td>デザインテスト</td>
+<td>デザインカンプとの照合、青グラデ適用範囲、レスポンシブ</td>
+</tr>
+<tr>
+<td>ブラウザ互換</td>
+<td>Chrome / Safari / Edge 各最新版</td>
+</tr>
+<tr>
+<td>デバイス</td>
+<td>iPhone(Safari)、Android(Chrome)、デスクトップ</td>
+</tr>
+<tr>
+<td>パフォーマンス</td>
+<td>PageSpeed Insights モバイル 70 以上</td>
+</tr>
+<tr>
+<td>アクセシビリティ</td>
+<td>基本的な alt 属性付与、見出し階層(WCAG AA レベル準拠は別契約)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="検収手続き構築契約書-第11条">11.3 検収手続き(構築契約書
+第11条)</h3>
+<ol type="1">
+<li>乙が成果物を納入</li>
+<li><strong>甲は 10 営業日以内</strong>
+に検収結果を書面/メールで通知</li>
+<li>期間内通知なき場合は検収完了とみなす</li>
+<li>検収不合格の場合、乙が修正し再納入</li>
+</ol>
+<h3 id="リリース手順">11.4 リリース手順</h3>
+<ol type="1">
+<li>検収合格通知の受領</li>
+<li>本番環境への最終デプロイ</li>
+<li>DNS 切替(必要に応じて)</li>
+<li>動作確認(乙)</li>
+<li>公開承認(甲、キックオフ タスク #8)</li>
+<li>公開</li>
+</ol>
+<hr />
+<h2 id="第12章-運用保守sla">第12章 運用保守・SLA</h2>
+<h3 id="保守業務保守契約書-第2条">12.1 保守業務(保守契約書 第2条)</h3>
+<ul>
+<li>乙の責に帰すべき事由により生じたシステム不具合の調査・復旧</li>
+<li>WordPress 本体・テーマ・プラグインのアップデート対応(月 1
+回程度)</li>
+<li>バックアップ運用</li>
+<li>軽微な文言・画像差し替え(月 2 件まで、各 30 分以内)</li>
+<li>セキュリティアラート対応</li>
+</ul>
+<h3 id="受付作業時間保守契約書-第2条2項">12.2 受付・作業時間(保守契約書
+第2条2項)</h3>
+<ul>
+<li><strong>受付:</strong> 月〜金 10:00〜19:00</li>
+<li><strong>作業:</strong> 月〜金 10:00〜19:00</li>
+<li>休日:土日祝、年末年始、乙が別途定める日</li>
+<li><strong>緊急障害発生時:</strong> 合理的範囲で休日・時間外も対応</li>
+</ul>
+<h3 id="保守費お申込書保守契約書-第5条">12.3 保守費(お申込書・保守契約書
+第5条)</h3>
+<ul>
+<li><strong>月額 ¥30,000(税抜)</strong></li>
+<li>当月分を翌月第5営業日までに乙が請求、甲は翌月末日までに支払</li>
+</ul>
+<h3 id="保守期間保守契約書-第4条">12.4 保守期間(保守契約書 第4条)</h3>
+<ul>
+<li>検収完了翌日から <strong>1年間</strong></li>
+<li>期間満了
+1ヶ月前までに非更新の書面通知がなければ、<strong>6ヶ月単位で自動更新</strong></li>
+</ul>
+<h3 id="保守スコープ外都度別途見積">12.5
+保守スコープ外(都度別途見積)</h3>
+<ul>
+<li>新規ページ追加・デザイン変更</li>
+<li>機能追加開発</li>
+<li>月 2 件・各 30 分を超える文言/画像差し替え</li>
+<li>Toroo プラグイン本体の不具合(ダトラ社へ問合せ要)</li>
+<li>第三者サービスの仕様変更対応</li>
+<li>データ移行・大量コンテンツ入稿</li>
+<li>セキュリティ脆弱性診断</li>
+<li>24/7 監視</li>
+</ul>
+<h3 id="賠償責任上限保守契約書-第11条">12.6 賠償責任上限(保守契約書
+第11条)</h3>
+<ul>
+<li>月額委託料の <strong>12 ヶ月分</strong>(=¥360,000)を上限</li>
+</ul>
+<hr />
+<h2 id="第13章-責任範囲免責契約整合">第13章
+責任範囲・免責・契約整合</h2>
+<h3 id="著作権構築契約書-第14条">13.1 著作権(構築契約書 第14条)</h3>
+<ul>
+<li>本件成果物の著作権は <strong>甲(セイノー)に帰属</strong></li>
+<li>ただし、乙が業務開始以前から有する知的財産権、本件業務と同種業務に共通利用されるノウハウ・モジュールは
+<strong>乙に留保</strong></li>
+<li>甲は留保された権利を、成果物運用上必要な範囲で
+<strong>無償利用可</strong></li>
+</ul>
+<h3 id="不一致修補構築契約書-第12条">13.2 不一致修補(構築契約書
+第12条)</h3>
+<ul>
+<li>検収完了後 <strong>3 ヶ月以内</strong>
+に甲から請求された場合に限り、乙は仕様書との不一致を無償修補</li>
+<li>甲の協力義務違反に起因する不一致は適用外</li>
+</ul>
+<h3 id="賠償責任構築契約書-第16条">13.3 賠償責任(構築契約書 第16条)</h3>
+<ul>
+<li>賠償上限は <strong>委託料総額(¥400,000)</strong> まで</li>
+</ul>
+<h3 id="免責事項構築契約書-第17条保守契約書-第12条">13.4
+免責事項(構築契約書 第17条、保守契約書 第12条)</h3>
+<p>乙は以下について一切の責任を負わない: -
+乙の責に帰すことができない事由(サーバ不具合、第三者サービス仕様変更等) -
+公開後にエンドユーザー等の第三者から発生したクレーム -
+公開後のアクセス数・売上・応募数等の増減 -
+甲のシステム環境変更、サーバメンテナンス等の乙管理外要因 -
+第三者サービスの利用料増額・サービス内容変更</p>
+<h3 id="秘密保持">13.5 秘密保持</h3>
+<p>別途締結の <strong>秘密保持契約書(NDA)</strong>
+に従う。本件業務で甲乙が相互開示する情報は、本目的以外に使用せず、必要最小限の関係者(役員・受領従業員・グループ会社・顧問専門家)以外に開示しない。</p>
+<h3 id="再委託">13.6 再委託</h3>
+<ul>
+<li>構築:乙の責任において再委託可(構築契約 第8条)</li>
+<li>保守:<strong>事前に甲の書面承諾が必要</strong>(保守契約 第7条)</li>
+</ul>
+<h3 id="反社条項">13.7 反社条項</h3>
+<p>両者は反社会的勢力でないことを表明保証。違反判明時は無催告解除可。</p>
+<hr />
+<h2 id="第14章-変更管理手戻り防止">第14章 変更管理(手戻り防止)</h2>
+<h3 id="変更要求フロー">14.1 変更要求フロー</h3>
+<pre><code>STEP 1: 甲より変更要求(Slack または メール)
+STEP 2: 乙が影響範囲・工数・費用を見積(2 営業日以内に回答)
+STEP 3: 甲が承諾(書面 / メール)
+STEP 4: 乙が変更要求書(Change Request)を発行
+STEP 5: 着手・追加納品</code></pre>
+<h3 id="修正回数の目安無償範囲">14.2 修正回数の目安(無償範囲)</h3>
+<table>
+<thead>
+<tr>
+<th>区分</th>
+<th>修正回数</th>
+<th>超過時</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ワイヤーフレーム</td>
+<td>2 回</td>
+<td>別途見積</td>
+</tr>
+<tr>
+<td>デザインカンプ</td>
+<td>2 回</td>
+<td>別途見積</td>
+</tr>
+<tr>
+<td>コーディング</td>
+<td>2 回</td>
+<td>別途見積</td>
+</tr>
+<tr>
+<td>文言修正(別紙①確定前)</td>
+<td>制限なし</td>
+<td>—</td>
+</tr>
+<tr>
+<td>文言修正(別紙①確定後)</td>
+<td>1 ページあたり 1 回</td>
+<td>別途見積</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文言確定の重要性">14.3 文言確定の重要性</h3>
+<p><strong>別紙①「掲載原稿一覧」は本要件定義書 v1.0
+合意時点で確定</strong>。確定後の文言修正は変更管理対象。</p>
+<h3 id="スケジュール変更">14.4 スケジュール変更</h3>
+<p>甲側タスク(素材提供、検収応答等)の遅延発生時、納期も同日数スライドする(構築契約
+第4条1項(2))。</p>
+<hr />
+<h2 id="第15章-別紙">第15章 別紙</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>別紙名</th>
+<th>形式</th>
+<th>状態</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>別紙①</td>
+<td>掲載原稿一覧 v1.0(全ページ文言全件)</td>
+<td>Google Sheets → PDF</td>
+<td>別途作成中(本書 5.1.1 より抽出可能)</td>
+</tr>
+<tr>
+<td>別紙②</td>
+<td>素材提供リスト</td>
+<td>Google Sheets → PDF</td>
+<td>別途作成</td>
+</tr>
+<tr>
+<td>別紙③</td>
+<td>サイトマップ図</td>
+<td>Figma / Google Drawings</td>
+<td>別途作成</td>
+</tr>
+<tr>
+<td>別紙④</td>
+<td>デザインカンプ</td>
+<td>Figma リンク or anyreach.github.io/seino</td>
+<td>既存デモあり</td>
+</tr>
+<tr>
+<td>別紙⑤</td>
+<td>Toroo 連携仕様書</td>
+<td>Google Docs</td>
+<td>別途作成</td>
+</tr>
+</tbody>
+</table>
+<p>別紙はすべて本要件定義書の一部とみなし、v1.0
+確定時点で各別紙の版数も凍結する。</p>
+<hr />
+<h2 id="第16章-合意">第16章 合意</h2>
+<p>本要件定義書 v1.0
+の内容について、甲乙双方が合意した時点で以下を確定する: - 第3章
+サイト構成(7ページ、URL構造、メタ情報、対応環境) - 第5章
+コンテンツ要件(別紙①、別紙②) - 第6章
+機能要件(全ページ別、フォーム仕様、Toroo 連携範囲) - 第7章
+技術要件(WordPress + Toroo) - 第8章 インフラ要件(AWS + サブドメイン) -
+第9章 SEO 要件 - 第10章 セキュリティ要件 - 第11章 リリース・テスト要件 -
+第12章 運用保守・SLA - 第13章 責任範囲・免責(各契約書と整合)</p>
+<p>合意方法:<strong>メールにて「本要件定義書 v1.0
+に同意します」と返信</strong>(構築契約
+第8条「電子メールによる合意形成」)</p>
+<p>合意後の変更は第14章に従う。</p>
+<hr />
+<h2 id="第17章-残課題キックオフ確認項目-v0.2-追加分">第17章
+残課題(キックオフ確認項目 + v0.2 追加分)</h2>
+<p>v1.0 確定までに甲側で決定が必要な事項:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>項目</th>
+<th>選択肢</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>新サービス名</td>
+<td>✅ <strong>SEINO AGENT(セイノーエージェント)</strong></td>
+<td>本体実装で確定済</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>サブドメイン名</td>
+<td><code>career.seino-ss.jp</code> / 他</td>
+<td>キックオフ #3</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>URL スラッグ(求人)</td>
+<td>recruit / job / saiyo</td>
+<td>キックオフ #16</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>デザイン方向性</td>
+<td>✅ <strong>刷新</strong></td>
+<td>確定済</td>
+</tr>
+<tr>
+<td>Q5</td>
+<td>素材提供期限</td>
+<td>〜2026/6/4 で OK か</td>
+<td>キックオフ #12</td>
+</tr>
+<tr>
+<td>Q6</td>
+<td>フォーム送信方式</td>
+<td>① Sheets ② メール ③ 現行踏襲</td>
+<td>キックオフ #14、推奨 ①</td>
+</tr>
+<tr>
+<td>Q7</td>
+<td>フォーム送信先メールアドレス</td>
+<td>6.8.6 の宛先で OK か</td>
+<td>本要件</td>
+</tr>
+<tr>
+<td>Q8</td>
+<td>フィードバック手段</td>
+<td>Figma / PDF / 他</td>
+<td>キックオフ #15</td>
+</tr>
+<tr>
+<td>Q9</td>
+<td>JobGear 既存求人データ移行</td>
+<td>Yes / No</td>
+<td>キックオフ #17</td>
+</tr>
+<tr>
+<td>Q10</td>
+<td>実績数値・利用者の声 提供期限</td>
+<td>〜2026/6/11 で OK か</td>
+<td>キックオフ #13</td>
+</tr>
+<tr>
+<td>Q11</td>
+<td>「あなたもキャリアアップを実現しませんか」(voices ページ
+CTA)文言の見直し</td>
+<td>維持 / 変更</td>
+<td>本書 5.1.1 注記</td>
+</tr>
+<tr>
+<td>Q12</td>
+<td>取引先企業ロゴ帯の表示有無(現状:トップ・採用担当・実績・会社案内に表示、求人/流れ/問い合わせ非表示)</td>
+<td>現状維持 / 全削除 / 他</td>
+<td>本体実装より</td>
+</tr>
+<tr>
+<td>Q13</td>
+<td>お問い合わせフォームの実装方式(WP Contact Form 7 + Sheets連携
+等)</td>
+<td>推奨案で OK か</td>
+<td>本要件 6.8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>本要件定義書は
+v0.2(サイト本体反映済みドラフト)です。</strong> 上記 Q2〜Q3、Q5〜Q13
+の確定および別紙①〜⑤の作成を経て v1.0
+へ昇格、両者メール合意により正本化します。</p>
+<hr />
+<p><strong>(以上)</strong></p>
+</body>
+</html>
