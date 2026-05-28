@@ -112,10 +112,10 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .group-badge {
   display: flex;
   align-items: center;
-  padding-left: 16px;
-  border-left: 1px solid var(--line);
+  padding-left: 12px;
+  border-left: none;
 }
-.group-badge__img { height: 32px; width: auto; display: block; }
+.group-badge__img { height: 60px; width: auto; display: block; }
 
 /* === Group block (footer) === */
 .footer-group {
