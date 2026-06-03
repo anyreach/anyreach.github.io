@@ -361,7 +361,8 @@ img, svg { max-width: 100%; height: auto; display: block; }
   margin-bottom: 28px;
   animation: fadeUp 0.8s ease both;
 }
-.hero-tagline::before {
+.hero-tagline::before,
+.hero-tagline::after {
   content: "";
   width: 42px; height: 1px;
   background: var(--gold);
