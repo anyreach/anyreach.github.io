@@ -1576,3 +1576,14 @@ img, svg { max-width: 100%; height: auto; display: block; }
   .stats-note{ color:rgba(0,0,0,0.55) !important; }
   .privacy-text p{ color:var(--text-soft) !important; }
 }
+
+/* === CONTACT PAGE LAYOUT === */
+.contact-grid{ grid-template-areas:"form phone" "form faq"; align-items:start; }
+.contact-form{ grid-area:form; }
+.contact-phone{ grid-area:phone; }
+.contact-faq{ grid-area:faq; }
+@media (max-width: 880px){
+  /* スマホ: 1列で phone(横長短め) → フォーム → FAQ の順 */
+  .contact-grid{ grid-template-columns:1fr !important; grid-template-areas:"phone" "form" "faq" !important; row-gap:24px !important; }
+  .contact-phone{ padding:18px 22px !important; }
+}
