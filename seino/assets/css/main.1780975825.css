@@ -1570,3 +1570,9 @@ img, svg { max-width: 100%; height: auto; display: block; }
   /* スクロール時のフェードインを無効化し即時表示（白抜け解消） */
   .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
+
+/* === MOBILE FIXES v5: 白文字をスマホのみ灰色化(PCは元の白のまま) === */
+@media (max-width: 880px){
+  .stats-note{ color:rgba(0,0,0,0.55) !important; }
+  .privacy-text p{ color:var(--text-soft) !important; }
+}
