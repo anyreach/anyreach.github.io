@@ -120,6 +120,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   .toroo-mock .search-btn{ width: 100% !important; max-width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; box-sizing: border-box; }
   /* ③ 第2CTA: 過大なpaddingを縮小 */
   .enterprise-cta__row{ padding-left: 24px !important; padding-right: 24px !important; gap: 20px !important; }
+  /* ④ 強み(5本柱): スマホは1列に */
+  .strengths-grid, .strengths-grid--5{ grid-template-columns: 1fr !important; }
+  .strength-card{ border-right: none !important; border-bottom: 1px solid var(--line) !important; padding: 40px 24px !important; }
+  .strength-card:last-child{ border-bottom: none !important; }
+  /* ⑤ 「すべての事例を見る」が中央見出しに重なる崩れを解消（絶対配置→静的・中央） */
+  .section-link{ position: static !important; right: auto !important; bottom: auto !important; display: block; text-align: center; margin-top: 14px; }
 }
 </style>
 </head>
