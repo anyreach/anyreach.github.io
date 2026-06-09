@@ -130,6 +130,16 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   .section-link{ position: static !important; right: auto !important; bottom: auto !important; display: block; text-align: center; margin-top: 14px; }
   /* ⑥ フッターも1列に */
   .footer-grid{ grid-template-columns: 1fr !important; }
+  /* ⑦ ヒーロー背景: スマホは白グラデが右まで届かずSEINO AGENT/説明文が暗背景に乗って読めない → 明るい背景に統一 */
+  .hero{ background: linear-gradient(165deg, #ffffff 0%, #e9eff7 100%) !important; }
+  .hero::before, .hero::after{ display: none !important; }
+  /* ⑧ 説明文「セイノーHDグループの信頼と実績…」を濃い黒で見やすく */
+  .hero-desc{ color: #15181d !important; }
+  /* ⑨ グローバルナビをスマホでも表示（横スクロール可能な1行） */
+  .top-bar__row2{ display: block !important; border-top: 1px solid var(--line); }
+  .top-bar__row2 .container{ overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .top-nav{ justify-content: flex-start !important; flex-wrap: nowrap !important; white-space: nowrap; gap: 16px !important; padding: 10px 0 !important; }
+  .top-nav a{ flex: 0 0 auto; font-size: 12.5px !important; }
 }
 </style>
 </head>
