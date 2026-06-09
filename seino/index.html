@@ -104,6 +104,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   .hero-region{ font-size: 20px !important; }
   .hero-photo{ height: 150px; }
   .hero-photo--main{ height: 210px; }
+  /* スマホ実機(360-430px)でCTAがロゴワードマークに重なるのを解消：ワードマークを隠し赤ロゴアイコンのみ表示 */
+  .brand__text-img{ display: none !important; }
 }
 /* === スマホ横はみ出し(横スクロール)対策 === */
 @media (max-width: 880px){
@@ -126,6 +128,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   .strength-card:last-child{ border-bottom: none !important; }
   /* ⑤ 「すべての事例を見る」が中央見出しに重なる崩れを解消（絶対配置→静的・中央） */
   .section-link{ position: static !important; right: auto !important; bottom: auto !important; display: block; text-align: center; margin-top: 14px; }
+  /* ⑥ フッターも1列に */
+  .footer-grid{ grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
