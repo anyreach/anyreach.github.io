@@ -105,6 +105,21 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   .hero-photo{ height: 150px; }
   .hero-photo--main{ height: 210px; }
 }
+/* === スマホ横はみ出し(横スクロール)対策 === */
+@media (max-width: 880px){
+  /* ① ヘッダー: ワードマークが赤ボタンに重なるのを解消 */
+  .group-badge{ display: none !important; }
+  .brand__text-img{ height: 22px !important; width: auto !important; }
+  .top-bar__row1 .container{ gap: 12px !important; }
+  .top-bar__row1 .btn, .top-bar__row1 a.btn-red{
+    padding: 10px 14px !important; font-size: 12px !important; white-space: nowrap;
+  }
+  /* ② 求人検索モック: 固定px列を1列にしてはみ出し解消 */
+  .toroo-mock .filter-row{ grid-template-columns: 1fr !important; }
+  .toroo-mock .filter-item{ min-width: 0 !important; }
+  /* ③ 第2CTA: 過大なpaddingを縮小 */
+  .enterprise-cta__row{ padding-left: 24px !important; padding-right: 24px !important; gap: 20px !important; }
+}
 </style>
 </head>
 <body class="home blog">
