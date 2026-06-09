@@ -1587,3 +1587,12 @@ img, svg { max-width: 100%; height: auto; display: block; }
   .contact-grid{ grid-template-columns:1fr !important; grid-template-areas:"phone" "form" "faq" !important; row-gap:24px !important; }
   .contact-phone{ padding:18px 22px !important; }
 }
+
+/* === CONTACT: スマホで黒ボックスを平たく・上詰め・全幅 === */
+@media (max-width: 880px){
+  .contact-hero{ padding-bottom:14px !important; }
+  .contact-section{ padding-top:8px !important; }
+  .contact-phone{ padding:12px 22px !important; margin-left:-32px !important; margin-right:-32px !important; }
+  .contact-phone > div:first-child{ margin-bottom:6px !important; }
+  .contact-phone > div:nth-child(2){ margin-bottom:2px !important; }
+}
