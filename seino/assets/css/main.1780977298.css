@@ -1596,3 +1596,8 @@ img, svg { max-width: 100%; height: auto; display: block; }
   .contact-phone > div:first-child{ margin-bottom:6px !important; }
   .contact-phone > div:nth-child(2){ margin-bottom:2px !important; }
 }
+
+/* === CONTACT: フォーム内eyebrowをスマホで中央寄せ === */
+@media (max-width: 880px){
+  .contact-form .section-eyebrow{ justify-content:center !important; }
+}
